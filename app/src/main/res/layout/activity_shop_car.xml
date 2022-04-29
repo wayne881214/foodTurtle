@@ -56,8 +56,8 @@
 
     <LinearLayout
             android:orientation="vertical"
-            android:layout_width="318dp"
-            android:layout_height="624dp"
+            android:layout_width="359dp"
+            android:layout_height="668dp"
             android:id="@+id/linearLayout"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -324,7 +324,7 @@
             <TextView
                     android:text="使用優惠券"
                     android:layout_width="314dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:id="@+id/textView17"
                     android:textColor="#00AEAE" />
 
@@ -373,8 +373,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/button"
                 android:textColor="#FFFFFF"
-                android:textColorHint="#814C4C"
-                app:rippleColor="#D3D3D3"
+                android:textColorHint="#009688"
+                app:rippleColor="#009688"
                 android:textStyle="bold" />
 
     </LinearLayout>
