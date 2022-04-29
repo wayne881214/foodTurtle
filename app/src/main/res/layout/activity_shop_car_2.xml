@@ -4,7 +4,8 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity"
+        android:fadingEdge="horizontal">
 
     <LinearLayout
             android:orientation="horizontal"
@@ -23,7 +24,8 @@
                 android:layout_weight="1"
                 android:backgroundTint="#FFFFFF"
                 android:scaleX="0.4"
-                android:scaleY="0.4" />
+                android:scaleY="0.4"
+                android:onClick="homePage" />
 
         <LinearLayout
                 android:orientation="vertical"
@@ -54,19 +56,225 @@
 
     </LinearLayout>
 
-    <TextView
-            android:text="付款方式"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView6"
-            tools:layout_editor_absoluteY="116dp"
-            tools:layout_editor_absoluteX="48dp" />
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="378dp"
+            android:layout_height="267dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.165"
+            app:layout_constraintHorizontal_bias="0.484"
+            android:id="@+id/linearLayout3">
 
-    <com.google.android.gms.maps.MapView
-            android:layout_width="333dp"
-            android:layout_height="140dp"
-            android:id="@+id/mapView"
-            tools:layout_editor_absoluteY="145dp"
-            tools:layout_editor_absoluteX="39dp" />
+        <TextView
+                android:text="外送地址"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView18"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        <com.google.android.gms.maps.MapView
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:id="@+id/mapView"
+                android:background="#FF0505"
+                android:backgroundTint="@color/teal_200" />
+
+        <TextView
+                android:text="188-18 光明路 西屯區,407"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView6"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+        <Button
+                android:text="+ 新增外送指示"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button4"
+                android:background="#0000BCD4"
+                android:textColor="@color/teal_200"
+                android:textAlignment="textStart" />
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="379dp"
+            android:layout_height="69dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.468"
+            android:layout_marginBottom="192dp"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
+            app:layout_constraintVertical_bias="0.126"
+            android:id="@+id/linearLayout4">
+
+        <TextView
+                android:text="外送地址"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView20"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="35dp">
+
+            <TextView
+                    android:text="現金付款"
+                    android:layout_width="307dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/T33"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+
+            <TextView
+                    android:text="$321"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/T34"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="383dp"
+            android:layout_height="180dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.441"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+            app:layout_constraintVertical_bias="0.162">
+
+        <TextView
+                android:text="訂單內容"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView20"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="72dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:text="小記"
+                    android:layout_width="307dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/T33"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+
+            <TextView
+                    android:text="$261"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/T34"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:text="外送服務費"
+                    android:layout_width="307dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/T33"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+
+            <TextView
+                    android:text="$60"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/T34"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="379dp"
+            android:layout_height="134dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="46dp">
+
+            <TextView
+                    android:text="總金額 "
+                    android:layout_width="1dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView27"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_weight="1" />
+
+            <TextView
+                    android:text="費用"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView28"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+
+            <TextView
+                    android:text="$321"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView30"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    android:layout_weight="1" />
+        </LinearLayout>
+
+        <Button
+                android:text="確認地址"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/button5"
+                android:textColor="#FFFFFF"
+                android:background="@color/teal_200" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
