@@ -4,7 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/appDev/Lab/foodTurtle/app/src/main/res/layout/activity_browse.xml" value="0.264" />
+        <entry key="..\:/appDev/Lab/foodTurtle/app/src/main/res/layout/activity_delivery_order.xml" value="0.176" />
         <entry key="..\:/appDev/Lab/foodTurtle/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/appDev/Lab/foodTurtle/app/src/main/res/layout/activity_navigation.xml" value="0.176" />
+        <entry key="..\:/appDev/Lab/foodTurtle/app/src/main/res/layout/activity_shop_car.xml" value="0.264" />
+        <entry key="..\:/appDev/Lab/foodTurtle/app/src/main/res/layout/activity_shop_car_2.xml" value="0.2" />
         <entry key="..\:/appDev/Lab/foodTurtle/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1805" />
         <entry key="..\:/appDev/Lab/foodTurtle/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1585" />
         <entry key="..\:/appDev/Lab/temp/0422/1/foodTurtle/app/src/main/res/layout/activity_main.xml" value="0.11503623188405797" />
