@@ -13,15 +13,21 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    protected void gonext(View view){
+    public void gonext(View view){
         Intent intent = new Intent();
         intent.setClass(this, deliveryOrderActivity.class);
         startActivity(intent);
     }
 
-    protected void god(View view){
+    public void god(View view){
         Intent intent = new Intent();
         intent.setClass(this, NavigationActivity.class);
+        startActivity(intent);
+    }
+
+    public void gotoorder(View view){
+        Intent intent = new Intent();
+        intent.setClass(this, orderOrderActivity.class);
         startActivity(intent);
     }
 }

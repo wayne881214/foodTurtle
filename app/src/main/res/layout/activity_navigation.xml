@@ -17,7 +17,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.786"
         app:srcCompat="?android:attr/scrollbarThumbVertical"
-        app:tint="#f2f2f2" />
+        app:tint="#f2f2f2"
+        android:contentDescription="@string/todowhere" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -31,27 +32,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.113"
-        />
+        android:contentDescription="@string/todoor" />
 
     <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/imageView2"
         android:layout_width="300dp"
         android:layout_height="62dp"
         android:background="@drawable/bg_border"
+        android:contentDescription="@string/todoor"
         android:padding="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.278"
-        />
+        app:layout_constraintVertical_bias="0.278" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="訂單#00"
+        android:text="@string/order"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -66,9 +67,9 @@
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="永和豆漿(逢甲店)"
+        android:text="@string/shop"
         android:textColor="#000000"
-        android:textSize="12sp"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,7 +80,7 @@
         android:id="@+id/textView19"
         android:layout_width="25dp"
         android:layout_height="24dp"
-        android:text="..."
+        android:text="@string/contiinue"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -93,9 +94,9 @@
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="插入新訂單"
+        android:text="@string/boo"
         android:textAllCaps="false"
-        android:textColor="#00AEAE"
+        android:textColor="#00796B"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -106,12 +107,12 @@
 
     <TextView
         android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="x導航"
+        android:layout_width="0dp"
+        android:layout_height="17dp"
+        android:text="@string/road"
         android:textAllCaps="false"
-        android:textColor="#00AEAE"
-        android:textSize="10sp"
+        android:textColor="#00838F"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.041"
@@ -123,7 +124,7 @@
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="西屯路右轉300公尺"
+        android:text="@string/aoo"
         android:textColor="#000000"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -151,31 +152,35 @@
         android:id="@+id/imageView15"
         android:layout_width="458dp"
         android:layout_height="391dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.802"
-        app:srcCompat="@drawable/map" />
+        app:srcCompat="@drawable/map"
+        tools:ignore="ImageContrastCheck" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="52dp"
         android:layout_height="40dp"
+        android:contentDescription="@string/todo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.069"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976"
-        app:srcCompat="@drawable/delivery" />
+        app:srcCompat="@drawable/delivery"
+        tools:ignore="ImageContrastCheck" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="今日跑單距離 30km"
+        android:text="@string/km"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -191,7 +196,7 @@
         android:layout_height="22dp"
         android:background="#00AEAE"
         android:backgroundTint="#00AEAE"
-        android:text="NT600"
+        android:text="@string/ntdollar"
         android:textColor="#FFFFFFFF"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -200,7 +205,8 @@
         app:layout_constraintHorizontal_bias="0.903"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.953" />
+        app:layout_constraintVertical_bias="0.953"
+        tools:ignore="TextContrastCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
