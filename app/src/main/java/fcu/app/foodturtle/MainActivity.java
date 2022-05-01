@@ -21,4 +21,7 @@ public class MainActivity extends AppCompatActivity {
 	public void onClick2(View v) {
 		setContentView(R.layout.activity_shop_car_2);
 	}
+	public void onClick3(View v) {
+		setContentView(R.layout.activity_shop_car_3);
+	}
 }
