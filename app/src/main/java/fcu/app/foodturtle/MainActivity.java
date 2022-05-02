@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
-
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -30,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
 	public void home(View v) {
 		setContentView(R.layout.activity_main);
 	}
+
 	public void onClick1(View v) {
 		setContentView(R.layout.activity_coupon_now);
 
@@ -46,5 +46,13 @@ public class MainActivity extends AppCompatActivity {
 	}
 	public void onClick2(View v) {
 		setContentView(R.layout.activity_coupon_expired);
+	public void homePage(View v) {
+		setContentView(R.layout.activity_main);
+	}
+	public void onClick2(View v) {
+		setContentView(R.layout.activity_shop_car_2);
+	}
+	public void onClick3(View v) {
+		setContentView(R.layout.activity_shop_car_3);
 	}
 }
