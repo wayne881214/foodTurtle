@@ -18,8 +18,8 @@
             android:padding="10dp">
 
             <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="58dp"
+                android:id="@+id/imageView14"
+                android:layout_width="50dp"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/list_icon" />
 
