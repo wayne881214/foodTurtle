@@ -6,16 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class orderOrderActivity extends AppCompatActivity {
+public class OrdersHomeActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order_order);
+        setContentView(R.layout.activity_orders_home);
     }
-    public void shopcarview(View v) {
+    public void Neworder(View v) {
         Intent intent = new Intent();
-        intent.setClass(this,ShopcarActivity.class);
+        intent.setClass(this,ordersAcceptActivity.class);
         startActivity(intent);
     }
 }

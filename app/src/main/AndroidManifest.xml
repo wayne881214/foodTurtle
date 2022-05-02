@@ -10,6 +10,34 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Food">
         <activity
+            android:name=".SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateAccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".shopcar3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".shopcar2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ShopcarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BrowseActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".OrdersHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ordersAcceptActivity"
+            android:exported="false" />
+        <activity
+            android:name=".couponMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".orderOrderActivity"
             android:exported="false" />
         <activity
