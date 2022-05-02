@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Food">
         <activity
+            android:name=".SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CreateAccountActivity"
+            android:exported="false" />
+        <activity
             android:name=".shopcar3Activity"
             android:exported="false" />
         <activity
@@ -21,9 +27,7 @@
         <activity
             android:name=".BrowseActivity"
             android:exported="false" />
-        <activity
-            android:name=".OrdersReadyActivity"
-            android:exported="false" />
+
         <activity
             android:name=".OrdersHomeActivity"
             android:exported="false" />

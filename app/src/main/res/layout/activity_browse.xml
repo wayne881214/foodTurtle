@@ -19,13 +19,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
+            android:id="@+id/imageButton"
             android:layout_width="79dp"
             android:layout_height="53dp"
-            app:srcCompat="@drawable/bar_botton"
-            android:id="@+id/imageButton"
             android:background="#FFFFFF"
+            android:onClick="Setmenu"
             android:scaleX="0.4"
-            android:scaleY="0.4" />
+            android:scaleY="0.4"
+            app:srcCompat="@drawable/bar_botton" />
 
         <LinearLayout
             android:orientation="vertical"
@@ -57,13 +58,14 @@
             android:layout_weight="1" />
 
         <ImageButton
+            android:id="@+id/imageButton2"
             android:layout_width="wrap_content"
             android:layout_height="52dp"
-            app:srcCompat="@drawable/shopping_car"
-            android:id="@+id/imageButton2"
             android:background="#FFFFFF"
+            android:onClick="shopcarmenu"
             android:scaleX="0.4"
-            android:scaleY="0.4" />
+            android:scaleY="0.4"
+            app:srcCompat="@drawable/shopping_car" />
 
     </LinearLayout>
 
@@ -94,10 +96,11 @@
             android:layout_height="246dp">
 
             <ImageView
+                android:id="@+id/imageView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/test_view"
-                android:id="@+id/imageView2" />
+                android:onClick="orderordermenu"
+                app:srcCompat="@drawable/test_view" />
 
             <TextView
                 android:text="$29"

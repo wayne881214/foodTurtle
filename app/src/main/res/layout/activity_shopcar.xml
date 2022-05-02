@@ -329,11 +329,12 @@
             android:scaleType="fitEnd" />
 
         <TextView
-            android:text="使用優惠券"
+            android:id="@+id/textView16"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:id="@+id/textView16"
             android:layout_weight="1"
+            android:onClick="Coupon"
+            android:text="使用優惠券"
             android:textColor="@color/teal_200" />
 
         <TextView

@@ -16,9 +16,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public void Coupon(View v) {
+
+    public void Viewmenu(View v) {
         Intent intent = new Intent();
-        intent.setClass(this,couponMainActivity.class);
+        intent.setClass(this,BrowseActivity.class);
+        startActivity(intent);
+    }
+
+    public void createmenu(View v) {
+        Intent intent = new Intent();
+        intent.setClass(this,CreateAccountActivity.class);
+        startActivity(intent);
+    }
+
+    public void deliverymenu(View v) {
+        Intent intent = new Intent();
+        intent.setClass(this,deliveryOrderActivity.class);
         startActivity(intent);
     }
     public void Ordermenu(View v) {
@@ -26,15 +39,6 @@ public class MainActivity extends AppCompatActivity {
         intent.setClass(this,OrdersHomeActivity.class);
         startActivity(intent);
     }
-    public void Viewmenu(View v) {
-        Intent intent = new Intent();
-        intent.setClass(this,BrowseActivity.class);
-        startActivity(intent);
-    }
-    public void shopcarmenu(View v) {
-        Intent intent = new Intent();
-        intent.setClass(this,ShopcarActivity.class);
-        startActivity(intent);
-    }
+
 
 }
