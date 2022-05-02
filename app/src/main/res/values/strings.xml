@@ -1,3 +1,20 @@
 <resources>
-    <string name="app_name">foodTurtle</string>
+    <string name="app_name">food</string>
+    <string name="aoo" translatable="false">西屯路右轉300公尺</string>
+    <string name="km" translatable="false">今日跑單距離 30km</string>
+    <string name="ntdollar" translatable="false">NT600</string>
+    <string name="todo" translatable="false">TODO</string>
+    <string name="or" translatable="false">TODO</string>
+    <string name="road" translatable="false">x導航</string>
+    <string name="boo" translatable="false">插入新訂單</string>
+    <string name="todowhere" translatable="false">TODO</string>
+    <string name="contiinue" translatable="false">...</string>
+    <string name="order" translatable="false">訂單#00</string>
+    <string name="shop" translatable="false">永和豆漿(逢甲店)</string>
+    <string name="todoor" translatable="false">TODO</string>
+    <string name="button1" translatable="false">Button</string>
+    <string name="button2" translatable="false">Button</string>
+    <string name="image1">TODO</string>
+    <string name="background">TODO</string>
+    <string name="who">TODO</string>
 </resources>
