@@ -17,8 +17,8 @@
             android:layout_height="80dp"
             android:padding="10dp">
 
-            <ImageButton
-                android:id="@+id/imageButton"
+            <ImageView
+                android:id="@+id/imageView14"
                 android:layout_width="50dp"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/list_icon" />
