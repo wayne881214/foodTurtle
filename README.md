@@ -74,15 +74,38 @@
     <td>裴鼎軒</td>
     <td>D0983064</td>
     <td>wayne881214</td>
-     <td></td>
+     <td>merge</td>
   <tr>
     <td>李柏村</td>
     <td>D0885494</td>
     <td>bobohuman</td>
-    <td></td>
+    <td>merge</td>
   <tr>
     <td>林子白</td>
     <td>D0857613</td>
     <td>peter1421</td>
-    <td></td>
+    <td>merge</td>
+</table>
+<h1> 2022-05-09 </h1>
+<table>
+   <tr>
+    <td>組員姓名</td>
+    <td>學號</td>
+    <td>GitHub帳號</td>
+    <td>Issues</td>
+  <tr>
+    <td>裴鼎軒</td>
+    <td>D0983064</td>
+    <td>wayne881214</td>
+    <td>#48</td>
+  <tr>
+    <td>李柏村</td>
+    <td>D0885494</td>
+    <td>bobohuman</td>
+    <td>#49</td>
+  <tr>
+    <td>林子白</td>
+    <td>D0857613</td>
+    <td>peter1421</td>
+    <td>#50</td>
 </table>
