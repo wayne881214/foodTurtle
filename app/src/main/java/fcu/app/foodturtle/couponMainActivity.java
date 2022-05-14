@@ -8,6 +8,9 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+import fcu.app.foodturtle.ArrayAdapter.CouponArrayAdapter;
+import fcu.app.foodturtle.item.CouponItem;
+
 public class couponMainActivity extends AppCompatActivity {
 
     @Override

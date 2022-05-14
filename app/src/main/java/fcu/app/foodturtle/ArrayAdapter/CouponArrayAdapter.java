@@ -1,4 +1,4 @@
-package fcu.app.foodturtle;
+package fcu.app.foodturtle.ArrayAdapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,6 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import java.util.List;
+
+import fcu.app.foodturtle.R;
+import fcu.app.foodturtle.item.CouponItem;
 
 public class CouponArrayAdapter extends ArrayAdapter<CouponItem> {
 
