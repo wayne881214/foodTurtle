@@ -51,11 +51,14 @@
                     android:textAlignment="center" />
         </LinearLayout>
 
-        <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="164dp"
-                app:srcCompat="@drawable/hamburger"
-                android:id="@+id/food_img" />
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/menu01"
+                android:id="@+id/food_img"
+                android:layout_weight="1"
+                android:onClick="shopcarview"
+                android:backgroundTint="#FFFFFF" />
 
     </LinearLayout>
 
