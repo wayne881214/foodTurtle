@@ -16,15 +16,15 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <ImageButton
-            android:layout_width="202dp"
-            android:layout_height="match_parent"
-            app:srcCompat="@drawable/close"
-            android:id="@+id/imageButton"
-            android:layout_weight="1"
-            android:backgroundTint="#FFFFFF"
-            android:scaleX="0.4"
-            android:scaleY="0.4"
-            android:onClick="homePage" />
+                android:layout_width="202dp"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/close"
+                android:id="@+id/imageButton"
+                android:layout_weight="1"
+                android:backgroundTint="#FFFFFF"
+                android:scaleX="0.4"
+                android:scaleY="0.4"
+                android:onClick="homePage" />
 
         <LinearLayout
             android:orientation="vertical"

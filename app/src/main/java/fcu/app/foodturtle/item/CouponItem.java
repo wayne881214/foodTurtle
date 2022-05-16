@@ -1,4 +1,4 @@
-package fcu.app.foodturtle;
+package fcu.app.foodturtle.item;
 
 public class CouponItem {
 	private String id;

@@ -17,6 +17,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+  public void homePage(View v) {
+//	Intent intent = new Intent();
+//	intent.setClass(this,MainActivity.class);
+//	startActivity(intent);
+	setContentView(R.layout.activity_main);
+  }
     public void Viewmenu(View v) {
         Intent intent = new Intent();
         intent.setClass(this,BrowseActivity.class);

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="147dp">
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="175dp"
+                android:layout_height="161dp">
+
+            <TextView
+                    android:text="三層牛肉豪華起司堡"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/food_name"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textAlignment="center" />
+
+            <TextView
+                    android:text="附贈60元小點心"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:id="@+id/food_commit"
+                    android:textColor="#9F9F9F"
+                    android:textSize="18sp"
+                    android:textAlignment="center" />
+
+            <TextView
+                    android:text="NT$.220.00"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/food_money"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textAlignment="center" />
+
+            <TextView
+                    android:text="漢堡類"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/food_type"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textAlignment="center" />
+        </LinearLayout>
+
+        <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/menu01"
+                android:id="@+id/food_img"
+                android:layout_weight="1"
+                android:onClick="shopcarview"
+                android:backgroundTint="#FFFFFF" />
+
+    </LinearLayout>
+
+</LinearLayout>
