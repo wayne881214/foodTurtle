@@ -84,7 +84,7 @@
     <td>林子白</td>
     <td>D0857613</td>
     <td>peter1421</td>
-    <td>#51</td>
+    <td>#51、#40</td>
 </table>
 <h1> 2022-05-09 </h1>
 <table>
