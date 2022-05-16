@@ -35,7 +35,7 @@ public class BrowseActivity extends AppCompatActivity {
         StoreArrayAdapter adapter = new StoreArrayAdapter(this, R.layout.listitem_store, storeList);
         lvStore.setAdapter(adapter);
 
-        if(!VALID_USER) {
+    if(!VALID_USER) {
             Intent intent = new Intent();
             intent.setClass(this,MainActivity.class);
             startActivity(intent);
