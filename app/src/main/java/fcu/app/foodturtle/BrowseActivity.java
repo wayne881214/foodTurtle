@@ -8,10 +8,18 @@ import android.view.View;
 
 public class BrowseActivity extends AppCompatActivity {
 
+    public static boolean VALID_USER = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browse);
+
+        if(!VALID_USER) {
+            Intent intent = new Intent();
+            intent.setClass(this,MainActivity.class);
+            startActivity(intent);
+        }
     }
     public void shopcarmenu(View v) {
         Intent intent = new Intent();
