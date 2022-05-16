@@ -51,17 +51,17 @@
     <td>裴鼎軒</td>
     <td>D0983064</td>
     <td>wayne881214</td>
-     <td>#28,#29,#30</td>
+     <td>#28、#29,#30</td>
   <tr>
     <td>李柏村</td>
     <td>D0885494</td>
     <td>bobohuman</td>
-    <td>#32,#33,#34</td>
+    <td>#32、#33、#34</td>
   <tr>
     <td>林子白</td>
     <td>D0857613</td>
     <td>peter1421</td>
-    <td>#35,#36</td>
+    <td>#35、#36</td>
 </table>
 <h1> 2022-05-02 </h1>
 <table>
