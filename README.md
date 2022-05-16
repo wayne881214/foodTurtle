@@ -79,12 +79,12 @@
     <td>李柏村</td>
     <td>D0885494</td>
     <td>bobohuman</td>
-    <td>merge</td>
+    <td>#41、#42</td>
   <tr>
     <td>林子白</td>
     <td>D0857613</td>
     <td>peter1421</td>
-    <td>merge</td>
+    <td>#51</td>
 </table>
 <h1> 2022-05-09 </h1>
 <table>
