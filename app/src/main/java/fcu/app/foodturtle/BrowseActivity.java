@@ -22,7 +22,7 @@ public class BrowseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browse);
 
-<<<<<<< HEAD
+
 
         ListView lvStore = this.findViewById(R.id.lv_store);
         ArrayList<StoreItem> storeList = new ArrayList<StoreItem>();
