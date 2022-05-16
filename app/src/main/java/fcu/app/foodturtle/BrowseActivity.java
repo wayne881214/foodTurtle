@@ -15,10 +15,13 @@ import fcu.app.foodturtle.item.StoreItem;
 
 public class BrowseActivity extends AppCompatActivity {
 
+    public static boolean VALID_USER = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browse);
+
 
         ListView lvStore = this.findViewById(R.id.lv_store);
         ArrayList<StoreItem> storeList = new ArrayList<StoreItem>();
@@ -31,6 +34,12 @@ public class BrowseActivity extends AppCompatActivity {
 
         StoreArrayAdapter adapter = new StoreArrayAdapter(this, R.layout.listitem_store, storeList);
         lvStore.setAdapter(adapter);
+
+        if(!VALID_USER) {
+            Intent intent = new Intent();
+            intent.setClass(this,MainActivity.class);
+            startActivity(intent);
+        }
 
     }
     public void shopcarmenu(View v) {

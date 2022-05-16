@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "797454773625",
+    "project_id": "foodturtle-dfb4c",
+    "storage_bucket": "foodturtle-dfb4c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:797454773625:android:3f2af0f8f7677a800413a8",
+        "android_client_info": {
+          "package_name": "fcu.app.foodturtle"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "797454773625-38tn7kfgb5vm8mjs7ufm2umtj9rtiqvh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6bjYqaFpBhNSSTRjiWaSdDY8vrq0ivXk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "797454773625-38tn7kfgb5vm8mjs7ufm2umtj9rtiqvh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
