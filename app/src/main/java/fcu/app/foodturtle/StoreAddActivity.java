@@ -5,12 +5,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -23,6 +19,12 @@ public class StoreAddActivity extends AppCompatActivity  {
 	private EditText etFreight;
 	private EditText etFraction;
 	private EditText etType;
+
+	private EditText etFoodName;
+	private EditText etFoodCommit;
+	private EditText etFoodMoney;
+	private EditText etFoodType;
+
 	private FirebaseAuth firebaseAuth;
 
 	@Override
@@ -34,6 +36,11 @@ public class StoreAddActivity extends AppCompatActivity  {
 		etFreight = findViewById(R.id.storeFreight);
 		etFraction = findViewById(R.id.storeFraction);
 		etType = findViewById(R.id.storeType);
+
+		etFoodName = findViewById(R.id.foodName);
+		etFoodCommit = findViewById(R.id.foodCommit);
+		etFoodMoney = findViewById(R.id.foodMoney);
+		etFoodType = findViewById(R.id.foodType);
 
 		firebaseAuth = FirebaseAuth.getInstance();
 //		temp();
@@ -57,6 +64,30 @@ public class StoreAddActivity extends AppCompatActivity  {
 		nameRef.updateChildren(store);
 
 		Toast.makeText(this,Name+"新增成功", Toast.LENGTH_LONG).show();
+
+	}
+	public void addFood(View view) {
+
+		String Name = etName.getText().toString();
+		String FoodName = etFoodName.getText().toString();
+		String FoodCommit = etFoodCommit.getText().toString();
+		String FoodType = etFoodType.getText().toString();
+		String FoodMoney = etFoodMoney.getText().toString();
+
+		String path="stores/"+Name+"/foods";
+		Toast.makeText(this,path+"新增!!", Toast.LENGTH_LONG).show();
+
+		FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+		DatabaseReference foodsRef = firebaseDatabase.getReference(path);
+		DatabaseReference nameRef = foodsRef.child(FoodName);
+		Map<String, Object> food = new HashMap<>();
+		food.put("name", FoodName);
+		food.put("commit", FoodCommit);
+		food.put("type", FoodType);
+		food.put("money", FoodMoney);
+		nameRef.updateChildren(food);
+
+		Toast.makeText(this,FoodName+"新增成功", Toast.LENGTH_LONG).show();
 
 	}
 //	public void temp(){

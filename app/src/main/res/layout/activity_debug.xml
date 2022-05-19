@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/teal_200"
-                android:text="新增商店"
+                android:text="商店管理"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:layout_marginBottom="576dp"
