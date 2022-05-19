@@ -14,8 +14,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements OnCompleteListener<AuthResult> {
 
@@ -63,7 +67,11 @@ public class MainActivity extends AppCompatActivity implements OnCompleteListene
         intent.setClass(this,OrdersHomeActivity.class);
         startActivity(intent);
     }
-
+		public void debug(View v) {
+			Intent intent = new Intent();
+			intent.setClass(this,debugActivity.class);
+			startActivity(intent);
+		}
     public void OnLogin(View view){
         String email = etEmail.getText().toString();
         String password = etPassword.getText().toString();
@@ -82,4 +90,6 @@ public class MainActivity extends AppCompatActivity implements OnCompleteListene
             Toast.makeText(this,"登入失敗", Toast.LENGTH_LONG).show();
         }
     }
+
+
 }
