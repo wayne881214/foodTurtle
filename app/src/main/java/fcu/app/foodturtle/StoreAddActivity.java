@@ -57,10 +57,11 @@ public class StoreAddActivity extends AppCompatActivity  {
 		DatabaseReference storesRef = firebaseDatabase.getReference("stores");
 		DatabaseReference nameRef = storesRef.child(Name);
 		Map<String, Object> store = new HashMap<>();
-		store.put("name", Name);
-		store.put("freight", Freight);
-		store.put("fraction", Fraction);
-		store.put("type", Type);
+		store.put("imgResId", Type);
+		store.put("storeName", Name);
+		store.put("storeFreight", Freight);
+		store.put("storeFraction", Fraction);
+		store.put("storeType", Type);
 		nameRef.updateChildren(store);
 
 		Toast.makeText(this,Name+"新增成功", Toast.LENGTH_LONG).show();
