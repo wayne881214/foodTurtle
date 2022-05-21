@@ -8,10 +8,27 @@ public class CouponItem {
 	private String description;
 	private String date;
 
-	public CouponItem(String id, String name, int money, String code, String description, String date) {
+//	public CouponItem(String id, String name, int money, String code, String description, String date) {
+//		this.id = id;
+//		this.name = name;
+//		this.money = money;
+//		this.code=code;
+//		this.description = description;
+//		this.date = date;
+//	}
+	public CouponItem(){}
+	public CouponItem(String date, String code, int money,String name, String description,String id ) {
 		this.id = id;
 		this.name = name;
 		this.money = money;
+		this.code=code;
+		this.description = description;
+		this.date = date;
+	}
+	public CouponItem(String date, String code, String money,String name,  String description,String id ) {
+		this.id = id;
+		this.name = name;
+		this.money = Integer.parseInt(money);
 		this.code=code;
 		this.description = description;
 		this.date = date;

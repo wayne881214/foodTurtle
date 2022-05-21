@@ -57,14 +57,13 @@ public class CouponAddActivity extends AppCompatActivity  {
 		String Date = etDate.getText().toString();
 
 		System.out.println("ERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
-
 		FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 		DatabaseReference couponsRef = firebaseDatabase.getReference("coupons");
 		DatabaseReference nameRef = couponsRef.child(Name);
 		Map<String, Object> coupon = new HashMap<>();
 		coupon.put("id", Id);
 		coupon.put("name", Name);
-		coupon.put("money", Money);
+		coupon.put("money", Integer.parseInt(Money));
 		coupon.put("code", Code);
 		coupon.put("description", Description);
 		coupon.put("date", Date);

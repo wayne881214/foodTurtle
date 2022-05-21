@@ -20,6 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import fcu.app.foodturtle.item.CouponItem;
 import fcu.app.foodturtle.item.StoreItem;
 import fcu.app.foodturtle.item.UserItem;
 
@@ -34,9 +35,23 @@ public class debugActivity extends AppCompatActivity {
 		FirebaseDatabase database = FirebaseDatabase.getInstance();
 		DatabaseReference storesRef = database.getReference("/stores");
 		DatabaseReference usersRef = database.getReference("/users");
+		DatabaseReference couponsRef = database.getReference("/coupons");
+
 //		DatabaseReference getContactsRef = database.getReference("users").child("444");
 //		DatabaseReference customerRef = database.getReference("/stores/store1");
-
+		couponsRef.addValueEventListener(new ValueEventListener() {
+			@Override
+			public void onDataChange(DataSnapshot dataSnapshot) {
+				for (DataSnapshot couponSnapshot : dataSnapshot.getChildren()) {
+					System.out.println("Data:"+couponSnapshot);
+					CouponItem coupon = couponSnapshot.getValue(CouponItem.class);
+				}
+			}
+			@Override
+			public void onCancelled(DatabaseError error) {
+				// Failed to read value
+			}
+		});
 		usersRef.addValueEventListener(new ValueEventListener() {
 			@Override
 			public void onDataChange(DataSnapshot dataSnapshot) {

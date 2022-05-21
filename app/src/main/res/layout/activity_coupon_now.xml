@@ -74,7 +74,7 @@
                 android:onClick="onClick1" />
 
         <Button
-                android:text="過期"
+                android:text="過期(停用中)"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/button2"
