@@ -29,7 +29,7 @@ public class debugActivity extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_debug);
 
-		//try1
+		//測試資料庫存取
 		TextView customer = (TextView) findViewById(R.id.customerTry);
 		FirebaseDatabase database = FirebaseDatabase.getInstance();
 		DatabaseReference storesRef = database.getReference("/stores");
@@ -74,12 +74,31 @@ public class debugActivity extends AppCompatActivity {
 			}
 		});
 	}
+
+
 	public void addStore(View v) {
 		Intent intent = new Intent();
 		intent.setClass(this, StoreAddActivity.class);
 		startActivity(intent);
 	}
+	public void couponLink(View v) {
+		Intent intent = new Intent();
+		intent.setClass(this, couponMainActivity.class);
+		startActivity(intent);
+	}
+	public void BrowseLink(View v) {
+		BrowseActivity.VALID_USER = true;
+		Intent intent = new Intent();
+		intent.setClass(this, BrowseActivity.class);
+		startActivity(intent);
+	}
+	public void addCoupon(View v) {
+		System.out.println("CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC");
 
-
+		Intent intent = new Intent();
+//		intent.setClass(this, couponMainActivity.class);
+		intent.setClass(this, CouponAddActivity.class);
+		startActivity(intent);
+	}
 
 }

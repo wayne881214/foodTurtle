@@ -2,6 +2,7 @@ package fcu.app.foodturtle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -21,9 +22,8 @@ import fcu.app.foodturtle.item.StoreItem;
 
 public class BrowseActivity extends AppCompatActivity {
 
-	public static boolean VALID_USER = true;
-//	public static boolean VALID_USER = false;
-
+	public static boolean VALID_USER = false;
+		Context T=this;
 		FirebaseDatabase database = FirebaseDatabase.getInstance();
 		DatabaseReference storesRef = database.getReference("/stores");
     @Override
@@ -34,11 +34,8 @@ public class BrowseActivity extends AppCompatActivity {
 			ListView lvStore = this.findViewById(R.id.lv_store);
 			ArrayList<StoreItem> storeList = new ArrayList<StoreItem>();
 			storeList.add(new StoreItem(R.drawable.test_view,"好吃火鍋" ,30,"4.5(5K+)","台式"));
-			storeList.add(new StoreItem(R.drawable.test_view,"好吃火鍋" ,30,"4.5(5K+)","台式"));
-			storeList.add(new StoreItem(R.drawable.test_view,"好吃火鍋" ,30,"4.5(5K+)","台式"));
-			storeList.add(new StoreItem(R.drawable.test_view,"好吃火鍋" ,30,"4.5(5K+)","台式"));
-			storeList.add(new StoreItem(R.drawable.test_view,"好吃火鍋" ,30,"4.5(5K+)","台式"));
-			storeList.add(new StoreItem(R.drawable.test_view,"好吃火鍋" ,30,"4.5(5K+)","台式"));
+
+			String[] storeL={"imgResId", "storeName", "storeFreight", "storeFraction","storeType"};
 
 			storesRef.addValueEventListener(new ValueEventListener() {
 				@Override
@@ -46,17 +43,19 @@ public class BrowseActivity extends AppCompatActivity {
 					for (DataSnapshot storeSnapshot : dataSnapshot.getChildren()) {
 						System.out.println("Data:"+storeSnapshot);
 						String[] item = {"imgResId", "storeName", "storeFreight", "storeFraction","storeType"};
-						String[] storeList={"imgResId", "storeName", "storeFreight", "storeFraction","storeType"};
 						int top=-1;
 						for(String i:item) {
 							System.out.println(i + ":" + storeSnapshot.child(i).getValue());
-							storeList[++top]=storeSnapshot.child(i).getValue().toString();
+							storeL[++top]=storeSnapshot.child(i).getValue().toString();
 						}
-
-						System.out.println(storeList[0]);
+						//圖片都先用一樣的
+						storeList.add(new StoreItem(R.drawable.test_view,storeL[1],Integer.parseInt(storeL[2]),storeL[3],storeL[4]));
+// 					物件傳入的方式有bug 先用array代替
 //					StoreItem store = storeSnapshot.getValue(StoreItem.class);
 //					System.out.println("??"+store.getStoreName()+":"+store.getStoreFraction()+":"+store.getStoreFreight()+":"+store.getStoreType());
 					}
+					StoreArrayAdapter adapter = new StoreArrayAdapter(T, R.layout.listitem_store, storeList);
+					lvStore.setAdapter(adapter);
 				}
 				@Override
 				public void onCancelled(DatabaseError error) {
@@ -64,10 +63,8 @@ public class BrowseActivity extends AppCompatActivity {
 				}
 			});
 
-
-        StoreArrayAdapter adapter = new StoreArrayAdapter(this, R.layout.listitem_store, storeList);
-        lvStore.setAdapter(adapter);
-
+//        StoreArrayAdapter adapter = new StoreArrayAdapter(this, R.layout.listitem_store, storeList);
+//        lvStore.setAdapter(adapter);
 
 
         if(!VALID_USER) {
@@ -75,7 +72,6 @@ public class BrowseActivity extends AppCompatActivity {
             intent.setClass(this,MainActivity.class);
             startActivity(intent);
         }
-
 
 
     }

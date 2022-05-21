@@ -50,6 +50,9 @@
                 android:name=".StoreAddActivity"
                 android:exported="false" />
         <activity
+                android:name=".CouponAddActivity"
+                android:exported="false" />
+        <activity
                 android:name=".debugActivity"
                 android:exported="false" />
         <activity
