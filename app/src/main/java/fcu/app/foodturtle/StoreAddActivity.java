@@ -43,8 +43,7 @@ public class StoreAddActivity extends AppCompatActivity  {
 		etFoodType = findViewById(R.id.foodType);
 
 		firebaseAuth = FirebaseAuth.getInstance();
-//		temp();
-//		addStore();
+
 	}
 
 	public void addStore(View view) {
@@ -57,10 +56,10 @@ public class StoreAddActivity extends AppCompatActivity  {
 		DatabaseReference storesRef = firebaseDatabase.getReference("stores");
 		DatabaseReference nameRef = storesRef.child(Name);
 		Map<String, Object> store = new HashMap<>();
-		store.put("imgResId", Type);
+		store.put("imgResId", 2131165383);
 		store.put("storeName", Name);
 		store.put("storeFreight", Freight);
-		store.put("storeFraction", Fraction);
+		store.put("storeFraction", Integer.parseInt(Fraction));
 		store.put("storeType", Type);
 		nameRef.updateChildren(store);
 
@@ -76,37 +75,21 @@ public class StoreAddActivity extends AppCompatActivity  {
 		String FoodMoney = etFoodMoney.getText().toString();
 
 		String path="stores/"+Name+"/foods";
-		Toast.makeText(this,path+"新增!!", Toast.LENGTH_LONG).show();
 
 		FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 		DatabaseReference foodsRef = firebaseDatabase.getReference(path);
 		DatabaseReference nameRef = foodsRef.child(FoodName);
 		Map<String, Object> food = new HashMap<>();
-		food.put("name", FoodName);
-		food.put("commit", FoodCommit);
-		food.put("type", FoodType);
-		food.put("money", FoodMoney);
+		food.put("foodName", FoodName);
+		food.put("foodCommit", FoodCommit );
+		food.put("foodType", FoodType);
+		food.put("foodMoney", Integer.parseInt(FoodMoney));
+		food.put("imgResId",2131165353);
 		nameRef.updateChildren(food);
 
 		Toast.makeText(this,FoodName+"新增成功", Toast.LENGTH_LONG).show();
 
 	}
-//	public void temp(){
-//			Toast.makeText(this,"Try", Toast.LENGTH_LONG).show();
-//			String T="877";
-//			String Name = T;
-//			String Freight = T;
-//			String Fraction = T;
-//			String Type = T;
-//			FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-//			DatabaseReference storesRef = firebaseDatabase.getReference("stores");
-//			DatabaseReference nameRef = storesRef.child(Name);
-//			Map<String, Object> store = new HashMap<>();
-//			store.put("name", Name);
-//			store.put("freight", Freight);
-//			store.put("fraction", Fraction);
-//			store.put("type", Type);
-//			nameRef.updateChildren(store);
-//	}
+
 
 }
