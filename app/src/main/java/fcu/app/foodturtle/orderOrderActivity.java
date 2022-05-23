@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -27,13 +28,12 @@ public class orderOrderActivity extends AppCompatActivity {
 		foodList.add(new FoodItem(R.drawable.menu01,"羊肉漢堡" ,"附贈小杯飲料",30,"漢堡"));
 		foodList.add(new FoodItem(R.drawable.menu01,"豬漢堡" ,"附贈小杯飲料",30,"漢堡"));
 		foodList.add(new FoodItem(R.drawable.menu01,"雞肉漢堡" ,"附贈小杯飲料",30,"漢堡"));
-
-		FoodArrayAdapter adapter = new FoodArrayAdapter(this, R.layout.listitem_food, foodList);
-		lvFood.setAdapter(adapter);
     }
+
     public void shopcarview(View v) {
         Intent intent = new Intent();
         intent.setClass(this,ShopcarActivity.class);
         startActivity(intent);
     }
+
 }
