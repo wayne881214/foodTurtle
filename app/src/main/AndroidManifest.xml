@@ -47,6 +47,15 @@
             android:name=".deliveryOrderActivity"
             android:exported="false" />
         <activity
+                android:name=".StoreAddActivity"
+                android:exported="false" />
+        <activity
+                android:name=".CouponAddActivity"
+                android:exported="false" />
+        <activity
+                android:name=".debugActivity"
+                android:exported="false" />
+        <activity
             android:name=".BrowseActivity"
             android:exported="true">
             <intent-filter>

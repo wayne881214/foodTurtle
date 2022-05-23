@@ -528,16 +528,17 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="375dp"
-        android:layout_height="54dp"
-        android:backgroundTint="@color/teal_200"
-        android:onClick="Neworder"
-        android:text="新訂單通知"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            android:id="@+id/button"
+            android:layout_width="386dp"
+            android:layout_height="42dp"
+            android:backgroundTint="@color/teal_200"
+            android:onClick="Neworder"
+            android:text="新訂單通知"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.36" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

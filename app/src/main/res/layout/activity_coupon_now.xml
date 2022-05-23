@@ -9,6 +9,58 @@
         android:backgroundTint="#E1E1E1">
 
     <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="410dp"
+            android:layout_height="109dp"
+            tools:layout_editor_absoluteY="147dp"
+            tools:layout_editor_absoluteX="0dp">
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:text="使用者ID:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView36"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            <EditText
+                    android:layout_width="237dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:hint="使用者ID(登入後自動輸入)" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="416dp"
+                android:layout_height="82dp">
+
+            <TextView
+                    android:text="優惠券密碼:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView36"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:hint="優惠券密碼" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
             android:orientation="horizontal"
             android:layout_width="414dp"
             android:layout_height="65dp"
@@ -74,7 +126,7 @@
                 android:onClick="onClick1" />
 
         <Button
-                android:text="過期"
+                android:text="過期(停用中)"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/button2"
@@ -86,14 +138,14 @@
     </LinearLayout>
 
     <ListView
-            android:layout_width="353dp"
-            android:layout_height="465dp"
+            android:layout_width="319dp"
+            android:layout_height="387dp"
             android:layout_weight="1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="84dp"
             android:id="@+id/lv_coupon"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -53,7 +53,7 @@ public class FoodArrayAdapter extends ArrayAdapter<FoodItem> {
 
 
 		TextView tvCommit = itemLayout.findViewById(R.id.food_commit);
-	  	tvCommit.setText(item.getfoodCommit());
+	  	tvCommit.setText(item.getFoodCommit());
 
 
 		TextView tvMoney = itemLayout.findViewById(R.id.food_money);

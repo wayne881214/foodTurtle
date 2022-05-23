@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/linearLayout13">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="374dp"
+            android:layout_height="592dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+                android:text="測試"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:id="@+id/customerTry2"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:textColor="#000000" />
+
+        <TextView
+                android:text="測試2"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:id="@+id/customerTry"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                android:textColor="#000000" />
+
+        <Button
+                android:id="@+id/button10"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:backgroundTint="@color/teal_200"
+                android:text="商店管理"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginBottom="0dp"
+                android:onClick="addStore" />
+
+        <Button
+                android:id="@+id/button18"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:backgroundTint="@color/teal_200"
+                android:text="商店連結"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginBottom="0dp"
+                android:onClick="BrowseLink" />
+
+        <Button
+                android:id="@+id/button19"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:backgroundTint="@color/teal_200"
+                android:text="優惠券管理"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginBottom="0dp"
+                android:onClick="addCoupon" />
+
+        <Button
+                android:id="@+id/button20"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:backgroundTint="@color/teal_200"
+                android:text="優惠券連結"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_marginBottom="0dp"
+                android:onClick="couponLink" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
