@@ -1,9 +1,12 @@
 package fcu.app.foodturtle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,11 +25,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ordersAcceptActivity extends AppCompatActivity {
+
+
+    public class Order_data {
+        //ArrayList number ;
+        String food;
+        String number;
+        String remark;
+    }
     String name = UserDetail.username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_orders_accept);
+        LinearLayout layout = (LinearLayout) findViewById(R.id.order_menu);
         TextView customer = (TextView) findViewById(R.id.customer);
         TextView food1 = (TextView) findViewById(R.id.food1);
         TextView number1 = (TextView) findViewById(R.id.number1);
@@ -39,15 +52,6 @@ public class ordersAcceptActivity extends AppCompatActivity {
         TextView remark3 = (TextView) findViewById(R.id.remark3);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference customerRef = database.getReference("order/bobo/1/customer");
-        DatabaseReference food1Ref = database.getReference("order/bobo/1/food/1/food");
-        DatabaseReference num1Ref = database.getReference("order/bobo/1/food/1/number");
-        DatabaseReference remark1Ref = database.getReference("order/bobo/1/food/2/remark");
-        DatabaseReference food2Ref = database.getReference("order/bobo/1/food/2/food");
-        DatabaseReference num2Ref = database.getReference("order/bobo/1/food/2/number");
-        DatabaseReference remark2Ref = database.getReference("order/bobo/1/food/2/remark");
-        DatabaseReference food3Ref = database.getReference("order/bobo/1/food/3/food");
-        DatabaseReference num3Ref = database.getReference("order/bobo/1/food/3/number");
-        DatabaseReference remark3Ref = database.getReference("order/bobo/1/food/3/remark");
 
         customerRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -63,7 +67,7 @@ public class ordersAcceptActivity extends AppCompatActivity {
                 // Failed to read value
             }
         });
-        //先寫成這樣 之後看能不能改成其他形式
+        /*
         food1Ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -77,153 +81,52 @@ public class ordersAcceptActivity extends AppCompatActivity {
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
             }
-        });
-        num1Ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                number1.setText(value);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-            }
-        });
-        remark1Ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                remark1.setText(value);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-            }
-        });
-
-        food2Ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                food2.setText(value);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-            }
-        });
-        num2Ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                number2.setText(value);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-            }
-        });
-        remark2Ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                remark2.setText(value);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-            }
-        });
-        food3Ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                food3.setText(value);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-            }
-        });
-        num3Ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                number3.setText(value);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-            }
-        });
-        remark3Ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                // This method is called once with the initial value and again
-                // whenever data at this location is updated.
-                String value = dataSnapshot.getValue(String.class);
-                remark3.setText(value);
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-            }
-        });
-       /* foodRef.addChildEventListener(new ChildEventListener() {
-            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                Map map = dataSnapshot.getValue(Map.class);
-                String food = map.get("food").toString();
-                food1.setText(food);
-
-            }
-            @Override
-            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
-                Map map = dataSnapshot.getValue(Map.class);
-                String food = map.get("food").toString();
-                food1.setText(food);
-
-            }
-            @Override
-            public void onChildRemoved(DataSnapshot dataSnapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
-
-            }
-
-            @Override
-            public void onCancelled(DatabaseError error) {
-                // Failed to read value
-            }
         });*/
 
+        DatabaseReference foodRef = database.getReference("order/bobo/1/food");
+        foodRef.addValueEventListener(new ValueEventListener() {
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                int i=0;
+                for(DataSnapshot ds : dataSnapshot.getChildren()){
+                    String food=ds.child("food").getValue().toString();
+                    String number=ds.child("number").getValue().toString();
+                    String remark=ds.child("remark").getValue().toString();
+                    i++;
+                    if(i==1){
+                        food1.setText(food);
+                        number1.setText(number);
+                        remark1.setText(remark);
+                    }
+                    if(i==2){
+                        food2.setText(food);
+                        number2.setText(number);
+                        remark2.setText(remark);
+                    }
+                    if(i==3){
+                        food3.setText(food);
+                        number3.setText(number);
+                        remark3.setText(remark);
+                    }
+                    /*String word=ds.child("food").getValue().toString();
+                    TextView textView = new TextView(ordersAcceptActivity.this);
+                    LinearLayout linearLayout =new LinearLayout(ordersAcceptActivity.this);
+                    LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                    lp.setMargins(20, 10, 20, 20);
+                    textView.setLayoutParams(lp);
+                    textView.setText(word);
+                    layout.addView(textView);*/
+                }
+
+            }
+
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+            }
+        });
+
     }
-
-
 
 
 }

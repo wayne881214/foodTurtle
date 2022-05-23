@@ -14,7 +14,6 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/foodTurtle/app/src/main/res/layout/activity_orders_home.xml" value="0.1" />
         <entry key="..\:/Users/user/AndroidStudioProjects/foodTurtle/app/src/main/res/layout/activity_setting.xml" value="0.152" />
         <entry key="..\:/Users/user/AndroidStudioProjects/foodTurtle/app/src/main/res/layout/activity_shopcar2.xml" value="0.1" />
-
         <entry key="..\:/appDev/Lab/temp/0515/foodTurtle/app/src/main/res/layout/activity_browse.xml" value="0.13323201621073963" />
         <entry key="..\:/appDev/Lab/temp/0515/foodTurtle/app/src/main/res/layout/activity_order_order.xml" value="0.264" />
         <entry key="..\:/appDev/Lab/temp/0515/foodTurtle/app/src/main/res/layout/activity_orders_home.xml" value="0.11956521739130435" />
@@ -23,7 +22,6 @@
         <entry key="..\:/appDev/Lab/temp/0515/foodTurtle/app/src/main/res/layout/activity_shopcar3.xml" value="0.11956521739130435" />
         <entry key="..\:/appDev/Lab/temp/0515/foodTurtle/app/src/main/res/layout/listitem_food.xml" value="0.2259963768115942" />
         <entry key="..\:/appDev/Lab/temp/0515/foodTurtle/app/src/main/res/layout/listitem_store.xml" value="0.13323201621073963" />
-
         <entry key="..\:/foodTurtle-main/foodTurtle-main/app/src/main/res/layout/activity_coupon.xml" value="0.12335359675785208" />
         <entry key="..\:/foodTurtle-main/foodTurtle-main/app/src/main/res/layout/activity_coupon_expired.xml" value="0.12335359675785208" />
         <entry key="..\:/foodTurtle-main/foodTurtle-main/app/src/main/res/layout/activity_coupon_main.xml" value="0.12335359675785208" />
@@ -68,9 +66,11 @@
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_shop_car_2.xml" value="0.26811594202898553" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_shop_car_3.xml" value="0.26811594202898553" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_shopcar.xml" value="0.25625" />
-        <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_shopcar2.xml" value="0.14010416666666667" />
+        <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_shopcar2.xml" value="0.4" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_shopcar3.xml" value="0.2" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/listitem_coupon.xml" value="0.26811594202898553" />
+        <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/listitem_food.xml" value="0.27395833333333336" />
+        <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/listitem_store.xml" value="0.27395833333333336" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.15625" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.15625" />
       </map>
