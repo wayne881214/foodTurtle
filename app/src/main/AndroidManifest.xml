@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Food">
         <activity
+            android:name=".NavigationDrawer"
+            android:exported="false"
+            android:label="@string/title_activity_navigation_drawer"
+            android:theme="@style/Theme.Food.NoActionBar" />
+        <activity
             android:name=".SettingActivity"
             android:exported="false" />
         <activity
@@ -27,7 +32,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-
         <activity
             android:name=".OrdersHomeActivity"
             android:exported="false" />
@@ -55,9 +59,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".PushNotificationService" android:exported="false">
+
+        <service
+            android:name=".PushNotificationService"
+            android:exported="false">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING.EVENT"></action>
+                <action android:name="com.google.firebase.MESSAGING.EVENT" />
             </intent-filter>
         </service>
     </application>
