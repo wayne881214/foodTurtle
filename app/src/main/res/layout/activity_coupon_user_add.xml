@@ -10,37 +10,22 @@
 
     <LinearLayout
             android:orientation="vertical"
-            android:layout_width="410dp"
-            android:layout_height="109dp"
-            tools:layout_editor_absoluteY="147dp"
-            tools:layout_editor_absoluteX="0dp">
+            android:layout_width="384dp"
+            android:layout_height="382dp"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/linearLayout15"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
+            app:layout_constraintEnd_toEndOf="parent">
 
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            <TextView
-                    android:text="使用者ID:"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView36"
-                    android:textColor="#000000"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-            <EditText
-                    android:layout_width="237dp"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:ems="10"
-                    android:hint="使用者ID(登入後自動輸入)" />
-        </LinearLayout>
+                android:layout_height="wrap_content"/>
 
         <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="416dp"
-                android:layout_height="82dp">
+                android:layout_width="match_parent"
+                android:layout_height="81dp">
 
             <TextView
                     android:text="優惠券密碼:"
@@ -56,8 +41,32 @@
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:ems="10"
-                    android:hint="優惠券密碼" />
+                    android:hint="優惠券密碼"
+                    android:id="@+id/couponCode" />
+
         </LinearLayout>
+
+        <Button
+                android:id="@+id/button13"
+                android:layout_width="match_parent"
+                android:layout_height="139dp"
+                android:backgroundTint="@color/teal_200"
+                android:text="新增"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.931"
+                android:layout_weight="1"
+                android:onClick="addCoupon" />
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="213dp"
+                android:id="@+id/textView38" />
     </LinearLayout>
 
     <LinearLayout
@@ -72,7 +81,7 @@
             android:background="#FFFFFF">
 
         <ImageButton
-                android:layout_width="59dp"
+                android:layout_width="63dp"
                 android:layout_height="match_parent"
                 app:srcCompat="@drawable/arrow"
                 android:id="@+id/imageButton"
@@ -83,26 +92,46 @@
                 android:scaleY="0.25"
                 android:onClick="home" />
 
-        <TextView
-                android:text="優惠券"
-                android:layout_width="211dp"
-                android:layout_height="match_parent"
-                android:id="@+id/textView"
-                android:layout_weight="1"
-                android:textColor="#000000"
-                android:textStyle="bold"
-                android:textSize="16sp"
-                android:textAlignment="textStart" />
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="133dp"
+                android:layout_height="55dp"
+                android:layout_weight="1">
 
-        <TextView
-                android:layout_width="wrap_content"
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    android:layout_weight="1" />
+
+            <TextView
+                    android:text="優惠券"
+                    android:layout_width="89dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/textView"
+                    android:layout_weight="1"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:textAlignment="textStart" />
+        </LinearLayout>
+
+        <Button
+                android:id="@+id/button12"
+                android:layout_width="55dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView2"
-                android:layout_weight="1" />
+                android:backgroundTint="@color/teal_200"
+                android:text="新增優惠券"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="0.931"
+                android:layout_weight="1"
+                android:onClick="user_add" />
 
-        <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
     </LinearLayout>
 
     <LinearLayout
@@ -116,17 +145,17 @@
             android:background="#FBFBFB">
 
         <Button
-                android:text="現在"
+                android:text="全部"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/button"
                 android:layout_weight="1"
                 android:backgroundTint="@color/white"
-                android:textColor="@color/teal_200"
+                android:textColor="@color/black"
                 android:onClick="onClick1" />
 
         <Button
-                android:text="過期(停用中)"
+                android:text="已擁有"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/button2"
@@ -136,16 +165,5 @@
                 android:onClick="onClick2" />
 
     </LinearLayout>
-
-    <ListView
-            android:layout_width="319dp"
-            android:layout_height="387dp"
-            android:layout_weight="1"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:id="@+id/lv_coupon"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-            app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
