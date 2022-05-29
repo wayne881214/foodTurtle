@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -26,33 +27,108 @@ import fcu.app.foodturtle.item.StoreItem;
 
 public class orderOrderActivity extends AppCompatActivity {
 		Context T=this;
+
 		public String storeName;
-		@Override
+		//存放資料庫資料list
+		ArrayList<FoodItem> foodList = new ArrayList<FoodItem>();
+
+		//資料庫與路徑相關
+		String foodPath;
+		FirebaseDatabase database = FirebaseDatabase.getInstance();
+		DatabaseReference foodRef;
+
+		//食物分類 寫死中
+		String foodType[]={"type1","type2","type3"};
+	ListView lvFood;
+
+	@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_order);
+
+				//設定分類
+				TextView txv_type1=(TextView)findViewById(R.id.foodType1);
+				TextView txv_type2=(TextView)findViewById(R.id.foodType2);
+				TextView txv_type3=(TextView)findViewById(R.id.foodType3);
+				String type="";
+				txv_type1.setText(type+foodType[0]);
+				txv_type2.setText(type+foodType[1]);
+				txv_type3.setText(type+foodType[2]);
+
+
+
 				Intent it = getIntent();
 				storeName = it.getStringExtra("商店名稱");
+				foodPath="/stores/"+storeName+"/foods";
+				foodRef = database.getReference(foodPath);
 				Toast.makeText(this,"歡迎進入:"+storeName , Toast.LENGTH_LONG).show();
 
-			ListView lvFood = this.findViewById(R.id.lv_food);
-//		foodList.add(new FoodItem(R.drawable.menu01,"羊肉漢堡" ,"附贈小杯飲料",30,"漢堡"));
-//		foodList.add(new FoodItem(R.drawable.menu01,"豬漢堡" ,"附贈小杯飲料",30,"漢堡"));
-//		foodList.add(new FoodItem(R.drawable.menu01,"雞肉漢堡" ,"附贈小杯飲料",30,"漢堡"));
+				lvFood = this.findViewById(R.id.lv_food);
 
-			FirebaseDatabase database = FirebaseDatabase.getInstance();
+				foodList.clear();
 
-			String foodPath="/stores/"+storeName+"/foods";
-			DatabaseReference foodRef = database.getReference(foodPath);
+				foodRef.addValueEventListener(new ValueEventListener() {
+					@Override
+					public void onDataChange(DataSnapshot dataSnapshot) {
+						for (DataSnapshot foodSnapshot : dataSnapshot.getChildren()) {
+							System.out.println("FoodData:"+foodSnapshot);
+							FoodItem food = foodSnapshot.getValue(FoodItem.class);
+							foodList.add(food);
+						}
+						FoodArrayAdapter adapter = new FoodArrayAdapter(T, R.layout.listitem_food, foodList);
+						lvFood.setAdapter(adapter);
+					}
+					@Override
+					public void onCancelled(DatabaseError error) {
+						// Failed to read value
+					}
+				});
+    }
+
+    public void shopcarview(View v) {
+        Intent intent = new Intent();
+        intent.setClass(this,ShopcarActivity.class);
+        startActivity(intent);
+    }
+
+	public void showAll(View v) {
+		lvFood = this.findViewById(R.id.lv_food);
+
+		foodList.clear();
+
+		foodRef.addValueEventListener(new ValueEventListener() {
+			@Override
+			public void onDataChange(DataSnapshot dataSnapshot) {
+				for (DataSnapshot foodSnapshot : dataSnapshot.getChildren()) {
+					System.out.println("FoodData:"+foodSnapshot);
+					FoodItem food = foodSnapshot.getValue(FoodItem.class);
+					foodList.add(food);
+				}
+				FoodArrayAdapter adapter = new FoodArrayAdapter(T, R.layout.listitem_food, foodList);
+				lvFood.setAdapter(adapter);
+			}
+			@Override
+			public void onCancelled(DatabaseError error) {
+				// Failed to read value
+			}
+		});
+	}
+
+		//顯示分類 分類目前寫死
+		public void showType1(View v) {
+			lvFood = this.findViewById(R.id.lv_food);
+
+			foodList.clear();
+
 			foodRef.addValueEventListener(new ValueEventListener() {
 				@Override
 				public void onDataChange(DataSnapshot dataSnapshot) {
-					ArrayList<FoodItem> foodList = new ArrayList<FoodItem>();
 					for (DataSnapshot foodSnapshot : dataSnapshot.getChildren()) {
 						System.out.println("FoodData:"+foodSnapshot);
 						FoodItem food = foodSnapshot.getValue(FoodItem.class);
-						System.out.println("DataName:"+food.getFoodName()+food.getFoodCommit()+food.getFoodType()+food.getFoodMoney());
-						foodList.add(food);
+						if(food.getFoodType().equals(foodType[0])){
+							foodList.add(food);
+						}
 					}
 					FoodArrayAdapter adapter = new FoodArrayAdapter(T, R.layout.listitem_food, foodList);
 					lvFood.setAdapter(adapter);
@@ -62,13 +138,54 @@ public class orderOrderActivity extends AppCompatActivity {
 					// Failed to read value
 				}
 			});
+		}
 
-    }
+	public void showType2(View v) {
+		lvFood = this.findViewById(R.id.lv_food);
 
-    public void shopcarview(View v) {
-        Intent intent = new Intent();
-        intent.setClass(this,ShopcarActivity.class);
-        startActivity(intent);
-    }
+		foodList.clear();
 
+		foodRef.addValueEventListener(new ValueEventListener() {
+			@Override
+			public void onDataChange(DataSnapshot dataSnapshot) {
+				for (DataSnapshot foodSnapshot : dataSnapshot.getChildren()) {
+					System.out.println("FoodData:"+foodSnapshot);
+					FoodItem food = foodSnapshot.getValue(FoodItem.class);
+					if(food.getFoodType().equals(foodType[1])){
+						foodList.add(food);
+					}
+				}
+				FoodArrayAdapter adapter = new FoodArrayAdapter(T, R.layout.listitem_food, foodList);
+				lvFood.setAdapter(adapter);
+			}
+			@Override
+			public void onCancelled(DatabaseError error) {
+				// Failed to read value
+			}
+		});
+	}
+	public void showType3(View v) {
+		ListView lvFood = this.findViewById(R.id.lv_food);
+
+		foodList.clear();
+
+		foodRef.addValueEventListener(new ValueEventListener() {
+			@Override
+			public void onDataChange(DataSnapshot dataSnapshot) {
+				for (DataSnapshot foodSnapshot : dataSnapshot.getChildren()) {
+					System.out.println("FoodData:"+foodSnapshot);
+					FoodItem food = foodSnapshot.getValue(FoodItem.class);
+					if(food.getFoodType().equals(foodType[2])){
+						foodList.add(food);
+					}
+				}
+				FoodArrayAdapter adapter = new FoodArrayAdapter(T, R.layout.listitem_food, foodList);
+				lvFood.setAdapter(adapter);
+			}
+			@Override
+			public void onCancelled(DatabaseError error) {
+				// Failed to read value
+			}
+		});
+	}
 }

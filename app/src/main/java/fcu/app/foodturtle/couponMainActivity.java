@@ -61,7 +61,6 @@ public class couponMainActivity extends AppCompatActivity {
     }
 		public void user_add(View v) {
 			setContentView(R.layout.activity_coupon_user_add);
-
 		}
 		public void addCoupon(View v) {
 			etCode = findViewById(R.id.couponCode);
