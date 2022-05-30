@@ -36,7 +36,8 @@ public class BrowseActivity extends AppCompatActivity {
 
 			ListView lvStore = this.findViewById(R.id.lv_store);
 			ArrayList<StoreItem> storeList = new ArrayList<StoreItem>();
-//			storeList.add(new StoreItem(R.drawable.test_view,"好吃火鍋" ,30,"4.5(5K+)","台式"));
+			storeList.add(new StoreItem(R.drawable.test_view,"好吃火鍋" ,30,"4.5(5K+)","台式"));
+			System.out.println("!!!!!!!!!!!!!!!!!!!!R.drawable.test_view:"+R.drawable.test_view);
 
 			String[] storeL={"imgResId", "storeName", "storeFreight", "storeFraction","storeType"};
 

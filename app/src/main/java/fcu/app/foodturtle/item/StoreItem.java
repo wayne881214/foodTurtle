@@ -10,7 +10,7 @@ public class StoreItem {
 	public StoreItem(){}
 
 	public StoreItem(int imgResId, String storeName, int storeFreight, String storeFraction, String storeType) {
-		this.imgResId = 2131165383;
+		this.imgResId = 2131165385;
 //		this.imgResId = imgResId;
 		this.storeName = storeName;
 		this.storeFreight = storeFreight;
