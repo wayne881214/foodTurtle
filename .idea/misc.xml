@@ -64,6 +64,7 @@
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.159375" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/drawable/hometext.xml" value="0.15625" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_browse.xml" value="0.2563405797101449" />
+        <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_chat.xml" value="0.24230072463768115" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_coupon.xml" value="0.152" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_coupon_expired.xml" value="0.2" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_coupon_main.xml" value="0.13802083333333334" />
@@ -87,6 +88,7 @@
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/listitem_food.xml" value="0.27395833333333336" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/listitem_order.xml" value="0.1" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/listitem_store.xml" value="0.27395833333333336" />
+        <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/message_area.xml" value="0.24230072463768115" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.15625" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.15625" />
       </map>

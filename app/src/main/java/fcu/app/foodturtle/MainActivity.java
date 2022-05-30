@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity implements OnCompleteListene
         startActivity(intent);
     }
     public void Ordermenu(View v) {
+        UserDetail.username="store1";
         Intent intent = new Intent();
         intent.setClass(this,OrdersHomeActivity.class);
         startActivity(intent);

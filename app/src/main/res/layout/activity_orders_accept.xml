@@ -36,7 +36,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:backgroundTint="@color/white"
-            android:text="拒絕"
+            android:onClick="Chat"
+            android:text="聊天"
             android:textColor="#00838F"
             android:textSize="12sp"
             tools:ignore="TouchTargetSizeCheck" />
