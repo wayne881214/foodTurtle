@@ -14,15 +14,21 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity implements OnCompleteListener<AuthResult> {
+import fcu.app.foodturtle.ArrayAdapter.OrderArrayAdapter;
+import fcu.app.foodturtle.item.OrderItem;
 
+public class MainActivity extends AppCompatActivity implements OnCompleteListener<AuthResult> {
+    String email="";
     private EditText etEmail;
     private EditText etPassword;
 
@@ -35,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements OnCompleteListene
 
         etEmail = findViewById(R.id.et_email);
         etPassword = findViewById(R.id.et_password);
-
         firebaseAuth = FirebaseAuth.getInstance();
     }
 
@@ -74,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements OnCompleteListene
 			startActivity(intent);
 		}
     public void OnLogin(View view){
-        String email = etEmail.getText().toString();
+        email = etEmail.getText().toString();
         String password = etPassword.getText().toString();
 
         firebaseAuth.signInWithEmailAndPassword(email, password)
@@ -84,7 +89,24 @@ public class MainActivity extends AppCompatActivity implements OnCompleteListene
     @Override
     public void onComplete(@NonNull Task<AuthResult> task) {
         if(task.isSuccessful()) {
-            Toast.makeText(this,"登入成功", Toast.LENGTH_LONG).show();
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference userRef = database.getReference("users/");
+            userRef.addValueEventListener(new ValueEventListener() {
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    for(DataSnapshot ds : dataSnapshot.getChildren()){
+                        if(email.equals(ds.child("email").getValue().toString())) {
+                            UserDetail.username=ds.child("name").getValue().toString();
+                            break;
+                        }
+                    }
+
+                }
+                @Override
+                public void onCancelled(DatabaseError error) {
+                    // Failed to read value
+                }
+            });
+            Toast.makeText(this,UserDetail.username+"登入成功", Toast.LENGTH_LONG).show();
             BrowseActivity.VALID_USER = true;
             finish();
         } else {

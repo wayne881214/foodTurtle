@@ -23,4 +23,9 @@ public class ShopcarActivity extends AppCompatActivity {
         intent.setClass(this,couponMainActivity.class);
         startActivity(intent);
     }
+    public void chat(View v) {
+        Intent intent = new Intent();
+        intent.setClass(this,chatActivity.class);
+        startActivity(intent);
+    }
 }
