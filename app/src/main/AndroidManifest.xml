@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Food">
         <activity
+            android:name=".chatActivity"
+            android:exported="false" />
+        <activity
             android:name=".SettingActivity"
             android:exported="false" />
         <activity
@@ -27,7 +30,6 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
-
         <activity
             android:name=".OrdersHomeActivity"
             android:exported="false" />
@@ -47,14 +49,14 @@
             android:name=".deliveryOrderActivity"
             android:exported="false" />
         <activity
-                android:name=".StoreAddActivity"
-                android:exported="false" />
+            android:name=".StoreAddActivity"
+            android:exported="false" />
         <activity
-                android:name=".CouponAddActivity"
-                android:exported="false" />
+            android:name=".CouponAddActivity"
+            android:exported="false" />
         <activity
-                android:name=".debugActivity"
-                android:exported="false" />
+            android:name=".debugActivity"
+            android:exported="false" />
         <activity
             android:name=".BrowseActivity"
             android:exported="true">
@@ -64,9 +66,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".PushNotificationService" android:exported="false">
+
+        <service
+            android:name=".PushNotificationService"
+            android:exported="false">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING.EVENT"></action>
+                <action android:name="com.google.firebase.MESSAGING.EVENT" />
             </intent-filter>
         </service>
     </application>

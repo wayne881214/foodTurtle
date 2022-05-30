@@ -3,7 +3,9 @@ package fcu.app.foodturtle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -72,6 +74,9 @@ public class ordersAcceptActivity extends AppCompatActivity {
             }
         });
     }
-
-
+    public void Chat(View v) {
+        Intent intent = new Intent();
+        intent.setClass(this,chatActivity.class);
+        startActivity(intent);
+    }
 }
