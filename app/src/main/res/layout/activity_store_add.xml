@@ -216,7 +216,7 @@
                     android:inputType="textPersonName"
                     android:ems="10"
                     android:layout_weight="1"
-                    android:id="@+id/foodType"
+                    android:id="@+id/foodType1"
                     android:hint="商品種類" />
 
         </LinearLayout>

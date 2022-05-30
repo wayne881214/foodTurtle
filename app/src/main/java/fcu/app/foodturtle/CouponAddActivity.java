@@ -42,12 +42,10 @@ public class CouponAddActivity extends AppCompatActivity  {
 
 
 		firebaseAuth = FirebaseAuth.getInstance();
-		System.out.println("FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFf");
 
 	}
 
 	public void addCoupon(View view) {
-		System.out.println("UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUu");
 
 		String Id = etId.getText().toString();
 		String Name = etName.getText().toString();
@@ -56,7 +54,6 @@ public class CouponAddActivity extends AppCompatActivity  {
 		String Description = etDescription.getText().toString();
 		String Date = etDate.getText().toString();
 
-		System.out.println("ERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
 		FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 		DatabaseReference couponsRef = firebaseDatabase.getReference("coupons");
 		DatabaseReference nameRef = couponsRef.child(Name);
@@ -69,26 +66,5 @@ public class CouponAddActivity extends AppCompatActivity  {
 		coupon.put("date", Date);
 		nameRef.updateChildren(coupon);
 		Toast.makeText(this,Name+"新增成功", Toast.LENGTH_LONG).show();
-
-
 	}
-
-//	public void temp(){
-//			Toast.makeText(this,"Try", Toast.LENGTH_LONG).show();
-//			String T="877";
-//			String Name = T;
-//			String Freight = T;
-//			String Fraction = T;
-//			String Type = T;
-//			FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-//			DatabaseReference storesRef = firebaseDatabase.getReference("stores");
-//			DatabaseReference nameRef = storesRef.child(Name);
-//			Map<String, Object> store = new HashMap<>();
-//			store.put("name", Name);
-//			store.put("freight", Freight);
-//			store.put("fraction", Fraction);
-//			store.put("type", Type);
-//			nameRef.updateChildren(store);
-//	}
-
 }

@@ -16,9 +16,9 @@ public class CouponActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_main);
 	}
 	public void onClick1(View v) {
-		setContentView(R.layout.activity_coupon_now);
+		setContentView(R.layout.activity_coupon_all);
 	}
 	public void onClick2(View v) {
-		setContentView(R.layout.activity_coupon_expired);
+		setContentView(R.layout.activity_coupon_user);
 	}
 }

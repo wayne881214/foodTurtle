@@ -40,7 +40,7 @@ public class StoreAddActivity extends AppCompatActivity  {
 		etFoodName = findViewById(R.id.foodName);
 		etFoodCommit = findViewById(R.id.foodCommit);
 		etFoodMoney = findViewById(R.id.foodMoney);
-		etFoodType = findViewById(R.id.foodType);
+		etFoodType = findViewById(R.id.foodType1);
 
 		firebaseAuth = FirebaseAuth.getInstance();
 
