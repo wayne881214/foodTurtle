@@ -82,7 +82,7 @@ public class chatActivity extends AppCompatActivity {
         storage = FirebaseStorage.getInstance();
         String yourDatabaseURL="https://foodturtle-dfb4c-default-rtdb.firebaseio.com/";
         Firebase.setAndroidContext(this);
-        reference1 = new Firebase(yourDatabaseURL+"messages/" + UserDetail.order);
+        reference1 = new Firebase(yourDatabaseURL+"messages/" +UserDetail.order);
 
 
         sendButton.setOnClickListener(new View.OnClickListener() {
