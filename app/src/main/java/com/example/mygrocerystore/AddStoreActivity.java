@@ -55,7 +55,7 @@ public class AddStoreActivity extends AppCompatActivity {
 		String img_url="https://firebasestorage.googleapis.com/v0/b/my-grocery-store-60a2c.appspot.com/o/grocery10.jpg?alt=media&token=4de96ce4-cd4f-44e6-9513-56e83944bd91";
 
 		FirebaseFirestore firebaseDatabase = FirebaseFirestore.getInstance();
-		PopularModel store =new PopularModel(Name,Fraction,Name,Name,Type,img_url);
+		PopularModel store =new PopularModel(Name,Name,Fraction,Name,Name,Type,img_url);
 		firebaseDatabase.collection("PopularProducts").document(Name).set(store);
 
 		//Real time
@@ -79,7 +79,7 @@ public class AddStoreActivity extends AppCompatActivity {
 
 		FirebaseFirestore firebaseDatabase = FirebaseFirestore.getInstance();
 
-		ViewAllModel food=new ViewAllModel(Name,Name,Name,Name,Name,100);
+		ViewAllModel food=new ViewAllModel(Name,Name,Name,Name,Name,Name,100);
 		firebaseDatabase.collection("AllProducts").document(Name).set(food);
 
 //		PopularModel store =new PopularModel(Name,Fraction,Name,Name,Freight,Type);
