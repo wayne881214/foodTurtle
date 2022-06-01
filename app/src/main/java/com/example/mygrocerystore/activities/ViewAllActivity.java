@@ -15,6 +15,8 @@ import com.example.mygrocerystore.adapter.ViewAllAdapter;
 import com.example.mygrocerystore.models.ViewAllModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -42,21 +44,22 @@ public class ViewAllActivity extends AppCompatActivity {
 
         progressBar = findViewById(R.id.progressbar);
         progressBar.setVisibility(View.VISIBLE);
-
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
         firestore = FirebaseFirestore.getInstance();
-        String type = getIntent().getStringExtra("type");
+        String storeName = getIntent().getStringExtra("storeName");
         recyclerView = findViewById(R.id.view_all_rec);
         recyclerView.setVisibility(View.GONE);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
 
         viewAllModelList = new ArrayList<>();
         viewAllAdapter = new ViewAllAdapter(this, viewAllModelList);
         recyclerView.setAdapter(viewAllAdapter);
 
+        DatabaseReference foodRef = database.getReference("stores");
+        
         ////////Getting Fruits
-        if (type != null && type.equalsIgnoreCase("fruit")) {
-            firestore.collection("AllProducts").whereEqualTo("type", "fruit").get()
+        if (storeName != null && storeName.equalsIgnoreCase("store1")) {
+            firestore.collection("AllProducts").whereEqualTo("storeName", "store1").get()
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -71,7 +74,7 @@ public class ViewAllActivity extends AppCompatActivity {
                 }
             });
         }
-
+        /*
         ////////Getting Vegetable
         if (type != null && type.equalsIgnoreCase("vegetable")) {
             firestore.collection("AllProducts").whereEqualTo("type", "vegetable").get()
@@ -142,6 +145,6 @@ public class ViewAllActivity extends AppCompatActivity {
                             }
                         }
                     });
-        }
+        }*/
     }
 }
