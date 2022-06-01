@@ -10,6 +10,33 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyGroceryStore.NoActionBar">
         <activity
+            android:name=".StoreMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StoreRegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.StoreLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DeliveryManRegistrstionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DeliveryManLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.DeliveryManHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.StoreHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".PlacedOrderActivity"
             android:exported="false" />
         <activity
@@ -25,7 +52,7 @@
             android:name=".activities.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.HomeActivity"
+            android:name=".activities.StartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
