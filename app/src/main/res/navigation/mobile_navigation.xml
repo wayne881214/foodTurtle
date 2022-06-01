@@ -42,4 +42,9 @@
         android:name="com.example.mygrocerystore.MyCartsFragment"
         android:label="@string/my_carts"
         tools:layout="@layout/fragment_my_carts" />
+    <fragment
+        android:id="@+id/nav_debug"
+        android:name="com.example.mygrocerystore.DebugFragment"
+        android:label="fragment_debug"
+        tools:layout="@layout/fragment_debug" />
 </navigation>
