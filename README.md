@@ -167,7 +167,7 @@
     <td>裴鼎軒</td>
     <td>D0983064</td>
     <td>wayne881214</td>
-    <td></td>
+    <td>#69</td>
   <tr>
     <td>李柏村</td>
     <td>D0885494</td>
