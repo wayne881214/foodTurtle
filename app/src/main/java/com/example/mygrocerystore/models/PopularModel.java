@@ -6,17 +6,19 @@ public class PopularModel {
     String description;
     String rating;
     String discount;
+    String storeName;
     String type;
     String img_url;
 
     public PopularModel() {
     }
 
-    public PopularModel(String name, String description, String rating, String discount, String type, String img_url) {
+    public PopularModel(String name, String description, String rating, String discount, String storeName,String type, String img_url) {
         this.name = name;
         this.description = description;
         this.rating = rating;
         this.discount = discount;
+        this.storeName= storeName;
         this.type = type;
         this.img_url = img_url;
     }
@@ -51,6 +53,14 @@ public class PopularModel {
 
     public void setDiscount(String discount) {
         this.discount = discount;
+    }
+
+    public String getStoreName() {
+        return storeName;
+    }
+
+    public void setStoreName(String storeName) {
+        this.storeName = storeName;
     }
 
     public String getType() {

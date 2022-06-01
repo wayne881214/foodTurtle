@@ -43,6 +43,9 @@
             android:name=".activities.NavCategoryActivity"
             android:exported="false" />
         <activity
+            android:name=".activities.ClassFragment"
+            android:exported="false" />
+        <activity
             android:name=".activities.DetailedActivity"
             android:exported="false" />
         <activity
@@ -60,6 +63,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".activities.RegistrationActivity"
             android:exported="false" />
