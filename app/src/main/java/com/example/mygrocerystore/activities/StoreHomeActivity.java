@@ -1,4 +1,4 @@
-package com.example.mygrocerystore.activities;
+package com.example.mygrocerystore.ui.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,9 +8,10 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.mygrocerystore.MainActivity;
 import com.example.mygrocerystore.R;
-import com.example.mygrocerystore.StoreRegistrationActivity;
+import com.example.mygrocerystore.StoreMainActivity;
+import com.example.mygrocerystore.activities.StoreLoginActivity;
+import com.example.mygrocerystore.activities.StoreRegistrationActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class StoreHomeActivity extends AppCompatActivity {
@@ -27,7 +28,7 @@ public class StoreHomeActivity extends AppCompatActivity {
         progressBar.setVisibility(View.GONE);
         if (auth.getCurrentUser() != null) {
             progressBar.setVisibility(View.VISIBLE);
-            startActivity(new Intent(StoreHomeActivity.this, MainActivity.class));
+            startActivity(new Intent(StoreHomeActivity.this, StoreMainActivity.class));
             Toast.makeText(this, "please wait you are already logged in", Toast.LENGTH_SHORT).show();
             finish();
         }
