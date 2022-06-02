@@ -6,10 +6,12 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 
+import com.example.mygrocerystore.MainActivity;
 import com.example.mygrocerystore.R;
 import com.example.mygrocerystore.adapter.ViewAllAdapter;
 import com.example.mygrocerystore.models.ViewAllModel;
@@ -35,12 +37,12 @@ public class ViewAllActivity extends AppCompatActivity {
     List<ViewAllModel> viewAllModelList;
     Toolbar toolbar;
     ProgressBar progressBar;
-
+    String storeName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_all);
-
+        storeName = getIntent().getStringExtra("storeName");
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -49,7 +51,6 @@ public class ViewAllActivity extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         firestore = FirebaseFirestore.getInstance();
-        String storeName = getIntent().getStringExtra("storeName");
         recyclerView = findViewById(R.id.view_all_rec);
         recyclerView.setVisibility(View.GONE);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -57,7 +58,7 @@ public class ViewAllActivity extends AppCompatActivity {
         viewAllModelList = new ArrayList<>();
         viewAllAdapter = new ViewAllAdapter(this, viewAllModelList);
         recyclerView.setAdapter(viewAllAdapter);
-
+        toolbar.setTitle(storeName);
         DatabaseReference StoresRef = database.getReference("Stores");
         StoresRef.addValueEventListener(new ValueEventListener() {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -89,6 +90,12 @@ public class ViewAllActivity extends AppCompatActivity {
                 // Failed to read value
             }
         });
+    }
 
+    public void shopcar(View view){
+        Intent intent=new Intent();
+        intent.setClass(ViewAllActivity.this, shopcarActivity.class);
+        intent.putExtra("storeName",storeName);
+        startActivity(intent);
     }
 }

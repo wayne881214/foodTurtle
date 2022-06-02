@@ -1,17 +1,12 @@
 package com.example.mygrocerystore.activities;
 
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ProgressBar;
-import android.widget.ScrollView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,13 +22,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClassFragment extends AppCompatActivity {
+public class ClassActivity extends AppCompatActivity {
 
 
     ProgressBar progressBar;
@@ -50,23 +44,21 @@ public class ClassFragment extends AppCompatActivity {
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_class);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setContentView(R.layout.fragment_class);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         String storetype = getIntent().getStringExtra("type");
+        toolbar.setTitle(storetype);
         db = FirebaseFirestore.getInstance();
         popularRec = findViewById(R.id.class_rec);
         progressBar = findViewById(R.id.progressbar);
         progressBar.setVisibility(View.VISIBLE);
-
-        //Class items
         popularRec.setLayoutManager(new LinearLayoutManager(this));
         popularModelList = new ArrayList<>();
         popularAdapters = new PopularAdapters(this,popularModelList);
         popularRec.setAdapter(popularAdapters);
         DatabaseReference StoresRef = database.getReference("Stores");
-
         StoresRef.addValueEventListener(new ValueEventListener() {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
