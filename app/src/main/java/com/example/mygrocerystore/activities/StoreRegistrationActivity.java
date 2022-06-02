@@ -100,7 +100,7 @@ public class StoreRegistrationActivity extends AppCompatActivity {
 
                             UserModel userModel = new UserModel(userName, userEmail, userPassword);
                             String id = task.getResult().getUser().getUid();
-                            database.getReference().child("Store").child(id).setValue(userModel);
+                            database.getReference().child("Stores").child(id).setValue(userModel);
                             progressBar.setVisibility(View.GONE);
                             Toast.makeText(StoreRegistrationActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
                         }

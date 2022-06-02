@@ -19,23 +19,24 @@ import com.example.mygrocerystore.databinding.FragmentSlideshowBinding;
 
 public class SlideshowFragment extends Fragment {
 
-    Activity activity;
-    Button button;
+
+	Activity activity;
+	Button button;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
-        activity = getActivity();
-        button = root.findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(activity, AddStoreActivity.class);
-                startActivity(intent);
-            }
-        });
 
+			View root = inflater.inflate(R.layout.fragment_slideshow, container, false);
+			activity = getActivity();
+			button = root.findViewById(R.id.button);
+			button.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View view) {
+					Intent intent = new Intent(activity, AddStoreActivity.class);
+					startActivity(intent);
+				}
+			});
         return root;
     }
 

@@ -37,11 +37,57 @@
 
     <LinearLayout
             android:orientation="vertical"
-            android:layout_width="339dp"
-            android:layout_height="512dp"
+            android:layout_width="399dp"
+            android:layout_height="650dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/storeName"
+            app:layout_constraintVertical_bias="0.124">
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:text="商店敘述:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:hint="商店敘述"
+                    android:id="@+id/storeDes" />
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:text="商店圖片:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:hint="商店圖片"
+                    android:id="@+id/storeImg" />
+        </LinearLayout>
 
         <LinearLayout
                 android:orientation="horizontal"
@@ -89,7 +135,7 @@
 
         <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="391dp"
+                android:layout_width="312dp"
                 android:layout_height="wrap_content">
 
             <TextView
@@ -138,7 +184,8 @@
                     android:inputType="textPersonName"
                     android:ems="10"
                     android:layout_weight="1"
-                    android:hint="商品名稱" />
+                    android:hint="商品名稱"
+                    android:id="@+id/foodName" />
 
         </LinearLayout>
 
@@ -161,7 +208,8 @@
                     android:inputType="textPersonName"
                     android:ems="10"
                     android:layout_weight="1"
-                    android:hint="商品敘述" />
+                    android:hint="商品敘述"
+                    android:id="@+id/foodDes" />
         </LinearLayout>
 
         <LinearLayout
@@ -183,14 +231,15 @@
                     android:inputType="textPersonName"
                     android:ems="10"
                     android:layout_weight="1"
-                    android:hint="商品價格" />
+                    android:hint="商品價格"
+                    android:id="@+id/foodPrice1" />
 
         </LinearLayout>
 
         <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="392dp"
-                android:layout_height="75dp">
+                android:layout_height="wrap_content">
 
             <TextView
                     android:text="商品種類:"
@@ -206,7 +255,61 @@
                     android:inputType="textPersonName"
                     android:ems="10"
                     android:layout_weight="1"
-                    android:hint="商品種類" />
+                    android:hint="商品種類"
+                    android:id="@+id/foodType" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:text="商品評價:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:layout_weight="1"
+                    android:hint="商品評價"
+                    android:id="@+id/foodRate" />
+
+        </LinearLayout>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            <TextView
+                    android:text="商品圖片:"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+            <Button
+                    android:text="選擇圖片"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/selectImg" />
+            <Button
+                    android:text="上傳圖片"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/uploadImg" />
 
         </LinearLayout>
 

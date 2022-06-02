@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+
         <entry key="..\:/Users/user/AndroidStudioProjects/MyGroceryStore/app/src/main/res/drawable/account.xml" value="0.162" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyGroceryStore/app/src/main/res/drawable/add_circle.xml" value="0.162" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyGroceryStore/app/src/main/res/drawable/btn_bg_detailed.xml" value="0.189" />
@@ -128,6 +129,7 @@
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/view_all_item.xml" value="0.17074275362318841" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/menu/activity_main_drawer.xml" value="0.26974358974358975" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/menu/delivery_man_main.xml" value="0.26974358974358975" />
+
       </map>
     </option>
   </component>

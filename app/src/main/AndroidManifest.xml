@@ -1,19 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.mygrocerystore">
+        package="com.example.mygrocerystore">
 
     <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.MyGroceryStore.NoActionBar">
+            android:allowBackup="true"
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/app_name"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:supportsRtl="true"
+            android:theme="@style/Theme.MyGroceryStore.NoActionBar">
+        <activity
+                android:name=".NewAddStoreActivity"
+                android:exported="false" />
+        <activity
+                android:name=".activities.shopcarActivity"
+                android:exported="false" />
+        <activity
 
-        <activity
-            android:name=".activities.shopcarActivity"
-            android:exported="false" />
-        <activity
             android:name=".ChangeActivity"
             android:exported="false" />
         <activity
@@ -21,59 +24,60 @@
             android:exported="false"
             android:label="@string/title_activity_store_main"
             android:theme="@style/Theme.MyGroceryStore.NoActionBar.NoActionBar" />
+
         <activity
-            android:name=".DeliveryManMainActivity"
-            android:exported="false"
-            android:label="@string/title_activity_delivery_man_main"
-            android:theme="@style/Theme.MyGroceryStore.NoActionBar.NoActionBar" />
+                android:name=".DeliveryManMainActivity"
+                android:exported="false"
+                android:label="@string/title_activity_delivery_man_main"
+                android:theme="@style/Theme.MyGroceryStore.NoActionBar.NoActionBar" />
         <activity
-            android:name=".activities.StoreRegistrationActivity"
-            android:exported="false" />
+                android:name=".activities.StoreRegistrationActivity"
+                android:exported="false" />
         <activity
-            android:name=".activities.StoreLoginActivity"
-            android:exported="false" />
+                android:name=".activities.StoreLoginActivity"
+                android:exported="false" />
         <activity
-            android:name=".activities.DeliveryManRegistrstionActivity"
-            android:exported="false" />
+                android:name=".activities.DeliveryManRegistrstionActivity"
+                android:exported="false" />
         <activity
-            android:name=".activities.DeliveryManLoginActivity"
-            android:exported="false" />
+                android:name=".activities.DeliveryManLoginActivity"
+                android:exported="false" />
         <activity
-            android:name=".TestActivity"
-            android:exported="false" />
+                android:name=".TestActivity"
+                android:exported="false" />
         <activity
-            android:name=".activities.DeliveryManHomeActivity"
-            android:exported="false" />
+                android:name=".activities.DeliveryManHomeActivity"
+                android:exported="false" />
         <activity
-            android:name=".activities.StoreHomeActivity"
-            android:exported="false" />
+                android:name=".activities.StoreHomeActivity"
+                android:exported="false" />
         <activity
-            android:name=".activities.HomeActivity"
-            android:exported="false" />
+                android:name=".activities.HomeActivity"
+                android:exported="false" />
         <activity
-            android:name=".PlacedOrderActivity"
-            android:exported="false" />
+                android:name=".PlacedOrderActivity"
+                android:exported="false" />
         <activity
-            android:name=".AddStoreActivity"
-            android:exported="false" />
+                android:name=".AddStoreActivity"
+                android:exported="false" />
         <activity
-            android:name=".activities.ClassActivity"
-            android:exported="false" />
+                android:name=".activities.ClassActivity"
+                android:exported="false" />
         <activity
-            android:name=".activities.DetailedActivity"
-            android:exported="false" />
+                android:name=".activities.DetailedActivity"
+                android:exported="false" />
         <activity
-            android:name=".activities.NavCategoryActivity"
-            android:exported="false" />
+                android:name=".activities.NavCategoryActivity"
+                android:exported="false" />
         <activity
-            android:name=".activities.ViewAllActivity"
-            android:exported="false" />
+                android:name=".activities.ViewAllActivity"
+                android:exported="false" />
         <activity
-            android:name=".activities.LoginActivity"
-            android:exported="false" />
+                android:name=".activities.LoginActivity"
+                android:exported="false" />
         <activity
-            android:name=".activities.StartActivity"
-            android:exported="true">
+                android:name=".activities.StartActivity"
+                android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -81,15 +85,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.RegistrationActivity"
-            android:exported="false" />
+                android:name=".activities.RegistrationActivity"
+                android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
+                android:name=".MainActivity"
+                android:exported="false" />
 
         <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+                android:name="preloaded_fonts"
+                android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

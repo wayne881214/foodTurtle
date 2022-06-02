@@ -16,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mygrocerystore.databinding.ActivityStoreMainBinding;
 
+
+
 public class StoreMainActivity extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
@@ -41,7 +43,7 @@ public class StoreMainActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_blankFragment,R.id.nav_storehome, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_blankFragment,R.id.nav_storehome, R.id.nav_gallery,R.id.nav_debug)
                 .setOpenableLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_store_main);
