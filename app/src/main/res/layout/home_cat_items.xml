@@ -22,6 +22,7 @@
             app:tint="@color/white"/>
 
         <TextView
+            android:layout_marginTop="10dp"
             android:id="@+id/cat_home_name"
             android:layout_width="65dp"
             android:layout_height="60dp"
