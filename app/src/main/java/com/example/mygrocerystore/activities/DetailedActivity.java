@@ -75,7 +75,7 @@ public class DetailedActivity extends AppCompatActivity {
         price = findViewById(R.id.detailed_price);
         rating = findViewById(R.id.detailed_rating);
         description = findViewById(R.id.detailed_dec);
-        database .getReference().child("Users").child(FirebaseAuth.getInstance().getUid())
+        database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid())
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -92,19 +92,8 @@ public class DetailedActivity extends AppCompatActivity {
             Glide.with(getApplicationContext()).load(viewAllModel.getImg_url()).into(detailedImg);
             rating.setText(viewAllModel.getRating());
             description.setText(viewAllModel.getDescription());
-            price.setText("Price :$"+viewAllModel.getPrice()+"/kg");
-
+            price.setText(viewAllModel.getPrice()+"$");
             totalPrice = viewAllModel.getPrice() * totalQuantity;
-
-            if(viewAllModel.getType().equals("egg")) {
-                price.setText("Price :$"+viewAllModel.getPrice()+"/dozen");
-                totalPrice = viewAllModel.getPrice() * totalQuantity;
-            }
-
-            if(viewAllModel.getType().equals("milk")) {
-                price.setText("Price :$"+viewAllModel.getPrice()+"/litre");
-                totalPrice = viewAllModel.getPrice() * totalQuantity;
-            }
 
         }
         addToCart = findViewById(R.id.add_to_cart);
@@ -140,56 +129,24 @@ public class DetailedActivity extends AppCompatActivity {
     }
 
     private void addedToCart() {
-        String saveCurrentDate, saveCurrentTime;
-        Calendar calForDate = Calendar.getInstance();
-
-        SimpleDateFormat currentData = new SimpleDateFormat("MM dd, yyyy");
-        saveCurrentDate = currentData.format(calForDate.getTime());
-
-        SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
-        saveCurrentTime = currentTime.format(calForDate.getTime());
-
-        final HashMap<String, Object> carMap = new HashMap<>();
-
-        carMap.put("productName", viewAllModel.getName());
-        carMap.put("productPrice", price.getText().toString());
-        carMap.put("currentData", saveCurrentDate);
-        carMap.put("currentTime", saveCurrentTime);
-        carMap.put("totalQuantity", quantity.getText().toString());
-        carMap.put("totalPrice", totalPrice);
-
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference ordersRef = firebaseDatabase.getReference("Orders");
         DatabaseReference listRef = ordersRef.child(name+viewAllModel.getStoreName()+"shopcar");
         DatabaseReference productRef = listRef.child("product").child(viewAllModel.getName());
 
-
         Map<String, Object> order = new HashMap<>();
         order.put("customer", name);
         order.put("store", viewAllModel.getStoreName());
+        order.put("type", 0);
         listRef.updateChildren(order);
-
 
         Map<String, Object> product = new HashMap<>();
         product.put("totalPrice",totalPrice);
-        product.put("count",  quantity.getText().toString());
-        product.put("price", price.getText().toString());
         product.put("name", viewAllModel.getName());
+        product.put("count",  quantity.getText().toString()+"X");
+        product.put("price", viewAllModel.getPrice());
+        product.put("img_url", viewAllModel.getImg_url());
         productRef.updateChildren(product);
-
         Toast.makeText(this,"新增成功", Toast.LENGTH_LONG).show();
-
-
-        firestore.collection("CurrentUser").document(auth.getCurrentUser().getUid())
-                .collection("AddToCart").add(carMap).addOnCompleteListener(new OnCompleteListener<DocumentReference>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentReference> task) {
-                Toast.makeText(DetailedActivity.this, "Added To A Cart", Toast.LENGTH_SHORT).show();
-                finish();
-            }
-        });
-
-
-
     }
 }
