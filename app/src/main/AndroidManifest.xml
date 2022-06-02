@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyGroceryStore.NoActionBar">
         <activity
-            android:name=".activities.StartActivity"
+            android:name=".ChangeActivity"
             android:exported="false" />
         <activity
             android:name=".StoreMainActivity"
@@ -68,7 +68,7 @@
             android:name=".activities.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ChangeActivity"
+            android:name=".activities.StartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
