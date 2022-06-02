@@ -14,9 +14,11 @@ import android.widget.ProgressBar;
 import com.example.mygrocerystore.MainActivity;
 import com.example.mygrocerystore.R;
 import com.example.mygrocerystore.adapter.ViewAllAdapter;
+import com.example.mygrocerystore.models.UserModel;
 import com.example.mygrocerystore.models.ViewAllModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,6 +40,7 @@ public class ViewAllActivity extends AppCompatActivity {
     Toolbar toolbar;
     ProgressBar progressBar;
     String storeName;
+    String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +62,8 @@ public class ViewAllActivity extends AppCompatActivity {
         viewAllAdapter = new ViewAllAdapter(this, viewAllModelList);
         recyclerView.setAdapter(viewAllAdapter);
         toolbar.setTitle(storeName);
+
+
         DatabaseReference StoresRef = database.getReference("Stores");
         StoresRef.addValueEventListener(new ValueEventListener() {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -93,6 +98,22 @@ public class ViewAllActivity extends AppCompatActivity {
     }
 
     public void shopcar(View view){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        database.getReference().child("Users").child(FirebaseAuth.getInstance().getUid())
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        UserModel userModel = snapshot.getValue(UserModel.class);
+                        name=userModel.getName();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+        OrderDetail.order=name+storeName+"shopcar";
         Intent intent=new Intent();
         intent.setClass(ViewAllActivity.this, shopcarActivity.class);
         intent.putExtra("storeName",storeName);
