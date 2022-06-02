@@ -15,16 +15,21 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class AddStoreActivity extends AppCompatActivity {
 	private EditText etName;
 	private EditText etFreight;
 	private EditText etFraction;
 	private EditText etType;
+	private EditText etDes;
+	private EditText etImg;
 
 	private EditText etFoodName;
 	private EditText etFoodCommit;
 	private EditText etFoodMoney;
 	private EditText etFoodType;
+	private EditText etFoodRate;
+	private EditText etFoodImg;
 
 	private FirebaseAuth firebaseAuth;
 
@@ -37,11 +42,15 @@ public class AddStoreActivity extends AppCompatActivity {
 		etFreight = findViewById(R.id.storeFreight1);
 		etFraction = findViewById(R.id.storeFraction1);
 		etType = findViewById(R.id.storeType1);
-//
-//		etFoodName = findViewById(R.id.foodName);
-//		etFoodCommit = findViewById(R.id.foodCommit);
-//		etFoodMoney = findViewById(R.id.foodMoney);
-//		etFoodType = findViewById(R.id.foodType1);
+		etImg = findViewById(R.id.storeImg);
+		etDes = findViewById(R.id.storeDes);
+
+		etFoodName = findViewById(R.id.foodName);
+		etFoodCommit = findViewById(R.id.foodDes);
+		etFoodMoney = findViewById(R.id.foodPrice1);
+		etFoodType = findViewById(R.id.foodType);
+		etFoodRate = findViewById(R.id.foodRate);
+		etFoodImg = findViewById(R.id.foodImg);
 
 		firebaseAuth = FirebaseAuth.getInstance();
 	}
@@ -51,11 +60,13 @@ public class AddStoreActivity extends AppCompatActivity {
 		String Freight = etFreight.getText().toString();
 		String Fraction = etFraction.getText().toString();
 		String Type = etType.getText().toString();
+//		String Img = etImg.getText().toString();
+		String Des = etDes.getText().toString();
 
 		String img_url="https://firebasestorage.googleapis.com/v0/b/my-grocery-store-60a2c.appspot.com/o/grocery10.jpg?alt=media&token=4de96ce4-cd4f-44e6-9513-56e83944bd91";
 
 		FirebaseFirestore firebaseDatabase = FirebaseFirestore.getInstance();
-		PopularModel store =new PopularModel(Name,Name,Fraction,Name,Name,Type,img_url);
+		PopularModel store =new PopularModel(Name,Des,Fraction,Freight,Name,Type,img_url);
 		firebaseDatabase.collection("PopularProducts").document(Name).set(store);
 
 		//Real time
@@ -72,15 +83,18 @@ public class AddStoreActivity extends AppCompatActivity {
 	public void addFood(View view) {
 
 		String Name = etName.getText().toString();
-//		String FoodName = etFoodName.getText().toString();
-//		String FoodCommit = etFoodCommit.getText().toString();
-//		String FoodType = etFoodType.getText().toString();
-//		String FoodMoney = etFoodMoney.getText().toString();
+		String FoodName = etFoodName.getText().toString();
+		String FoodCommit = etFoodCommit.getText().toString();
+		String FoodType = etFoodType.getText().toString();
+		String FoodMoney = etFoodMoney.getText().toString();
+		String FoodRate = etFoodRate.getText().toString();
+		String FoodImg = etFoodImg.getText().toString();
 
 		FirebaseFirestore firebaseDatabase = FirebaseFirestore.getInstance();
+		String img_url="https://firebasestorage.googleapis.com/v0/b/my-grocery-store-60a2c.appspot.com/o/grocery10.jpg?alt=media&token=4de96ce4-cd4f-44e6-9513-56e83944bd91";
 
-		ViewAllModel food=new ViewAllModel(Name,Name,Name,Name,Name,Name,100);
-		firebaseDatabase.collection("AllProducts").document(Name).set(food);
+		ViewAllModel food=new ViewAllModel(FoodName,FoodCommit,FoodRate,Name,FoodType,img_url,Integer.parseInt(FoodMoney));
+		firebaseDatabase.collection("AllProducts").document(FoodName).set(food);
 
 //		PopularModel store =new PopularModel(Name,Fraction,Name,Name,Freight,Type);
 //		firebaseDatabase.collection("PopularProducts").document(Name).set(store);
