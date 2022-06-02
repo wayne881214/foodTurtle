@@ -23,6 +23,7 @@ public class ChangeActivity extends AppCompatActivity {
             public void onClick(View view) {
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.go_to_fr_main, new TestTestFragment()).commit();
+                button.setVisibility(View.GONE);
             }
         });
     }
