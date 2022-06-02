@@ -8,8 +8,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.mygrocerystore.DeliveryManLoginActivity;
-import com.example.mygrocerystore.DeliveryManRegistrstionActivity;
+import com.example.mygrocerystore.DeliveryManMainActivity;
 import com.example.mygrocerystore.MainActivity;
 import com.example.mygrocerystore.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,7 +28,7 @@ public class DeliveryManHomeActivity extends AppCompatActivity {
         progressBar.setVisibility(View.GONE);
         if (auth.getCurrentUser() != null) {
             progressBar.setVisibility(View.VISIBLE);
-            startActivity(new Intent(DeliveryManHomeActivity.this, MainActivity.class));
+            startActivity(new Intent(DeliveryManHomeActivity.this, DeliveryManMainActivity.class));
             Toast.makeText(this, "please wait you are already logged in", Toast.LENGTH_SHORT).show();
             finish();
         }

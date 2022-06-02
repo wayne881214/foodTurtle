@@ -1,4 +1,4 @@
-package com.example.mygrocerystore.ui.home;
+package com.example.mygrocerystore.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,8 +10,7 @@ import android.widget.Toast;
 
 import com.example.mygrocerystore.R;
 import com.example.mygrocerystore.StoreMainActivity;
-import com.example.mygrocerystore.activities.StoreLoginActivity;
-import com.example.mygrocerystore.activities.StoreRegistrationActivity;
+import com.example.mygrocerystore.TestActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class StoreHomeActivity extends AppCompatActivity {

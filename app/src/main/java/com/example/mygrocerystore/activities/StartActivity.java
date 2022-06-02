@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.mygrocerystore.R;
-import com.example.mygrocerystore.TestActivity;
 
 public class StartActivity extends AppCompatActivity {
 

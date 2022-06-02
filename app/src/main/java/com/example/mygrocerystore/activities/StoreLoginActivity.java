@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SearchRecentSuggestionsProvider;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -15,7 +14,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mygrocerystore.R;
-import com.example.mygrocerystore.StoreRegistrationActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -90,7 +88,7 @@ public class StoreLoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             progressBar.setVisibility(View.GONE);
                             Toast.makeText(StoreLoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(StoreLoginActivity.this, HomeActivity.class));
+                            startActivity(new Intent(StoreLoginActivity.this, StoreHomeActivity.class));
                         } else {
                             progressBar.setVisibility(View.GONE);
                             Toast.makeText(StoreLoginActivity.this, "Error"+task.isSuccessful(), Toast.LENGTH_SHORT).show();

@@ -37,7 +37,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomeFragment extends Fragment {
+public class OrderHomeFragment extends Fragment {
 
     ScrollView scrollView;
     ProgressBar progressBar;

@@ -1,4 +1,4 @@
-package com.example.mygrocerystore;
+package com.example.mygrocerystore.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,9 +13,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.mygrocerystore.R;
-import com.example.mygrocerystore.activities.LoginActivity;
-import com.example.mygrocerystore.activities.RegistrationActivity;
-import com.example.mygrocerystore.activities.StoreLoginActivity;
 import com.example.mygrocerystore.models.UserModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

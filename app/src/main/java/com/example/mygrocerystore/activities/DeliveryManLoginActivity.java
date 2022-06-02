@@ -1,4 +1,4 @@
-package com.example.mygrocerystore;
+package com.example.mygrocerystore.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,9 +13,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.mygrocerystore.activities.HomeActivity;
-import com.example.mygrocerystore.activities.LoginActivity;
-import com.example.mygrocerystore.activities.RegistrationActivity;
+import com.example.mygrocerystore.R;
+import com.example.mygrocerystore.ui.home.DeliveryManHomeFragment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -91,7 +90,7 @@ public class DeliveryManLoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             progressBar.setVisibility(View.GONE);
                             Toast.makeText(DeliveryManLoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(DeliveryManLoginActivity.this, HomeActivity.class));
+                            startActivity(new Intent(DeliveryManLoginActivity.this, DeliveryManHomeFragment.class));
                         } else {
                             progressBar.setVisibility(View.GONE);
                             Toast.makeText(DeliveryManLoginActivity.this, "Error"+task.isSuccessful(), Toast.LENGTH_SHORT).show();
