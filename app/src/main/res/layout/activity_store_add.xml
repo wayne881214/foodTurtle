@@ -297,14 +297,19 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
-            <EditText
+
+            <Button
+                    android:text="選擇圖片"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:ems="10"
                     android:layout_weight="1"
-                    android:hint="商品圖片"
-                    android:id="@+id/foodImg" />
+                    android:id="@+id/selectImg" />
+            <Button
+                    android:text="上傳圖片"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:id="@+id/uploadImg" />
 
         </LinearLayout>
 
