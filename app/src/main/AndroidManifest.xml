@@ -9,6 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyGroceryStore.NoActionBar">
+
+        <activity
+            android:name=".activities.shopcarActivity"
+            android:exported="false" />
         <activity
             android:name=".StoreMainActivity"
             android:exported="false"
@@ -50,7 +54,7 @@
             android:name=".AddStoreActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.ClassFragment"
+            android:name=".activities.ClassActivity"
             android:exported="false" />
         <activity
             android:name=".activities.DetailedActivity"

@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.mygrocerystore.R;
 import com.example.mygrocerystore.models.HomeCategory;
-import com.example.mygrocerystore.activities.ClassFragment;
+import com.example.mygrocerystore.activities.ClassActivity;
 
 import java.util.List;
 
@@ -43,7 +43,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context,ClassFragment.class);
+                Intent intent = new Intent(context, ClassActivity.class);
                 intent.putExtra("type", categoryList.get(position).getType());
                 context.startActivity(intent);
             }
