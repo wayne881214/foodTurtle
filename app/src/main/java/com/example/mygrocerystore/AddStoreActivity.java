@@ -63,7 +63,7 @@ public class AddStoreActivity extends AppCompatActivity {
 	private FirebaseAuth firebaseAuth;
 	String storename="";
 	String FoodType="";
-
+	String FoodName="null";
 
 
 	@Override
@@ -134,47 +134,49 @@ public class AddStoreActivity extends AppCompatActivity {
 	public void addFood(View view) {
 
 		String Name = etName.getText().toString();
-		String FoodName = etFoodName.getText().toString();
+		FoodName = etFoodName.getText().toString();
 		String FoodCommit = etFoodCommit.getText().toString();
 
 		String FoodMoney = etFoodMoney.getText().toString();
 		String FoodRate = etFoodRate.getText().toString();
-		String FoodImg = etFoodImg.getText().toString();
+
+		System.out.println("!!!!!!!!"+Name);
+//		String FoodImg = etFoodImg.getText().toString();
 
 		FirebaseDatabase database;
 		database = FirebaseDatabase.getInstance();
-		database.getReference().child("Stores").child(FirebaseAuth.getInstance().getUid()).child("storeName")
-		.addValueEventListener(new ValueEventListener() {
-			@Override
-			public void onDataChange(@NonNull DataSnapshot snapshot) {
-				storename=snapshot.getValue(String.class);
-			}
-
-			@Override
-			public void onCancelled(@NonNull DatabaseError error) {
-
-			}
-		});
-		database.getReference().child("Stores").child(FirebaseAuth.getInstance().getUid()).child("type")
-		.addValueEventListener(new ValueEventListener() {
-			@Override
-			public void onDataChange(@NonNull DataSnapshot snapshot) {
-				FoodType=snapshot.getValue(String.class);
-			}
-
-			@Override
-			public void onCancelled(@NonNull DatabaseError error) {
-
-			}
-		});
+//		database.getReference().child("Stores").child(FirebaseAuth.getInstance().getUid()).child("storeName")
+//		.addValueEventListener(new ValueEventListener() {
+//			@Override
+//			public void onDataChange(@NonNull DataSnapshot snapshot) {
+//				storename=snapshot.getValue(String.class);
+//			}
+//
+//			@Override
+//			public void onCancelled(@NonNull DatabaseError error) {
+//
+//			}
+//		});
+//		database.getReference().child("Stores").child(FirebaseAuth.getInstance().getUid()).child("type")
+//		.addValueEventListener(new ValueEventListener() {
+//			@Override
+//			public void onDataChange(@NonNull DataSnapshot snapshot) {
+//				FoodType=snapshot.getValue(String.class);
+//			}
+//
+//			@Override
+//			public void onCancelled(@NonNull DatabaseError error) {
+//
+//			}
+//		});
 		FirebaseFirestore firebaseDatabase = FirebaseFirestore.getInstance();
-		String img_url="https://firebasestorage.googleapis.com/v0/b/my-grocery-store-60a2c.appspot.com/o/grocery10.jpg?alt=media&token=4de96ce4-cd4f-44e6-9513-56e83944bd91";
+//		String img_url="https://firebasestorage.googleapis.com/v0/b/my-grocery-store-60a2c.appspot.com/o/grocery10.jpg?alt=media&token=4de96ce4-cd4f-44e6-9513-56e83944bd91";
 
-		ViewAllModel food=new ViewAllModel(FoodName,FoodCommit,FoodRate,storename,FoodType,imageUri.toString(),Integer.parseInt(FoodMoney));
+		ViewAllModel food=new ViewAllModel(FoodName,FoodCommit,FoodRate,Name,FoodType,imageUri.toString(),Integer.parseInt(FoodMoney));
 		firebaseDatabase.collection("AllProducts").document(FoodName).set(food);
 //		PopularModel store =new PopularModel(Name,Fraction,Name,Name,Freight,Type);
 //		firebaseDatabase.collection("PopularProducts").document(Name).set(store);
-		Toast.makeText(this,Name+"新增成功", Toast.LENGTH_LONG).show();
+		Toast.makeText(this,FoodName+"新增成功", Toast.LENGTH_LONG).show();
 	}
 
 
@@ -186,7 +188,7 @@ public class AddStoreActivity extends AppCompatActivity {
 		if (data.getData() != null) {
 			Uri profileUri = data.getData();
 			storage=FirebaseStorage.getInstance();
-			final StorageReference reference = storage.getReference().child("food_picture").child("123");
+			final StorageReference reference = storage.getReference().child("food_picture").child(FoodName);
 			reference.putFile(profileUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
 				@Override
 				public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {

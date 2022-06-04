@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.slideshow.SlideshowFragment">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.slideshow.SlideshowFragment">
 
     <Button
             android:text="newStore"
@@ -13,29 +13,84 @@
             android:id="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/text_slideshow" />
-
-    <TextView
-        android:text="hihi"
-        android:id="@+id/text_slideshow"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintHorizontal_bias="0.498" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="newStore"
-        app:layout_constraintBottom_toTopOf="@+id/text_slideshow"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+            android:text="pp給123的訂單"
+            android:layout_width="320dp"
+            android:layout_height="69dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="476dp"
+            android:textSize="24sp"
+            android:id="@+id/testOrder" />
+
+    <Button
+            android:text="pp給123的訂單"
+            android:layout_width="320dp"
+            android:layout_height="69dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.615"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="308dp"
+            android:textSize="24sp"
+            android:id="@+id/button5" />
+
+    <TextView
+            android:layout_width="210dp"
+            android:layout_height="49dp"
+            android:id="@+id/textView8"
+            android:text="等待外送員訂單"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.423" />
+
+    <Button
+            android:text="pp給123的訂單"
+            android:layout_width="320dp"
+            android:layout_height="69dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="148dp"
+            android:textSize="24sp"
+            android:id="@+id/button7" />
+
+    <TextView
+            android:layout_width="157dp"
+            android:layout_height="49dp"
+            android:id="@+id/textView7"
+            android:text="等待批准訂單"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.156" />
+
+    <TextView
+            android:layout_width="269dp"
+            android:layout_height="51dp"
+            android:id="@+id/textView9"
+            android:text="媒合成功訂單(製作中)"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.659" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

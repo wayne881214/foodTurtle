@@ -68,6 +68,7 @@ public class ViewAllActivity extends AppCompatActivity {
         StoresRef.addValueEventListener(new ValueEventListener() {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
+										System.out.print(ds+"!!!!!!!!!!!");
                     String name =ds.child("storeName").getValue().toString();
                     if (storeName != null && storeName.equalsIgnoreCase(name)) {
                         firestore.collection("AllProducts").whereEqualTo("storeName", name).get()

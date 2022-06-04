@@ -22,6 +22,7 @@ public class SlideshowFragment extends Fragment {
 
 	Activity activity;
 	Button button;
+	Button testOrder;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -31,6 +32,14 @@ public class SlideshowFragment extends Fragment {
 			activity = getActivity();
 			button = root.findViewById(R.id.button);
 			button.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View view) {
+					Intent intent = new Intent(activity, AddStoreActivity.class);
+					startActivity(intent);
+				}
+			});
+			testOrder = root.findViewById(R.id.testOrder);
+			testOrder.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View view) {
 					Intent intent = new Intent(activity, AddStoreActivity.class);
