@@ -64,4 +64,11 @@ public class StoreMainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+//	@Override
+//	public boolean onCreateAcpectOrder(Menu menu) {
+//		// Inflate the menu; this adds items to the action bar if it is present.
+//		getMenuInflater().inflate(R.menu.store_main, menu);
+//		return true;
+//	}
 }

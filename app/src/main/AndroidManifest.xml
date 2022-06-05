@@ -37,6 +37,9 @@
                 android:name=".activities.StoreLoginActivity"
                 android:exported="false" />
         <activity
+                android:name=".StoreOrderActivity"
+                android:exported="false" />
+        <activity
                 android:name=".activities.DeliveryManRegistrstionActivity"
                 android:exported="false" />
         <activity
