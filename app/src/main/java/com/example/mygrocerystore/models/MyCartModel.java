@@ -4,79 +4,61 @@ import java.io.Serializable;
 
 public class MyCartModel implements Serializable {
 
-    String productName;
-    String productPrice;
-    String currentDate;
-    String currentTime;
-    String totalQuantity;
-    int totalPrice;
-    String documentId;
+    String customer;
+    String store;
+    String delivery;
+    int type;
+    String remark;
+
 
     public MyCartModel() {
     }
 
-    public MyCartModel(String productName, String productPrice, String currentDate, String currentTime, String totalQuantity, int totalPrice) {
-        this.productName = productName;
-        this.productPrice = productPrice;
-        this.currentDate = currentDate;
-        this.currentTime = currentTime;
-        this.totalQuantity = totalQuantity;
-        this.totalPrice = totalPrice;
+    public MyCartModel(String store,String customer, String delivery, int type,String remark) {
+        this.store = store;
+        this.customer = customer;
+        this.delivery = delivery;
+        this.type = type;
+        this.remark=remark;
     }
 
-    public String getDocumentId() {
-        return documentId;
+    public String getStore() {
+        return store;
     }
 
-    public void setDocumentId(String documentId) {
-        this.documentId = documentId;
+    public void setStore(String store) {
+        this.store = store;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getCustomer() {
+        return customer;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setCustomer(String customer) {
+        this.customer = customer;
     }
 
-    public String getProductPrice() {
-        return productPrice;
+    public String getDelivery() {
+        return delivery;
     }
 
-    public void setProductPrice(String productPrice) {
-        this.productPrice = productPrice;
+    public void setdelivery(String delivery) {
+        this.delivery = delivery;
     }
 
-    public String getCurrentDate() {
-        return currentDate;
+    public int getType() {
+        return type;
     }
 
-    public void setCurrentDate(String currentDate) {
-        this.currentDate = currentDate;
+    public void setType(int type) {
+        this.type = type;
     }
 
-    public String getCurrentTime() {
-        return currentTime;
+    public String getRemark() {
+        return remark;
     }
 
-    public void setCurrentTime(String currentTime) {
-        this.currentTime = currentTime;
-    }
-
-    public String getTotalQuantity() {
-        return totalQuantity;
-    }
-
-    public void setTotalQuantity(String totalQuantity) {
-        this.totalQuantity = totalQuantity;
-    }
-
-    public int getTotalPrice() {
-        return totalPrice;
-    }
-
-    public void setTotalPrice(int totalPrice) {
-        this.totalPrice = totalPrice;
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 }

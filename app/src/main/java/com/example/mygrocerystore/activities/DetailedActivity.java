@@ -80,7 +80,7 @@ public class DetailedActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         UserModel userModel = snapshot.getValue(UserModel.class);
-                        name=userModel.getName();
+                        OrderDetail.customer=userModel.getName();
                     }
 
                     @Override
@@ -131,13 +131,15 @@ public class DetailedActivity extends AppCompatActivity {
     private void addedToCart() {
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference ordersRef = firebaseDatabase.getReference("Orders");
-        DatabaseReference listRef = ordersRef.child(name+viewAllModel.getStoreName()+"shopcar");
+        DatabaseReference listRef = ordersRef.child(OrderDetail.customer+viewAllModel.getStoreName()+"shopcar");
         DatabaseReference productRef = listRef.child("product").child(viewAllModel.getName());
 
         Map<String, Object> order = new HashMap<>();
-        order.put("customer", name);
+        order.put("customer",OrderDetail.customer);
+        order.put("delivery","無");
         order.put("store", viewAllModel.getStoreName());
         order.put("type", 0);
+        order.put("remark", "無");
         listRef.updateChildren(order);
 
         Map<String, Object> product = new HashMap<>();

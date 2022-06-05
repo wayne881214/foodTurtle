@@ -3,7 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-
         <entry key="..\:/Users/user/AndroidStudioProjects/MyGroceryStore/app/src/main/res/drawable/account.xml" value="0.162" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyGroceryStore/app/src/main/res/drawable/add_circle.xml" value="0.162" />
         <entry key="..\:/Users/user/AndroidStudioProjects/MyGroceryStore/app/src/main/res/drawable/btn_bg_detailed.xml" value="0.189" />
@@ -105,7 +104,7 @@
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/menu/main.xml" value="0.25364583333333335" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/menu/store_main.xml" value="0.25364583333333335" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_nav_category.xml" value="0.176" />
-        <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_placed_order.xml" value="0.17074275362318841" />
+        <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_placed_order.xml" value="0.152" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_shopcar.xml" value="0.28629856850715746" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_test.xml" value="0.15715579710144928" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_view_all.xml" value="0.2" />
@@ -119,6 +118,7 @@
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/fragment_my_orders.xml" value="0.17074275362318841" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/fragment_offers.xml" value="0.17074275362318841" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/fragment_profile.xml" value="0.17074275362318841" />
+        <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/fragment_slideshow.xml" value="0.14895833333333333" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/home_cat_items.xml" value="0.17074275362318841" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/my_cart_item.xml" value="0.4" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/nav_cat_item.xml" value="0.17074275362318841" />
@@ -129,7 +129,6 @@
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/view_all_item.xml" value="0.17074275362318841" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/menu/activity_main_drawer.xml" value="0.26974358974358975" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/menu/delivery_man_main.xml" value="0.26974358974358975" />
-
       </map>
     </option>
   </component>

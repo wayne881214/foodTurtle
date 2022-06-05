@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,24 +13,28 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 import androidx.recyclerview.widget.RecyclerView;
-
+import com.example.mygrocerystore.activities.shopcarActivity;
+import com.example.mygrocerystore.PlacedOrderActivity;
 import com.example.mygrocerystore.R;
+import com.example.mygrocerystore.activities.OrderDetail;
 import com.example.mygrocerystore.models.MyCartModel;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder> {
 
     Context context;
     List<MyCartModel> cartModelList;
-    int totalPrice = 0;
     FirebaseFirestore firestore;
     FirebaseAuth auth;
-
+    String typeText="未讀取";
+    String typeOrder="未讀取";
 
     public MyCartAdapter(Context context, List<MyCartModel> cartModelList) {
         this.context = context;
@@ -47,32 +52,60 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        holder.name.setText(cartModelList.get(position).getProductName());
-        holder.price.setText(cartModelList.get(position).getProductPrice());
-        holder.date.setText(cartModelList.get(position).getCurrentDate());
-        holder.time.setText(cartModelList.get(position).getCurrentTime());
-        holder.quantity.setText(cartModelList.get(position).getTotalQuantity());
-        holder.totalPrice.setText(String.valueOf(cartModelList.get(position).getTotalPrice()));
+        holder.store.setText(cartModelList.get(position).getStore());
+        holder.customer.setText(cartModelList.get(position).getCustomer());
+        holder.delivery.setText(cartModelList.get(position).getDelivery());
+        switch(cartModelList.get(position).getType())
+        {
+            case 0:
+                typeText="購物車";
+                break;
+            case 1:
+                typeText="等待商家接受訂單";
+                break;
+            case 2:
+                typeText="商家已接受，等待外送員中";
+                break;
+            case 3:
+                typeText="外送員已接受，等待餐點送達";
+                break;
+            case 4:
+                typeText="已完成訂單";
+                break;
+            default:
+                break;
 
-        holder.deleteItem.setOnClickListener(new View.OnClickListener() {
+        }
+        holder.type.setText(typeText);
+        holder.remark.setText(cartModelList.get(position).getRemark());
+
+        holder.viewCarItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                firestore.collection("CurrentUser").document(auth.getCurrentUser().getUid())
-                        .collection("AddToCart")
-                        .document(cartModelList.get(position).getDocumentId())
-                        .delete()
-                        .addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                  if (task.isSuccessful()) {
-                                      cartModelList.remove(cartModelList.get(position));
-                                      notifyDataSetChanged();
-                                      Toast.makeText(context, "Item Deleted", Toast.LENGTH_SHORT).show();
-                                  } else {
-                                      Toast.makeText(context, "Error"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                                  }
-                            }
-                        });
+                switch(cartModelList.get(position).getType())
+                {
+                    case 0:
+                        typeOrder="shopcar";
+                        break;
+                    case 1:
+                        typeText="storeOrder";
+                        break;
+                    case 2:
+                        typeText="deliveryOrder";
+                        break;
+                    case 3:
+                        typeText="wait";
+                        break;
+                    case 4:
+                        typeText="complete";
+                        break;
+                    default:
+                        break;
+                }
+                OrderDetail.order=cartModelList.get(position).getCustomer()+cartModelList.get(position).getStore()+typeOrder;
+                Intent intent = new Intent(context,shopcarActivity.class);
+                intent.putExtra("storeName",cartModelList.get(position).getStore());
+                context.startActivity(intent);
             }
         });
 
@@ -86,19 +119,18 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView name, price, date, time, quantity, totalPrice;
-        ImageView deleteItem;
+        TextView customer, store, delivery, type, remark;
+        Button viewCarItem;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            name = itemView.findViewById(R.id.product_name);
-            price = itemView.findViewById(R.id.product_price);
-            date = itemView.findViewById(R.id.current_date);
-            time = itemView.findViewById(R.id.current_time);
-            quantity = itemView.findViewById(R.id.total_quantity);
-            totalPrice = itemView.findViewById(R.id.total_price);
-            deleteItem = itemView.findViewById(R.id.delete);
+            customer = itemView.findViewById(R.id.customer);
+            store = itemView.findViewById(R.id.store);
+            delivery = itemView.findViewById(R.id.delivery);
+            type = itemView.findViewById(R.id.type);
+            remark = itemView.findViewById(R.id.remark);
+            viewCarItem = itemView.findViewById(R.id.viewCar);
         }
     }
 }

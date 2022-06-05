@@ -83,33 +83,16 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.71" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buy_now"
-            android:layout_width="316dp"
-            android:layout_height="41dp"
-            android:layout_margin="10dp"
-            android:background="@drawable/btn_bg_detailed"
-            android:text="送出訂單NT$100"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.412"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.962" />
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/order_rec"
             android:layout_width="466dp"
             android:layout_height="409dp"
+            android:layout_marginTop="56dp"
             android:layout_marginRight="7dp"
-            app:layout_constraintBottom_toTopOf="@+id/buy_now"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.257" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/editTextTextPostalAddress"
@@ -123,6 +106,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.717" />
+
+        <Button
+            android:id="@+id/toOrder"
+            android:layout_width="299dp"
+            android:layout_height="43dp"
+            android:background="@drawable/btn_bg_detailed"
+            android:text="Button"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.941" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

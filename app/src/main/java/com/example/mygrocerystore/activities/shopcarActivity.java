@@ -8,8 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.example.mygrocerystore.R;
@@ -17,6 +19,8 @@ import com.example.mygrocerystore.adapter.OrderAdapter;
 import com.example.mygrocerystore.adapter.ViewAllAdapter;
 import com.example.mygrocerystore.models.OrderModel;
 import com.example.mygrocerystore.models.UserModel;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -31,6 +35,7 @@ import java.util.List;
 public class shopcarActivity extends AppCompatActivity {
     FirebaseDatabase database;
     RecyclerView recyclerView;
+    Button button;
     TextView textview;
     OrderAdapter orderAdapter;
     List<OrderModel> OrderModelList;
@@ -51,6 +56,7 @@ public class shopcarActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressbar);
         progressBar.setVisibility(View.VISIBLE);
         textview = findViewById(R.id.textView5);
+        button =findViewById(R.id.toOrder);
         recyclerView = findViewById(R.id.order_rec);
         recyclerView.setVisibility(View.GONE);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -80,6 +86,7 @@ public class shopcarActivity extends AppCompatActivity {
                     recyclerView.setVisibility(View.VISIBLE);
                 }
                 textview.setText("總計金額:"+total+"$");
+                button.setText("送出訂單"+" "+total+"$");
 
             }
 
@@ -89,5 +96,11 @@ public class shopcarActivity extends AppCompatActivity {
             }
         });
 
-        }
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                
+            }
+        });
+    }
 }
