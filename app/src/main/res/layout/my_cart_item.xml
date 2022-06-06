@@ -19,15 +19,16 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:weightSum="2">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Product Name"
-                android:textSize="16sp"
-                android:fontFamily="@font/alice" />
+                android:fontFamily="@font/alice"
+                android:text="店家名稱"
+                android:textSize="16sp" />
             <TextView
-                android:id="@+id/product_name"
+                android:id="@+id/store"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -43,15 +44,16 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:weightSum="2">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Product Price"
-                android:textSize="16sp"
-                android:fontFamily="@font/alice" />
+                android:fontFamily="@font/alice"
+                android:text="顧客"
+                android:textSize="16sp" />
             <TextView
-                android:id="@+id/product_price"
+                android:id="@+id/customer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -67,15 +69,16 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:weightSum="2">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Current Date"
-                android:textSize="16sp"
-                android:fontFamily="@font/alice" />
+                android:fontFamily="@font/alice"
+                android:text="外送員"
+                android:textSize="16sp" />
             <TextView
-                android:id="@+id/current_date"
+                android:id="@+id/delivery"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -91,15 +94,16 @@
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:weightSum="2">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Current Time"
-                android:textSize="16sp"
-                android:fontFamily="@font/alice" />
+                android:fontFamily="@font/alice"
+                android:text="訂單狀態"
+                android:textSize="16sp" />
             <TextView
-                android:id="@+id/current_time"
+                android:id="@+id/type"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -110,59 +114,41 @@
             "
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
             android:weightSum="2">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Total Price"
-                android:textSize="16sp"
-                android:fontFamily="@font/alice" />
+                android:fontFamily="@font/alice"
+                android:text="備註"
+                android:textSize="16sp" />
+
             <TextView
-                android:id="@+id/total_price"
+                android:id="@+id/remark"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textStyle="bold"
-                android:text="Total Price"
+                android:fontFamily="@font/alice"
+                android:text="Current Time"
                 android:textSize="16sp"
-                android:fontFamily="@font/alice" />
+                android:textStyle="bold" />
+
             "
 
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:weightSum="2">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Total Quantity"
-                android:textSize="16sp"
-                android:fontFamily="@font/alice" />
-            <TextView
-                android:id="@+id/total_quantity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textStyle="bold"
-                android:text="Total Quantity"
-                android:textSize="16sp"
-                android:fontFamily="@font/alice" />
 
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/delete"
+        <Button
+            android:id="@+id/viewCar"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:src="@drawable/ic_baseline_delete_24" />
+            android:layout_height="wrap_content"
+            android:text="查看詳情" />
 
     </LinearLayout>
+
 </androidx.cardview.widget.CardView>

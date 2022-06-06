@@ -30,7 +30,7 @@ public class PlacedOrderActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
-
+       /*
         List<MyCartModel> list = (ArrayList<MyCartModel>) getIntent().getSerializableExtra("itemList");
 
         if (list != null && list.size() > 0) {
@@ -52,6 +52,6 @@ public class PlacedOrderActivity extends AppCompatActivity {
                     }
                 });
             }
-        }
+        }*/
     }
 }

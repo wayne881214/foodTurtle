@@ -57,7 +57,7 @@
             android:background="@color/purple_700"
             android:fontFamily="@font/alice"
             android:padding="10dp"
-            android:text="Total Price :0$"
+            android:text="我的訂單"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="28sp"
@@ -72,24 +72,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="7dp"
             android:layout_marginRight="7dp"
-            app:layout_constraintBottom_toTopOf="@+id/buy_now"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5"
-            app:layout_constraintVertical_bias="0" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/buy_now"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/btn_bg_detailed"
-            android:text="Buy Now"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

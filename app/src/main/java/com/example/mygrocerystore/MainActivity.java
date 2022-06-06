@@ -7,6 +7,7 @@ import android.widget.TextView;
 import android.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
+import com.example.mygrocerystore.activities.OrderDetail;
 import com.example.mygrocerystore.models.UserModel;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
@@ -71,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         UserModel userModel = snapshot.getValue(UserModel.class);
-
+                        OrderDetail.customer=userModel.getName();
                         headerName.setText(userModel.getName());
                         headerEmail.setText(userModel.getEmail());
                         Glide.with(MainActivity.this).load(userModel.getProfileImg()).into(headerImg);
