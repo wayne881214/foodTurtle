@@ -6,88 +6,65 @@
         android:layout_height="match_parent"
         tools:context=".ui.slideshow.SlideshowFragment">
 
-    <Button
-            android:text="newStore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/button"
-            tools:layout_editor_absoluteX="147dp" />
-
-    <TextView
+    <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="51dp"
-            android:text="商店名稱"
-            android:textSize="34sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.12"
-            android:textAlignment="center"
-            android:id="@+id/storeName" />
+            android:layout_height="match_parent">
 
-    <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="350dp"
-            android:layout_height="498dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.491"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.742">
-
-        <TextView
-                android:layout_width="157dp"
-                android:layout_height="49dp"
-                android:id="@+id/textView7"
-                android:text="等待批准"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-        <Button
-                android:text="pp給123的訂單"
-                android:layout_width="320dp"
-                android:layout_height="63dp"
-                android:layout_marginBottom="0dp"
-                android:textSize="24sp"
-                android:id="@+id/waitAceptOrder" />
-
-        <TextView
-                android:layout_width="269dp"
-                android:layout_height="51dp"
-                android:id="@+id/textView9"
-                android:text="等待外送員確認"
-                android:textSize="24sp"
-                android:textStyle="bold" />
-
-        <Button
-                android:text="null給123的訂單"
+        <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="63dp"
-                android:layout_marginBottom="0dp"
-                android:textSize="24sp"
-                android:id="@+id/waitAceptOrder3" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
 
-        <TextView
-                android:layout_width="268dp"
-                android:layout_height="51dp"
-                android:id="@+id/textView8"
-                android:text="媒合成功(製作中)"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="51dp"
+                    android:text="商店名稱"
+                    android:textSize="34sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:id="@+id/storeName" />
 
-        <Button
-                android:text="Null給123的訂單"
-                android:layout_width="match_parent"
-                android:layout_height="63dp"
-                android:layout_marginBottom="0dp"
-                android:textSize="24sp"
-                android:id="@+id/waitAceptOrder4" />
+            <TextView
+                    android:layout_width="157dp"
+                    android:layout_height="49dp"
+                    android:id="@+id/textView7"
+                    android:text="等待批准"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-    </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="409dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/store_recyclerview" />
+
+            <TextView
+                    android:layout_width="269dp"
+                    android:layout_height="51dp"
+                    android:id="@+id/textView9"
+                    android:text="等待外送員確認"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/store_recyclerview2" />
+
+            <TextView
+                    android:layout_width="268dp"
+                    android:layout_height="51dp"
+                    android:id="@+id/textView8"
+                    android:text="媒合成功(製作中)"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/store_recyclerview3" />
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
