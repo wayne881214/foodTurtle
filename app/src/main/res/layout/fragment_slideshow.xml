@@ -63,6 +63,14 @@
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
+        <Button
+                android:text="null給123的訂單"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:layout_marginBottom="0dp"
+                android:textSize="24sp"
+                android:id="@+id/waitAceptOrder3" />
+
         <TextView
                 android:layout_width="268dp"
                 android:layout_height="51dp"
@@ -70,6 +78,14 @@
                 android:text="媒合成功(製作中)"
                 android:textSize="24sp"
                 android:textStyle="bold" />
+
+        <Button
+                android:text="Null給123的訂單"
+                android:layout_width="match_parent"
+                android:layout_height="63dp"
+                android:layout_marginBottom="0dp"
+                android:textSize="24sp"
+                android:id="@+id/waitAceptOrder4" />
 
     </LinearLayout>
 

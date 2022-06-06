@@ -63,19 +63,26 @@ public class SlideshowFragment extends Fragment {
 			String storeName="123";
 			TextView store=root.findViewById(R.id.storeName);
 			store.setText("商店名稱:"+storeName);
+
 			ordersRef.addValueEventListener(new ValueEventListener() {
 				@Override
 				public void onDataChange(DataSnapshot dataSnapshot) {
 					for (DataSnapshot ds : dataSnapshot.getChildren()) {
 						System.out.println("Data:"+ds);
 						FullOrderModel fullOrder = ds.getValue(FullOrderModel.class);
-						System.out.println("Type????"+fullOrder.getType());
-
-						if(fullOrder.getType()==1&& fullOrder.getStore().equals(storeName)){
-							System.out.println("Type!!!!!"+fullOrder.getType());
-
+						if(fullOrder.getStore().equals(storeName)){
+							switch(fullOrder.getType()){
+								case 1:
+									System.out.println("Type==1!!!!!");
+									//生成訂單按鈕
+								case 2:
+									System.out.println("Type==2!!!!!");
+									//生成訂單按鈕
+								case 3:
+									System.out.println("Type==3!!!!!");
+									//生成訂單按鈕
+							}
 						}
-
 					}
 
 
