@@ -168,10 +168,8 @@ public class BlankFragment extends Fragment {
 		database = FirebaseDatabase.getInstance();
 		FirebaseFirestore firebaseDatabase = FirebaseFirestore.getInstance();
 
-		System.out.println("FFFFFF"+imageUri);
-
 		ViewAllModel food=new ViewAllModel(FoodName,FoodCommit,FoodRate,storename,FoodType,imageUri.toString(),Integer.parseInt(FoodMoney));
-		firebaseDatabase.collection("AllProducts").document(FoodName).set(food);
+		firebaseDatabase.collection("AllProducts").document(storename+"_"+FoodName).set(food);
 //		Toast.makeText(this,FoodName+"新增成功", Toast.LENGTH_LONG).show();
 	}
 	@Override

@@ -99,8 +99,9 @@ public class GalleryFragment extends Fragment {
 		String Fraction = etFraction.getText().toString();
 		String Type = etType.getText().toString();
 		String Des = etDes.getText().toString();
+//		String name, String description, String rating, String discount, String storeName,String type, String img_url
 
-
+		System.out.println("!!!!!!"+Name+storeName+Freight+Type);
 		FirebaseFirestore firebaseDatabase = FirebaseFirestore.getInstance();
 		PopularModel store =new PopularModel(Name,Des,Fraction,Freight,storeName,Type,imageUri.toString());
 		firebaseDatabase.collection("PopularProducts").document(Name).set(store);
@@ -134,7 +135,6 @@ public class GalleryFragment extends Fragment {
 						@Override
 						public void onSuccess(Uri uri) {
 							imageUri=uri;
-							System.out.println("RRRRRRR"+imageUri);
 						}
 					});
 				}
