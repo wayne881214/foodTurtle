@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation2"
+    app:startDestination="@id/nav_deliverymanhome">
+
+    <fragment
+        android:id="@+id/nav_delivery1"
+        android:name="com.example.mygrocerystore.ui.DeliveryFragment1.DeliveryFragment1"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_delivery1" />
+
+    <fragment
+        android:id="@+id/nav_delivery2"
+        android:name="com.example.mygrocerystore.ui.DeliveryFragment2.DeliveryFragment2"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_delivery2" />
+    <fragment
+        android:id="@+id/nav_deliverymanhome"
+        android:name="com.example.mygrocerystore.ui.home.DeliveryManHomeFragment"
+        android:label="fragment_delivery_man_home"
+        tools:layout="@layout/fragment_delivery_man_home" />
+</navigation>

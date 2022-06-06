@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_deliverymanhome"
+            android:icon="@drawable/ic_menuhome"
+            android:title="首頁" />
+        <item
+            android:id="@+id/nav_delivery1"
+            android:icon="@drawable/menu_person"
+            android:title="編輯個人資料" />
+        <item
+            android:id="@+id/nav_delivery2"
+            android:icon="@drawable/ic_baseline_category_24"
+            android:title="外送訂單" />
+
+    </group>
+</menu>
