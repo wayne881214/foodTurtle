@@ -17,14 +17,6 @@
             android:icon="@drawable/ic_baseline_category_24"
             android:title="優惠券" />
         <item
-            android:id="@+id/nav_offers"
-            android:icon="@drawable/ic_baseline_local_offer_24"
-            android:title="設定" />
-        <item
-            android:id="@+id/nav_new_products"
-            android:icon="@drawable/autorenew"
-            android:title="新商品" />
-        <item
             android:id="@+id/nav_my_orders"
             android:icon="@drawable/ic_baseline_shopping_cart_24"
             android:title="查看訂單" />
@@ -32,10 +24,5 @@
             android:id="@+id/nav_my_carts"
             android:icon="@drawable/mycart"
             android:title="購物車" />
-        <item
-            android:id="@+id/nav_debug"
-            android:icon="@drawable/ic_baseline_category_24"
-            android:title="@string/debug" />
-
     </group>
 </menu>

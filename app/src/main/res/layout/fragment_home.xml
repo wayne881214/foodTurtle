@@ -33,7 +33,7 @@
                 android:drawableLeft="@drawable/ic_baseline_search_24"
                 android:background="@drawable/search_gb"
                 android:padding="13dp"
-                android:hint="Search Your Item Here..."
+                android:hint="搜尋..."
                 android:drawablePadding="5dp" />
 
             <androidx.recyclerview.widget.RecyclerView

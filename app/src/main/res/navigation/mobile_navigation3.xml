@@ -14,17 +14,17 @@
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.mygrocerystore.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
+        android:label="編輯商品"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.mygrocerystore.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
+        android:label="查看訂單"
         tools:layout="@layout/fragment_slideshow" />
     <fragment
         android:id="@+id/nav_blankFragment"
         android:name="com.example.mygrocerystore.BlankFragment"
-        android:label="fragment_blank"
+        android:label="新增商品"
         tools:layout="@layout/fragment_blank" />
 </navigation>

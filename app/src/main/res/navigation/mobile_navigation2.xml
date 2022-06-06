@@ -8,17 +8,17 @@
     <fragment
         android:id="@+id/nav_delivery1"
         android:name="com.example.mygrocerystore.ui.DeliveryFragment1.DeliveryFragment1"
-        android:label="@string/menu_gallery"
+        android:label="編輯個人資料"
         tools:layout="@layout/fragment_delivery1" />
 
     <fragment
         android:id="@+id/nav_delivery2"
         android:name="com.example.mygrocerystore.ui.DeliveryFragment2.DeliveryFragment2"
-        android:label="@string/menu_slideshow"
+        android:label="外送訂單"
         tools:layout="@layout/fragment_delivery2" />
     <fragment
         android:id="@+id/nav_deliverymanhome"
         android:name="com.example.mygrocerystore.ui.home.DeliveryManHomeFragment"
-        android:label="fragment_delivery_man_home"
+        android:label="首頁"
         tools:layout="@layout/fragment_delivery_man_home" />
 </navigation>
