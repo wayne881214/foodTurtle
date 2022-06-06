@@ -93,13 +93,15 @@ public class MyCartsFragment extends Fragment {
                     if(ds.child("customer").getValue().toString().equals(OrderDetail.customer)&&
                        ds.child("type").getValue().toString().equals("0")
                     ) {
-
+                        int key=Integer.parseInt(ds.child("key").getValue().toString());
                         String store = ds.child("store").getValue().toString();
                         String customer = ds.child("customer").getValue().toString();
                         String delivery = ds.child("delivery").getValue().toString();
                         int type = Integer.parseInt(ds.child("type").getValue().toString());
                         String remark= ds.child("remark").getValue().toString();
-                        cartModelList.add(new MyCartModel(store, customer, delivery, type,remark));
+                        String payment= ds.child("payment").getValue().toString();
+                        String address= ds.child("address").getValue().toString();
+                        cartModelList.add(new MyCartModel(key,store, customer, delivery, type,remark,payment,address));
                         cartAdapter.notifyDataSetChanged();
                         progressBar.setVisibility(View.GONE);
                         recyclerView.setVisibility(View.VISIBLE);
