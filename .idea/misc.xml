@@ -56,6 +56,7 @@
         <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/activity_store_login.xml" value="0.13323201621073963" />
         <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/activity_store_main.xml" value="0.13323201621073963" />
         <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/activity_store_registration.xml" value="0.2" />
+        <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/fragment_blank.xml" value="0.264" />
         <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/fragment_slideshow.xml" value="0.2" />
         <entry key="..\:/foodTurtle-main/foodTurtle-main/app/src/main/res/layout/activity_coupon.xml" value="0.12335359675785208" />
         <entry key="..\:/foodTurtle-main/foodTurtle-main/app/src/main/res/layout/activity_coupon_expired.xml" value="0.12335359675785208" />
@@ -95,7 +96,6 @@
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_delivery_order.xml" value="0.264" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_navigation.xml" value="0.264" />
-        <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_order.xml" value="0.23097826086956522" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_order_order.xml" value="0.2" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_orders_accept.xml" value="0.4" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_orders_home.xml" value="0.4" />

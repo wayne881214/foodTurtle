@@ -145,30 +145,7 @@ public class AddStoreActivity extends AppCompatActivity {
 
 		FirebaseDatabase database;
 		database = FirebaseDatabase.getInstance();
-//		database.getReference().child("Stores").child(FirebaseAuth.getInstance().getUid()).child("storeName")
-//		.addValueEventListener(new ValueEventListener() {
-//			@Override
-//			public void onDataChange(@NonNull DataSnapshot snapshot) {
-//				storename=snapshot.getValue(String.class);
-//			}
-//
-//			@Override
-//			public void onCancelled(@NonNull DatabaseError error) {
-//
-//			}
-//		});
-//		database.getReference().child("Stores").child(FirebaseAuth.getInstance().getUid()).child("type")
-//		.addValueEventListener(new ValueEventListener() {
-//			@Override
-//			public void onDataChange(@NonNull DataSnapshot snapshot) {
-//				FoodType=snapshot.getValue(String.class);
-//			}
-//
-//			@Override
-//			public void onCancelled(@NonNull DatabaseError error) {
-//
-//			}
-//		});
+
 		FirebaseFirestore firebaseDatabase = FirebaseFirestore.getInstance();
 //		String img_url="https://firebasestorage.googleapis.com/v0/b/my-grocery-store-60a2c.appspot.com/o/grocery10.jpg?alt=media&token=4de96ce4-cd4f-44e6-9513-56e83944bd91";
 

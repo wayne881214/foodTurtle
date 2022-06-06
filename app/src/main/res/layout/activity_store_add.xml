@@ -304,6 +304,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:id="@+id/selectImg" />
+
             <Button
                     android:text="上傳圖片"
                     android:layout_width="wrap_content"
