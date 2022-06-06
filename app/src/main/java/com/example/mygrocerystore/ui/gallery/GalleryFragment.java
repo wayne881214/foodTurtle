@@ -113,6 +113,8 @@ public class GalleryFragment extends Fragment {
 		store2.put("storeName", Name);
 		store2.put("type", Type);
 		nameRef.updateChildren(store2);
+		Toast.makeText(getActivity(), Name+"新增成功", Toast.LENGTH_LONG).show();
+
 
 	}
     @Override

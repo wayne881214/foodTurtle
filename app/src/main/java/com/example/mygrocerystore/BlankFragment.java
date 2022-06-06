@@ -170,7 +170,7 @@ public class BlankFragment extends Fragment {
 
 		ViewAllModel food=new ViewAllModel(FoodName,FoodCommit,FoodRate,storename,FoodType,imageUri.toString(),Integer.parseInt(FoodMoney));
 		firebaseDatabase.collection("AllProducts").document(storename+"_"+FoodName).set(food);
-//		Toast.makeText(goActivity(), FoodName+"新增成功", Toast.LENGTH_LONG).show();
+		Toast.makeText(getActivity(), FoodName+"新增成功", Toast.LENGTH_LONG).show();
 	}
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
