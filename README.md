@@ -172,10 +172,10 @@
     <td>李柏村</td>
     <td>D0885494</td>
     <td>bobohuman</td>
-    <td>#71、#80</td>
+    <td>#70、#71、#80</td>
   <tr>
     <td>林子白</td>
     <td>D0857613</td>
     <td>peter1421</td>
-    <td>#74</td>
+    <td>#74、#75</td>
 </table>
