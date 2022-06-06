@@ -151,8 +151,6 @@ public class AddStoreActivity extends AppCompatActivity {
 
 		ViewAllModel food=new ViewAllModel(FoodName,FoodCommit,FoodRate,Name,FoodType,imageUri.toString(),Integer.parseInt(FoodMoney));
 		firebaseDatabase.collection("AllProducts").document(FoodName).set(food);
-//		PopularModel store =new PopularModel(Name,Fraction,Name,Name,Freight,Type);
-//		firebaseDatabase.collection("PopularProducts").document(Name).set(store);
 		Toast.makeText(this,FoodName+"新增成功", Toast.LENGTH_LONG).show();
 	}
 

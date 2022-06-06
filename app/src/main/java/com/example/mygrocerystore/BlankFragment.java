@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
@@ -16,7 +17,11 @@ import android.widget.Toast;
 
 import com.example.mygrocerystore.models.ViewAllModel;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -87,7 +92,6 @@ public class BlankFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-//				setContentView(R.layout.activity_start);
 
 		}
 
@@ -95,7 +99,32 @@ public class BlankFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-			System.out.println("!!!!!!!!!!!!");
+			FirebaseDatabase database;
+			database = FirebaseDatabase.getInstance();
+			database.getReference().child("Stores").child(FirebaseAuth.getInstance().getUid()).child("storeName")
+			.addValueEventListener(new ValueEventListener() {
+				@Override
+				public void onDataChange(@NonNull DataSnapshot snapshot) {
+					storename=snapshot.getValue(String.class);
+				}
+
+				@Override
+				public void onCancelled(@NonNull DatabaseError error) {
+
+				}
+			});
+			database.getReference().child("Stores").child(FirebaseAuth.getInstance().getUid()).child("type")
+			.addValueEventListener(new ValueEventListener() {
+				@Override
+				public void onDataChange(@NonNull DataSnapshot snapshot) {
+					FoodType=snapshot.getValue(String.class);
+				}
+
+				@Override
+				public void onCancelled(@NonNull DatabaseError error) {
+
+				}
+			});
 			View root = inflater.inflate(R.layout.fragment_blank, container, false);
 
 			selectImg=root.findViewById(R.id.selectImg);
@@ -129,17 +158,19 @@ public class BlankFragment extends Fragment {
     }
 
 	public void addFood1() {
-    Name = etName.getText().toString();
 		FoodName = etFoodName.getText().toString();
 		String FoodCommit = etFoodCommit.getText().toString();
 		String FoodMoney = etFoodMoney.getText().toString();
 		String FoodRate = etFoodRate.getText().toString();
 
+
 		FirebaseDatabase database;
 		database = FirebaseDatabase.getInstance();
 		FirebaseFirestore firebaseDatabase = FirebaseFirestore.getInstance();
 
-		ViewAllModel food=new ViewAllModel(FoodName,FoodCommit,FoodRate,Name,FoodType,imageUri.toString(),Integer.parseInt(FoodMoney));
+		System.out.println("FFFFFF"+imageUri);
+
+		ViewAllModel food=new ViewAllModel(FoodName,FoodCommit,FoodRate,storename,FoodType,imageUri.toString(),Integer.parseInt(FoodMoney));
 		firebaseDatabase.collection("AllProducts").document(FoodName).set(food);
 //		Toast.makeText(this,FoodName+"新增成功", Toast.LENGTH_LONG).show();
 	}
@@ -150,10 +181,8 @@ public class BlankFragment extends Fragment {
 		if (data.getData() != null) {
 			Uri profileUri = data.getData();
 			storage= FirebaseStorage.getInstance();
-			Name = etName.getText().toString();
 			FoodName = etFoodName.getText().toString();
-			System.out.println("YYYYYYYYYY"+Name+"!"+FoodName);
-			final StorageReference reference = storage.getReference().child("food_picture").child(Name+"_"+FoodName);
+			final StorageReference reference = storage.getReference().child("food_picture").child(storename+"_"+FoodName);
 			reference.putFile(profileUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
 				@Override
 				public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
