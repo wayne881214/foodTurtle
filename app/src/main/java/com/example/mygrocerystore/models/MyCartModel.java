@@ -3,23 +3,34 @@ package com.example.mygrocerystore.models;
 import java.io.Serializable;
 
 public class MyCartModel implements Serializable {
-
+    int key;
     String customer;
     String store;
     String delivery;
     int type;
     String remark;
-
+    String payment;
+    String address;
 
     public MyCartModel() {
     }
 
-    public MyCartModel(String store,String customer, String delivery, int type,String remark) {
+    public MyCartModel( int key,String store,String customer, String delivery, int type,String remark, String payment, String address) {
+        this.key = key;
         this.store = store;
         this.customer = customer;
         this.delivery = delivery;
         this.type = type;
         this.remark=remark;
+        this.payment = payment;
+        this.address = address;
+    }
+    public int getKey() {
+        return key;
+    }
+
+    public void setKey(int key) {
+        this.key = key;
     }
 
     public String getStore() {
@@ -42,7 +53,7 @@ public class MyCartModel implements Serializable {
         return delivery;
     }
 
-    public void setdelivery(String delivery) {
+    public void setDelivery(String delivery) {
         this.delivery = delivery;
     }
 
@@ -60,5 +71,21 @@ public class MyCartModel implements Serializable {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public String getPayment() {
+        return payment;
+    }
+
+    public void setPayment(String payment) {
+        this.payment = payment;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

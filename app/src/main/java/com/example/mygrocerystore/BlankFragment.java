@@ -1,21 +1,60 @@
 package com.example.mygrocerystore;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.mygrocerystore.models.ViewAllModel;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link BlankFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BlankFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
+public class BlankFragment extends Fragment {
+	Button selectImg, uploadImg,b1,addButton;
+
+
+	private EditText etName;
+
+	private EditText etFoodName;
+	private EditText etFoodCommit;
+	private EditText etFoodMoney;
+	private EditText etFoodType;
+	private EditText etFoodRate;
+	private EditText etFoodImg;
+	FirebaseStorage storage;
+
+	Uri imageUri;
+
+	String storename="";
+	String FoodType="";
+	String FoodName="null";
+	String Name="null";
+
+	// TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -53,12 +92,107 @@ public class BlankFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-    }
+
+		}
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_blank, container, false);
+			FirebaseDatabase database;
+			database = FirebaseDatabase.getInstance();
+			database.getReference().child("Stores").child(FirebaseAuth.getInstance().getUid()).child("storeName")
+			.addValueEventListener(new ValueEventListener() {
+				@Override
+				public void onDataChange(@NonNull DataSnapshot snapshot) {
+					storename=snapshot.getValue(String.class);
+				}
+
+				@Override
+				public void onCancelled(@NonNull DatabaseError error) {
+
+				}
+			});
+			database.getReference().child("Stores").child(FirebaseAuth.getInstance().getUid()).child("type")
+			.addValueEventListener(new ValueEventListener() {
+				@Override
+				public void onDataChange(@NonNull DataSnapshot snapshot) {
+					FoodType=snapshot.getValue(String.class);
+				}
+
+				@Override
+				public void onCancelled(@NonNull DatabaseError error) {
+
+				}
+			});
+			View root = inflater.inflate(R.layout.fragment_blank, container, false);
+
+			selectImg=root.findViewById(R.id.selectImg);
+			uploadImg=root.findViewById(R.id.uploadImg);
+
+			etName =  root.findViewById(R.id.storeName1);
+			etFoodName = root.findViewById(R.id.foodName);
+			etFoodCommit = root.findViewById(R.id.foodDes);
+			etFoodMoney = root.findViewById(R.id.foodPrice1);
+			etFoodType = root.findViewById(R.id.foodType);
+			etFoodRate = root.findViewById(R.id.foodRate);
+
+			addButton=root.findViewById(R.id.addButton);
+
+			selectImg.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View view) {
+					Intent intent = new Intent();
+					intent.setAction(Intent.ACTION_GET_CONTENT);
+					intent.setType("image/*");
+					startActivityForResult(intent, 33);
+				}
+			});
+			addButton.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View view) {
+					addFood1();
+				}
+			});
+        return root;
     }
+
+	public void addFood1() {
+		FoodName = etFoodName.getText().toString();
+		String FoodCommit = etFoodCommit.getText().toString();
+		String FoodMoney = etFoodMoney.getText().toString();
+		String FoodRate = etFoodRate.getText().toString();
+
+
+		FirebaseDatabase database;
+		database = FirebaseDatabase.getInstance();
+		FirebaseFirestore firebaseDatabase = FirebaseFirestore.getInstance();
+
+		ViewAllModel food=new ViewAllModel(FoodName,FoodCommit,FoodRate,storename,FoodType,imageUri.toString(),Integer.parseInt(FoodMoney));
+		firebaseDatabase.collection("AllProducts").document(storename+"_"+FoodName).set(food);
+		Toast.makeText(getActivity(), FoodName+"新增成功", Toast.LENGTH_LONG).show();
+	}
+	@Override
+	public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+		super.onActivityResult(requestCode, resultCode, data);
+
+		if (data.getData() != null) {
+			Uri profileUri = data.getData();
+			storage= FirebaseStorage.getInstance();
+			FoodName = etFoodName.getText().toString();
+			final StorageReference reference = storage.getReference().child("food_picture").child(storename+"_"+FoodName);
+			reference.putFile(profileUri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+				@Override
+				public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+					reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+						@Override
+						public void onSuccess(Uri uri) {
+							imageUri=uri;
+						}
+					});
+				}
+			});
+		}
+	}
+
 }

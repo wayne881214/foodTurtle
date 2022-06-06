@@ -78,31 +78,25 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
         }
         holder.type.setText(typeText);
         holder.remark.setText(cartModelList.get(position).getRemark());
+        holder.payment.setText(cartModelList.get(position).getPayment());
+        holder.address.setText(cartModelList.get(position).getAddress());
 
         holder.viewCarItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch(cartModelList.get(position).getType())
-                {
+                switch(cartModelList.get(position).getType()) {
                     case 0:
-                        typeOrder="shopcar";
+                        OrderDetail.order = cartModelList.get(position).getCustomer() + cartModelList.get(position).getStore() + "shopcar";
                         break;
                     case 1:
-                        typeText="storeOrder";
-                        break;
                     case 2:
-                        typeText="deliveryOrder";
-                        break;
                     case 3:
-                        typeText="wait";
-                        break;
                     case 4:
-                        typeText="complete";
+                        OrderDetail.order = Integer.toString(cartModelList.get(position).getKey());
                         break;
                     default:
                         break;
                 }
-                OrderDetail.order=cartModelList.get(position).getCustomer()+cartModelList.get(position).getStore()+typeOrder;
                 Intent intent = new Intent(context,shopcarActivity.class);
                 intent.putExtra("storeName",cartModelList.get(position).getStore());
                 context.startActivity(intent);
@@ -119,7 +113,7 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView customer, store, delivery, type, remark;
+        TextView customer, store, delivery, type, remark,payment,address;
         Button viewCarItem;
 
         public ViewHolder(@NonNull View itemView) {
@@ -130,6 +124,8 @@ public class MyCartAdapter extends RecyclerView.Adapter<MyCartAdapter.ViewHolder
             delivery = itemView.findViewById(R.id.delivery);
             type = itemView.findViewById(R.id.type);
             remark = itemView.findViewById(R.id.remark);
+            payment = itemView.findViewById(R.id.payment);
+            address = itemView.findViewById(R.id.address);
             viewCarItem = itemView.findViewById(R.id.viewCar);
         }
     }

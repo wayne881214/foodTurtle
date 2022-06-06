@@ -135,11 +135,14 @@ public class DetailedActivity extends AppCompatActivity {
         DatabaseReference productRef = listRef.child("product").child(viewAllModel.getName());
 
         Map<String, Object> order = new HashMap<>();
+        order.put("key",0);
         order.put("customer",OrderDetail.customer);
-        order.put("delivery","無");
+        order.put("delivery","none");
         order.put("store", viewAllModel.getStoreName());
         order.put("type", 0);
-        order.put("remark", "無");
+        order.put("remark", "none");
+        order.put("payment", "none");
+        order.put("address", "none");
         listRef.updateChildren(order);
 
         Map<String, Object> product = new HashMap<>();
