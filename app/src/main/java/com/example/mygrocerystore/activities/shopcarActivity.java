@@ -40,7 +40,7 @@ import java.util.Map;
 public class shopcarActivity extends AppCompatActivity {
     FirebaseDatabase database;
     RecyclerView recyclerView;
-    EditText editText;
+    EditText remarkEdit,paymentEdit,addressEdit;
     Button button;
     TextView textview;
     OrderAdapter orderAdapter;
@@ -63,7 +63,9 @@ public class shopcarActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressbar);
         progressBar.setVisibility(View.VISIBLE);
         textview = findViewById(R.id.textView5);
-        editText=findViewById(R.id.remark);
+        remarkEdit=findViewById(R.id.remark);
+        paymentEdit=findViewById(R.id.payment);
+        addressEdit=findViewById(R.id.address);
         button =findViewById(R.id.toOrder);
         recyclerView = findViewById(R.id.order_rec);
         recyclerView.setVisibility(View.GONE);
@@ -121,11 +123,14 @@ public class shopcarActivity extends AppCompatActivity {
 
                 //添加舊有購物車資訊至新訂單中
                 Map<String, Object> order = new HashMap<>();
+                order.put("key",productCount);
                 order.put("customer",OrderDetail.customer);
                 order.put("delivery","無");
                 order.put("store",storeName);
                 order.put("type", 1);
-                order.put("remark",editText.getText().toString());
+                order.put("remark",remarkEdit.getText().toString());
+                order.put("payment",paymentEdit.getText().toString());
+                order.put("address",addressEdit.getText().toString());
                 DatabaseReference listRef =  database.getReference().child("Orders").child(Integer.toString(productCount));
                 listRef.updateChildren(order);
 
