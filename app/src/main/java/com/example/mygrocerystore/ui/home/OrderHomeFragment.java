@@ -192,7 +192,7 @@ public class OrderHomeFragment extends Fragment {
 
         if (!type.isEmpty()) {
 
-            db.collection("AllProducts").whereEqualTo("type", type).get()
+            db.collection("AllProducts").whereEqualTo("name", type).get()
                     .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<QuerySnapshot> task) {
