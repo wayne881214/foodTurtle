@@ -1,22 +1,16 @@
 package com.example.mygrocerystore.models;
 
+import com.google.firebase.database.DataSnapshot;
+
+import java.util.List;
+
 public class FullOrderModel extends MyCartModel {
-	OrderModel order;
-
-	public FullOrderModel(){}
-
-	public FullOrderModel(String store,int type,String customer){
-		this.store=store;
-		this.type=type;
-		this.customer=customer;
+	List<OrderModel> product;
+	public FullOrderModel(){
 	}
-	public FullOrderModel(OrderModel order ,String store,int type,String customer){
-		this.order=order;
-		this.store=store;
-		this.type=type;
-		this.customer=customer;
-	}
-	public FullOrderModel( String delivery,OrderModel order , String address, String payment,String remark,String store,  int type,int key,String customer) {
+
+
+	public FullOrderModel( String delivery,List<OrderModel> product , String address, String payment,String remark,String store,  int type,int key,String customer) {
 		this.key = key;
 		this.store = store;
 		this.customer = customer;
@@ -25,25 +19,17 @@ public class FullOrderModel extends MyCartModel {
 		this.remark=remark;
 		this.payment = payment;
 		this.address = address;
-		this.order = order;
-	}
-	public void showAll(){
-		System.out.println("key:"+key);
-		System.out.println("store:"+store);
-		System.out.println("customer:"+customer);
-		System.out.println("delivery:"+delivery);
-		System.out.println("type:"+type);
-		System.out.println("remark:"+remark);
-		System.out.println("payment:"+payment);
-		System.out.println("address:"+address);
-	}
-	public OrderModel getOrder() {
-		return order;
+		this.product = product;
 	}
 
-	public void setOrder(OrderModel order) {
-		this.order = order;
-	}
+//	public List<OrderModel>  getProduct() {
+//		return product;
+//	}
+//
+//	public void setProduct(List<OrderModel> product) {
+//		this.product =product;
+//	}
+
 
 }
 

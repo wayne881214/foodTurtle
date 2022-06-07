@@ -25,6 +25,17 @@ public class MyCartModel implements Serializable {
         this.payment = payment;
         this.address = address;
     }
+		public void showAll(){
+    	//爽
+			System.out.println("key:"+key);
+			System.out.println("store:"+store);
+			System.out.println("customer:"+customer);
+			System.out.println("delivery:"+delivery);
+			System.out.println("type:"+type);
+			System.out.println("remark:"+remark);
+			System.out.println("payment:"+payment);
+			System.out.println("address:"+address);
+		}
     public int getKey() {
         return key;
     }

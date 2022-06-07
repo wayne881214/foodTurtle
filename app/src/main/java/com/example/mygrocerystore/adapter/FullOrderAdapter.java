@@ -40,13 +40,13 @@ public class FullOrderAdapter extends RecyclerView.Adapter<FullOrderAdapter.View
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new FullOrderAdapter.ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.my_cart_item, parent, false));
+        return new FullOrderAdapter.ViewHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.store_cart_item, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        holder.store.setText(fullOrderModelList.get(position).getStore());
+//        holder.store.setText(fullOrderModelList.get(position).getStore());
         holder.customer.setText(fullOrderModelList.get(position).getCustomer());
         holder.delivery.setText(fullOrderModelList.get(position).getDelivery());
         switch(fullOrderModelList.get(position).getType())
@@ -70,7 +70,7 @@ public class FullOrderAdapter extends RecyclerView.Adapter<FullOrderAdapter.View
                 break;
 
         }
-        holder.type.setText(typeText);
+//        holder.type.setText(typeText);
         holder.remark.setText(fullOrderModelList.get(position).getRemark());
         holder.payment.setText(fullOrderModelList.get(position).getPayment());
         holder.address.setText(fullOrderModelList.get(position).getAddress());
@@ -114,9 +114,9 @@ public class FullOrderAdapter extends RecyclerView.Adapter<FullOrderAdapter.View
             super(itemView);
 
             customer = itemView.findViewById(R.id.customer);
-            store = itemView.findViewById(R.id.store);
+//            store = itemView.findViewById(R.id.store);
             delivery = itemView.findViewById(R.id.delivery);
-            type = itemView.findViewById(R.id.type);
+//            type = itemView.findViewById(R.id.type);
             remark = itemView.findViewById(R.id.remark);
             payment = itemView.findViewById(R.id.payment);
             address = itemView.findViewById(R.id.address);
