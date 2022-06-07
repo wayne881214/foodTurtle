@@ -19,6 +19,7 @@ import com.example.mygrocerystore.AddStoreActivity;
 import com.example.mygrocerystore.R;
 import com.example.mygrocerystore.StoreOrderActivity;
 import com.example.mygrocerystore.activities.OrderDetail;
+import com.example.mygrocerystore.adapter.FullOrderAdapter;
 import com.example.mygrocerystore.adapter.MyCartAdapter;
 import com.example.mygrocerystore.databinding.FragmentSlideshowBinding;
 import com.example.mygrocerystore.models.FullOrderModel;
@@ -44,7 +45,9 @@ public class SlideshowFragment extends Fragment {
 	Button testOrder;
 	String storeName="null";
 	List<MyCartModel> cartModelList,cartModelList2,cartModelList3;
+	List<FullOrderModel> fullOrderModelList,fullOrderModelList2,fullOrderModelList3;
 	MyCartAdapter cartAdapter,cartAdapter2,cartAdapter3;
+	FullOrderAdapter fullOrderAdapter,fullOrderAdapter2,fullOrderAdapter3;
 	RecyclerView recyclerView,recyclerView2,recyclerView3;
 
 
@@ -72,14 +75,15 @@ public class SlideshowFragment extends Fragment {
 
 				}
 			});
-		cartModelList = new ArrayList<>();
-		cartAdapter = new MyCartAdapter(getActivity(),cartModelList);
 
-		cartModelList2 = new ArrayList<>();
-		cartAdapter2 = new MyCartAdapter(getActivity(),cartModelList2);
+		fullOrderModelList = new ArrayList<>();
+		fullOrderAdapter = new FullOrderAdapter(getActivity(),fullOrderModelList);
 
-		cartModelList3 = new ArrayList<>();
-		cartAdapter3 = new MyCartAdapter(getActivity(),cartModelList3);
+		fullOrderModelList2 = new ArrayList<>();
+		fullOrderAdapter2 = new FullOrderAdapter(getActivity(),fullOrderModelList2);
+
+		fullOrderModelList3 = new ArrayList<>();
+		fullOrderAdapter3 = new FullOrderAdapter(getActivity(),fullOrderModelList3);
 
 		recyclerView = root.findViewById(R.id.store_recyclerview);
 		recyclerView2 = root.findViewById(R.id.store_recyclerview2);
@@ -94,10 +98,10 @@ public class SlideshowFragment extends Fragment {
 		recyclerView3.setLayoutManager(new LinearLayoutManager(getActivity(),  RecyclerView.HORIZONTAL, false));
 
 
+		recyclerView.setAdapter(fullOrderAdapter);
+		recyclerView2.setAdapter(fullOrderAdapter2);
+		recyclerView3.setAdapter(fullOrderAdapter3);
 
-		recyclerView.setAdapter(cartAdapter);
-		recyclerView2.setAdapter(cartAdapter2);
-		recyclerView3.setAdapter(cartAdapter3);
 
 
 		DatabaseReference ordersRef = database.getReference("/Orders/");
@@ -105,32 +109,24 @@ public class SlideshowFragment extends Fragment {
 			ordersRef.addValueEventListener(new ValueEventListener() {
 				@Override
 				public void onDataChange(DataSnapshot dataSnapshot) {
-					cartModelList.add(new MyCartModel(1,"store222", "customer", "delivery", 1,"remark","payment","address"));
-					cartModelList.add(new MyCartModel(1,"store222", "customer", "delivery", 1,"remark","payment","address"));
-					cartModelList.add(new MyCartModel(1,"store222", "customer", "delivery", 1,"remark","payment","address"));
-					cartModelList2.add(new MyCartModel(3,"store444", "customer", "delivery", 1,"remark","payment","address"));
-					cartModelList3.add(new MyCartModel(4,"store121", "customer", "delivery", 1,"remark","payment","address"));
-
-					cartAdapter.notifyDataSetChanged();
 					recyclerView.setVisibility(View.VISIBLE);
 					recyclerView2.setVisibility(View.VISIBLE);
 					recyclerView3.setVisibility(View.VISIBLE);
 					for (DataSnapshot ds : dataSnapshot.getChildren()) {
-						System.out.println("Data:"+ds);
+//						System.out.println("Data:"+ds);
 						FullOrderModel fullOrder = ds.getValue(FullOrderModel.class);
-						System.out.println(fullOrder.getStore()+"!!RRRRRR:!!"+storeName);
+						fullOrder.showAll();
 						if(fullOrder.getStore().equals(storeName)){
-							System.out.println("fullOrder.getStore():"+fullOrder.getStore());
-							System.out.println("fullOrder.getType():"+fullOrder.getType());
 							switch(fullOrder.getType()){
 								case 1:
-									System.out.println("Type==1!!!!!"+fullOrder.getType());
+									fullOrderModelList.add(fullOrder);
+									fullOrderModelList.add(fullOrder);
 									break;
 								case 2:
-									System.out.println("Type==2!!!!!");
+									fullOrderModelList2.add(fullOrder);
 									break;
 								case 3:
-									System.out.println("Type==3!!!!!");
+									fullOrderModelList3.add(fullOrder);
 									break;
 								default:
 									break;
