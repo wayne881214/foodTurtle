@@ -12,7 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mygrocerystore.R;
+import com.example.mygrocerystore.StoreOrderActivity;
 import com.example.mygrocerystore.activities.OrderDetail;
+import com.example.mygrocerystore.activities.StoreFullOrderActivity;
 import com.example.mygrocerystore.activities.shopcarActivity;
 import com.example.mygrocerystore.models.FullOrderModel;
 import com.example.mygrocerystore.models.MyCartModel;
@@ -70,7 +72,6 @@ public class FullOrderAdapter extends RecyclerView.Adapter<FullOrderAdapter.View
                 break;
 
         }
-//        holder.type.setText(typeText);
         holder.remark.setText(fullOrderModelList.get(position).getRemark());
         holder.payment.setText(fullOrderModelList.get(position).getPayment());
         holder.address.setText(fullOrderModelList.get(position).getAddress());
@@ -91,7 +92,7 @@ public class FullOrderAdapter extends RecyclerView.Adapter<FullOrderAdapter.View
                     default:
                         break;
                 }
-                Intent intent = new Intent(context,shopcarActivity.class);
+                Intent intent = new Intent(context, StoreFullOrderActivity.class);
                 intent.putExtra("storeName",fullOrderModelList.get(position).getStore());
                 context.startActivity(intent);
             }
@@ -114,9 +115,7 @@ public class FullOrderAdapter extends RecyclerView.Adapter<FullOrderAdapter.View
             super(itemView);
 
             customer = itemView.findViewById(R.id.customer);
-//            store = itemView.findViewById(R.id.store);
             delivery = itemView.findViewById(R.id.delivery);
-//            type = itemView.findViewById(R.id.type);
             remark = itemView.findViewById(R.id.remark);
             payment = itemView.findViewById(R.id.payment);
             address = itemView.findViewById(R.id.address);
