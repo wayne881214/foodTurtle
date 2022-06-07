@@ -120,7 +120,6 @@ public class SlideshowFragment extends Fragment {
 							switch(fullOrder.getType()){
 								case 1:
 									fullOrderModelList.add(fullOrder);
-									fullOrderModelList.add(fullOrder);
 									break;
 								case 2:
 									fullOrderModelList2.add(fullOrder);

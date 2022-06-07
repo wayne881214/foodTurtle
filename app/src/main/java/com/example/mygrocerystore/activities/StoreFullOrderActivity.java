@@ -36,7 +36,7 @@ public class StoreFullOrderActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     EditText remarkEdit,paymentEdit,addressEdit;
     Button button;
-    TextView textview;
+    TextView textview,textView11,textView14,textView12;
     OrderAdapter orderAdapter;
     List<OrderModel> OrderModelList;
     Toolbar toolbar;
@@ -45,6 +45,7 @@ public class StoreFullOrderActivity extends AppCompatActivity {
     String name;
     int total=0;
     int productCount=0;
+		FullOrderModel fullOrder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +58,11 @@ public class StoreFullOrderActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressbar);
         progressBar.setVisibility(View.VISIBLE);
         textview = findViewById(R.id.textView5);
+
+				textView11=findViewById(R.id.textView11);
+				textView14=findViewById(R.id.textView14);
+				textView12=findViewById(R.id.textView12);
+
         remarkEdit=findViewById(R.id.remark);
         paymentEdit=findViewById(R.id.payment);
         addressEdit=findViewById(R.id.address);
@@ -73,6 +79,26 @@ public class StoreFullOrderActivity extends AppCompatActivity {
         orderAdapter = new OrderAdapter(this, OrderModelList);
         recyclerView.setAdapter(orderAdapter);
 
+      //先把訂單資料存下
+			DatabaseReference OrdersTypeRef = database.getReference().child("Orders").child(OrderDetail.order);
+			OrdersTypeRef.addValueEventListener(new ValueEventListener() {
+				public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+					fullOrder = dataSnapshot.getValue(FullOrderModel.class);
+					textView11.setText("備註:"+fullOrder.getRemark());
+					textView12.setText("付款方式:"+fullOrder.getPayment());
+					textView14.setText("地址"+fullOrder.getAddress());
+
+					TextView customer=(TextView) findViewById(R.id.customer);
+					customer.setText(fullOrder.getCustomer());
+					TextView deliveryMan=(TextView)findViewById(R.id.deliveryMan);
+					deliveryMan.setText(fullOrder.getDelivery());
+				}
+
+				@Override
+				public void onCancelled(DatabaseError error) {
+					// Failed to read value
+				}
+			});
 
         DatabaseReference ProductCountRef = database.getReference("Counts/count");
         ProductCountRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -98,6 +124,7 @@ public class StoreFullOrderActivity extends AppCompatActivity {
                 }
                 textview.setText("總計金額:"+total+"$");
                 button.setText("送出訂單"+" "+total+"$");
+
             }
             @Override
             public void onCancelled(DatabaseError error) {
@@ -105,39 +132,20 @@ public class StoreFullOrderActivity extends AppCompatActivity {
             }
         });
 
-        //送出訂單按鈕被點擊
+        //點擊修改訂單
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+							Map<String, Object> order = new HashMap<>();
+							order.put("key",fullOrder.getKey());
+							order.put("type",fullOrder.getType()+1);
+							database.getReference().child("Orders").child(OrderDetail.order).updateChildren(order);
+							Toast.makeText(StoreFullOrderActivity.this,fullOrder.getType()+"接受修改", Toast.LENGTH_LONG).show();
+//							Intent intent=new Intent();
+//							intent.setClass(StoreFullOrderActivity.this, SlideshowFragment.class);
+//							startActivity(intent);
+							finish();
 
-							DatabaseReference OrdersTypeRef = database.getReference().child("Orders").child(OrderDetail.order);
-							OrdersTypeRef.addValueEventListener(new ValueEventListener() {
-								public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-									FullOrderModel fullOrder = dataSnapshot.getValue(FullOrderModel.class);
-									Map<String, Object> order = new HashMap<>();
-									order.put("key",fullOrder.getKey());
-									order.put("type",fullOrder.getType()+1);
-									//小心無限迴圈
-									database.getReference().child("Orders").child(OrderDetail.order).updateChildren(order);
-									Toast.makeText(StoreFullOrderActivity.this,fullOrder.getType()+"接受修改", Toast.LENGTH_LONG).show();
-									Intent intent=new Intent();
-									intent.setClass(StoreFullOrderActivity.this, SlideshowFragment.class);
-									startActivity(intent);
-								}
-
-								@Override
-								public void onCancelled(DatabaseError error) {
-									// Failed to read value
-								}
-							});
-//                //跳出提示 跳轉到該我的訂單-該筆資料
-//                OrderDetail.order=Integer.toString(productCount);
-//                Toast.makeText(StoreFullOrderActivity.this,"接受訂單成功", Toast.LENGTH_LONG).show();
-//                Intent intent=new Intent();
-//                intent.setClass(StoreFullOrderActivity.this, OrderActivity.class);
-//                intent.putExtra("storeName",storeName);
-//                intent.putExtra("count",productCount);
-//                startActivity(intent);
             }
         });
     }
