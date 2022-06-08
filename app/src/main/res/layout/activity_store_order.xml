@@ -123,19 +123,20 @@
         </LinearLayout>
 
         <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:backgroundTint="@color/white"
-                android:text="聊天"
-                android:textColor="#00838F"
-                android:textSize="12sp"
-                tools:ignore="TouchTargetSizeCheck"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="8dp"
-                app:layout_constraintHorizontal_bias="0.95" />
+            android:id="@+id/chat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/white"
+            android:text="聊天"
+            android:textColor="#00838F"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TouchTargetSizeCheck" />
 
         <TextView
                 android:id="@+id/textView5"
