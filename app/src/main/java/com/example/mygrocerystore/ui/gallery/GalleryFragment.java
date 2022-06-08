@@ -52,6 +52,7 @@ public class GalleryFragment extends Fragment {
 	String FoodType="";
 	String FoodName="null";
 	String Name="null";
+	String[] food_type;
     private FragmentGalleryBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -73,6 +74,7 @@ public class GalleryFragment extends Fragment {
 
 			addStoreButton=root.findViewById(R.id.addStoreButton);
 			spType=root.findViewById(R.id.spinnerType);
+			food_type =getResources().getStringArray(R.array.food_type);
 
 			selectImg.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -101,9 +103,25 @@ public class GalleryFragment extends Fragment {
 		String Fraction = etFraction.getText().toString();
 		String Type = etType.getText().toString();
 		String Des = etDes.getText().toString();
-//		String name, String description, String rating, String discount, String storeName,String type, String img_url
+		int idFoodTpye=spType.getSelectedItemPosition();
+		switch (food_type[idFoodTpye]) {
+			case "早餐":
+				Type="breakfast";
+				break;
+			case "火鍋":
+				Type="hotpot";
+				break;
+			case "飲料":
+				Type="drink";
+				break;
+			case "便當":
+				Type="convenient";
+				break;
+			case "點心":
+				Type="dessert";
+				break;
+		}
 
-		System.out.println("!!!!!!"+Name+storeName+Freight+Type);
 		FirebaseFirestore firebaseDatabase = FirebaseFirestore.getInstance();
 		PopularModel store =new PopularModel(Name,Des,Fraction,Freight,storeName,Type,imageUri.toString());
 		firebaseDatabase.collection("PopularProducts").document(Name).set(store);
