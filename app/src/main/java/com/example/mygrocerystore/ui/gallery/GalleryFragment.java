@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,6 +43,7 @@ public class GalleryFragment extends Fragment {
 	private EditText etType;
 	private EditText etDes;
 	private EditText etImg;
+	Spinner spType;
 	FirebaseStorage storage;
 
 	Uri imageUri;
@@ -55,7 +57,6 @@ public class GalleryFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
 
-			System.out.println("!!!!!!!!!!!!");
 			View root = inflater.inflate(R.layout.fragment_gallery, container, false);
 
 			selectImg=root.findViewById(R.id.selectImg);
@@ -71,6 +72,7 @@ public class GalleryFragment extends Fragment {
 			etDes = root.findViewById(R.id.storeDes);
 
 			addStoreButton=root.findViewById(R.id.addStoreButton);
+			spType=root.findViewById(R.id.spinnerType);
 
 			selectImg.setOnClickListener(new View.OnClickListener() {
 				@Override

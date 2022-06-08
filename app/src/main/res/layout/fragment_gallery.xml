@@ -120,6 +120,13 @@
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
+            <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:entries="@array/food_type"
+                    android:id="@+id/spinnerType" />
+
             <EditText
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -149,6 +156,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:id="@+id/selectImg" />
+
 
         </LinearLayout>
 
