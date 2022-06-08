@@ -44,6 +44,9 @@
                 android:name=".activities.StoreFullOrderActivity"
                 android:exported="false" />
         <activity
+                android:name=".activities.DeliveryFullOrderActivity"
+                android:exported="false" />
+        <activity
                 android:name=".activities.DeliveryManRegistrstionActivity"
                 android:exported="false" />
 
