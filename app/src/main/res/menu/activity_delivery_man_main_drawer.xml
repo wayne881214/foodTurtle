@@ -16,6 +16,10 @@
             android:id="@+id/nav_delivery2"
             android:icon="@drawable/ic_baseline_category_24"
             android:title="外送訂單" />
+        <item
+            android:id="@+id/goToMapFragment"
+            android:icon="@drawable/ic_baseline_category_24"
+            android:title="地圖" />
 
     </group>
 </menu>

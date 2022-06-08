@@ -21,4 +21,9 @@
         android:name="com.example.mygrocerystore.ui.home.DeliveryManHomeFragment"
         android:label="首頁"
         tools:layout="@layout/fragment_delivery_man_home" />
+    <fragment
+        android:id="@+id/goToMapFragment"
+        android:name="com.example.mygrocerystore.GoToMapFragment"
+        android:label="fragment_go_to_map"
+        tools:layout="@layout/fragment_go_to_map" />
 </navigation>
