@@ -17,7 +17,7 @@
             android:icon="@drawable/ic_baseline_category_24"
             android:title="外送訂單" />
         <item
-            android:id="@+id/mapFragment"
+            android:id="@+id/goToMapFragment"
             android:icon="@drawable/ic_baseline_category_24"
             android:title="地圖" />
 

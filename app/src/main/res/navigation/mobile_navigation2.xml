@@ -22,8 +22,8 @@
         android:label="首頁"
         tools:layout="@layout/fragment_delivery_man_home" />
     <fragment
-        android:id="@+id/mapFragment"
-        android:name="com.example.mygrocerystore.MapFragment"
-        android:label="fragment_map"
-        tools:layout="@layout/fragment_map" />
+        android:id="@+id/goToMapFragment"
+        android:name="com.example.mygrocerystore.GoToMapFragment"
+        android:label="fragment_go_to_map"
+        tools:layout="@layout/fragment_go_to_map" />
 </navigation>

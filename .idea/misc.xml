@@ -82,6 +82,7 @@
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/activity_first.xml" value="0.2" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/activity_login.xml" value="0.25364583333333335" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/activity_map.xml" value="0.25364583333333335" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/activity_nav_category.xml" value="0.25364583333333335" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/activity_navigation.xml" value="0.25364583333333335" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/activity_order.xml" value="0.25364583333333335" />
@@ -108,11 +109,12 @@
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/content_store_main.xml" value="0.12335359675785208" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_blank.xml" value="0.12335359675785208" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_category.xml" value="0.25364583333333335" />
-        <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_debug.xml" value="0.12335359675785208" />
+        <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_debug.xml" value="0.2" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_delivery1.xml" value="0.12335359675785208" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_delivery2.xml" value="0.25364583333333335" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_delivery_man_home.xml" value="0.12335359675785208" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_gallery.xml" value="0.12335359675785208" />
+        <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_go_to_map.xml" value="0.2128623188405797" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_map.xml" value="0.25364583333333335" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_my_carts.xml" value="0.25364583333333335" />

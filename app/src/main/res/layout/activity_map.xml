@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MapFragment">
+    tools:context=".activities.MapActivity">
 
     <EditText
         android:id="@+id/et_source"
@@ -32,10 +32,10 @@
         android:id="@+id/bt_track"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="顯示追蹤"
-        app:layout_constraintTop_toBottomOf="@+id/et_destination"
-        tools:layout_editor_absoluteX="158dp"
-        android:layout_marginTop="10dp"/>
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_destination" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
