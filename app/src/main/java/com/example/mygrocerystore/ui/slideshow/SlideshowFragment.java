@@ -127,6 +127,7 @@ public class SlideshowFragment extends Fragment {
 								case 3:
 									fullOrderModelList3.add(fullOrder);
 									break;
+								case 4:
 								default:
 									break;
 							}

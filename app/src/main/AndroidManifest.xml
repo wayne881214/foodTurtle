@@ -12,6 +12,9 @@
         <activity
             android:name=".activities.MapActivity"
             android:exported="false" />
+         <activity
+            android:name=".activities.ChatActivity"
+            android:exported="false" />
         <activity
             android:name=".activities.OrderActivity"
             android:exported="false" />
@@ -43,6 +46,7 @@
         <activity
             android:name=".StoreOrderActivity"
             android:exported="false" />
+
         <activity
             android:name=".activities.StoreFullOrderActivity"
             android:exported="false" />

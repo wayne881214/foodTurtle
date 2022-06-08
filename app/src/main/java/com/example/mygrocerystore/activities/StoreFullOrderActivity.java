@@ -20,6 +20,7 @@ import com.example.mygrocerystore.adapter.OrderAdapter;
 import com.example.mygrocerystore.models.FullOrderModel;
 import com.example.mygrocerystore.models.OrderModel;
 import com.example.mygrocerystore.ui.slideshow.SlideshowFragment;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -35,7 +36,7 @@ public class StoreFullOrderActivity extends AppCompatActivity {
     FirebaseDatabase database;
     RecyclerView recyclerView;
     EditText remarkEdit,paymentEdit,addressEdit;
-    Button button;
+    Button button,chat;
     TextView textview,textView11,textView14,textView12;
     OrderAdapter orderAdapter;
     List<OrderModel> OrderModelList;
@@ -43,6 +44,7 @@ public class StoreFullOrderActivity extends AppCompatActivity {
     ProgressBar progressBar;
     String storeName;
     String name;
+    String Username;
     int total=0;
     int productCount=0;
 		FullOrderModel fullOrder;
@@ -67,10 +69,11 @@ public class StoreFullOrderActivity extends AppCompatActivity {
         paymentEdit=findViewById(R.id.payment);
         addressEdit=findViewById(R.id.address);
         button =findViewById(R.id.toOrder);
+        button.setVisibility(View.GONE);
         recyclerView = findViewById(R.id.order_rec);
         recyclerView.setVisibility(View.GONE);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
+        chat=findViewById(R.id.chat);
         storeName = getIntent().getStringExtra("storeName");
         toolbar.setTitle(storeName);
         database =FirebaseDatabase.getInstance();
@@ -78,6 +81,19 @@ public class StoreFullOrderActivity extends AppCompatActivity {
         OrderModelList=new ArrayList<>();
         orderAdapter = new OrderAdapter(this, OrderModelList);
         recyclerView.setAdapter(orderAdapter);
+
+        database.getReference().child("Stores").child(FirebaseAuth.getInstance().getUid()).child("name")
+                .addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull com.google.firebase.database.DataSnapshot snapshot) {
+                        Username = snapshot.getValue(String.class);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
 
       //先把訂單資料存下
 			DatabaseReference OrdersTypeRef = database.getReference().child("Orders").child(OrderDetail.order);
@@ -92,6 +108,11 @@ public class StoreFullOrderActivity extends AppCompatActivity {
 					customer.setText(fullOrder.getCustomer());
 					TextView deliveryMan=(TextView)findViewById(R.id.deliveryMan);
 					deliveryMan.setText(fullOrder.getDelivery());
+                    //按鈕顯示隱藏
+                    if(fullOrder.getType()==1) {
+                        button.setVisibility(View.VISIBLE);
+                        button.setText("確認接受");
+                    }
 				}
 
 				@Override
@@ -146,6 +167,16 @@ public class StoreFullOrderActivity extends AppCompatActivity {
 //							startActivity(intent);
 							finish();
 
+            }
+        });
+
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+						Intent intent=new Intent();
+                        intent.putExtra("name",Username);
+						intent.setClass(StoreFullOrderActivity.this, ChatActivity.class);
+						startActivity(intent);
             }
         });
     }

@@ -58,7 +58,7 @@ public class StoreOrderActivity extends AppCompatActivity {
 			@Override
 			public void onDataChange(DataSnapshot dataSnapshot) {
 				for (DataSnapshot ds : dataSnapshot.getChildren()) {
-					System.out.println("Data:"+ds);
+
 
 					String name=ds.child("name").getValue().toString();
 					String count=ds.child("count").getValue().toString();
