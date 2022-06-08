@@ -7,7 +7,7 @@ public class OrderModel {
     int price;
     int totalPrice;
     String img_url;
-
+		public OrderModel(){}
 
     public OrderModel(String name, String count, int  price, int totalPrice, String img_url) {
         this.name = name;

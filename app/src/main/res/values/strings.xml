@@ -22,4 +22,11 @@
     <string name="debug">Debug</string>
     <string name="title_activity_delivery_man_main">DeliveryManMainActivity</string>
     <string name="title_activity_store_main">StoreMainActivity</string>
+
+    <string-array name="food_type">
+        <item>早餐</item>
+        <item>火鍋</item>
+        <item>飲料</item>
+        <item>便當</item>
+    </string-array>
 </resources>

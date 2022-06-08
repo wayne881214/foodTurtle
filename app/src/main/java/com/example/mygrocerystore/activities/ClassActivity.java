@@ -49,7 +49,26 @@ public class ClassActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         String storetype = getIntent().getStringExtra("type");
-        toolbar.setTitle(storetype);
+        switch(storetype){
+            case "breakfast":
+                toolbar.setTitle("早餐店");
+                break;
+            case "dessert":
+                toolbar.setTitle("點心");
+                break;
+            case "hotpot":
+                toolbar.setTitle("火鍋");
+                break;
+            case "convenient":
+                toolbar.setTitle("便當");
+                break;
+            case "drink":
+                toolbar.setTitle("飲料");
+                break;
+            default:
+                toolbar.setTitle("nofound");
+                break;
+        }
         db = FirebaseFirestore.getInstance();
         popularRec = findViewById(R.id.class_rec);
         progressBar = findViewById(R.id.progressbar);

@@ -1,64 +1,34 @@
 package com.example.mygrocerystore.models;
 
-public class FullOrderModel {
-	OrderModel order;
-	String store;
-	int type;
-	String customer;
-//	String 外送員;
-//	String 地址;
-//  String 附註
-	public FullOrderModel(){}
+import com.google.firebase.database.DataSnapshot;
 
-	public FullOrderModel(String store,int type,String customer){
-		this.store=store;
-		this.type=type;
-		this.customer=customer;
-	}
-	public FullOrderModel(OrderModel order ,String store,int type,String customer){
-		this.order=order;
-		this.store=store;
-		this.type=type;
-		this.customer=customer;
-	}
-//	public FullOrderModel(OrderModel order ,String store,String type,String customer,String 外送員,String 地址){
-//		this.order=order;
-//		this.store=store;
-//		this.type=type;
-//		this.customer=customer;
-//	}
+import java.util.List;
 
-	public String getStore() {
-		return store;
+public class FullOrderModel extends MyCartModel {
+	List<OrderModel> product;
+	public FullOrderModel(){
 	}
 
-	public void setStore(String store) {
+
+	public FullOrderModel( String delivery,List<OrderModel> product , String address, String payment,String remark,String store,  int type,int key,String customer) {
+		this.key = key;
 		this.store = store;
-	}
-
-	public int getType() {
-		return type;
-	}
-
-	public void setType(int type) {
-		this.type = type;
-	}
-
-	public String getCustomer() {
-		return customer;
-	}
-
-	public void setCustomer(String customer) {
 		this.customer = customer;
+		this.delivery = delivery;
+		this.type = type;
+		this.remark=remark;
+		this.payment = payment;
+		this.address = address;
+		this.product = product;
 	}
 
-	public OrderModel getOrder() {
-		return order;
-	}
-
-	public void setOrder(OrderModel order) {
-		this.order = order;
-	}
+//	public List<OrderModel>  getProduct() {
+//		return product;
+//	}
+//
+//	public void setProduct(List<OrderModel> product) {
+//		this.product =product;
+//	}
 
 
 }
