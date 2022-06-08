@@ -14,7 +14,7 @@
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.mygrocerystore.ui.gallery.GalleryFragment"
-        android:label="編輯商品"
+        android:label="編輯商店資訊"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
@@ -27,4 +27,9 @@
         android:name="com.example.mygrocerystore.BlankFragment"
         android:label="新增商品"
         tools:layout="@layout/fragment_blank" />
+    <fragment
+        android:id="@+id/storeProfile"
+        android:name="com.example.mygrocerystore.StoreProfile"
+        android:label="編輯個人資料"
+        tools:layout="@layout/fragment_store_profile" />
 </navigation>
