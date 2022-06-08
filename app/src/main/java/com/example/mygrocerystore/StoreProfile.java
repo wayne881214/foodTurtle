@@ -1,8 +1,13 @@
-package com.example.mygrocerystore.ui.DeliveryFragment1;
+package com.example.mygrocerystore;
 
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,12 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import com.bumptech.glide.Glide;
-import com.example.mygrocerystore.R;
 import com.example.mygrocerystore.models.UserModel;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,7 +29,8 @@ import com.google.firebase.storage.UploadTask;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class DeliveryFragment1 extends Fragment {
+
+public class StoreProfile extends Fragment {
 
     CircleImageView profileImage;
     EditText name, email, number, address;
@@ -41,9 +42,7 @@ public class DeliveryFragment1 extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-
-
-        View root = inflater.inflate(R.layout.fragment_delivery1, container, false);
+        View root = inflater.inflate(R.layout.fragment_profile, container, false);
 
         auth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -56,7 +55,7 @@ public class DeliveryFragment1 extends Fragment {
         address = root.findViewById(R.id.profile_address);
         update = root.findViewById(R.id.update);
 
-        database.getReference().child("DeliveryMan").child(FirebaseAuth.getInstance().getUid())
+        database.getReference().child("Stores").child(FirebaseAuth.getInstance().getUid())
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -86,7 +85,6 @@ public class DeliveryFragment1 extends Fragment {
             }
         });
 
-
         return root;
     }
 
@@ -111,7 +109,7 @@ public class DeliveryFragment1 extends Fragment {
                     reference.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
-                            database.getReference().child("DeliveryMan").child(FirebaseAuth.getInstance().getUid())
+                            database.getReference().child("Stores").child(FirebaseAuth.getInstance().getUid())
                                     .child("profileImg").setValue(uri.toString());
                             Toast.makeText(getContext(), "Profile Picture Uploaded", Toast.LENGTH_SHORT).show();
                         }
