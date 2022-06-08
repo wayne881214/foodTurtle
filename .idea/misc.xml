@@ -50,14 +50,27 @@
         <entry key="..\:/appDev/Lab/temp/0528/foodTurtle/app/src/main/res/layout/activity_order_order.xml" value="0.4" />
         <entry key="..\:/appDev/Lab/temp/0528/foodTurtle/app/src/main/res/layout/activity_store_add.xml" value="0.14990942028985507" />
         <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/activity_add_store.xml" value="0.1" />
+        <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/activity_delivery_order.xml" value="0.2" />
         <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/activity_shopcar.xml" value="0.2708333333333333" />
+        <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/activity_storeOrder.xml" value="0.13323201621073963" />
         <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/activity_store_add.xml" value="0.2" />
         <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/activity_store_agree.xml" value="0.2" />
         <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/activity_store_login.xml" value="0.13323201621073963" />
         <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/activity_store_main.xml" value="0.13323201621073963" />
+        <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/activity_store_order.xml" value="0.264" />
         <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/activity_store_registration.xml" value="0.2" />
+        <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/delivery_cart_item.xml" value="0.264" />
         <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/fragment_blank.xml" value="0.264" />
+        <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/fragment_category.xml" value="0.11296296296296296" />
+        <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/fragment_delivery1.xml" value="0.13323201621073963" />
+        <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/fragment_delivery2.xml" value="0.2" />
         <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/fragment_gallery.xml" value="0.264" />
+        <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/fragment_my_carts.xml" value="0.2" />
+        <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/fragment_slideshow.xml" value="0.176" />
+        <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/home_cat_items.xml" value="0.13323201621073963" />
+        <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/my_cart_item.xml" value="0.264" />
+        <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/nav_cat_item.xml" value="0.10511651469098278" />
+        <entry key="..\:/appDev/Lab/temp/0604/temp/foodTurtle/app/src/main/res/layout/store_cart_item.xml" value="0.4" />
         <entry key="..\:/foodTurtle-main/foodTurtle-main/app/src/main/res/layout/activity_coupon.xml" value="0.12335359675785208" />
         <entry key="..\:/foodTurtle-main/foodTurtle-main/app/src/main/res/layout/activity_coupon_expired.xml" value="0.12335359675785208" />
         <entry key="..\:/foodTurtle-main/foodTurtle-main/app/src/main/res/layout/activity_coupon_main.xml" value="0.12335359675785208" />
@@ -81,7 +94,6 @@
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/activity_first.xml" value="0.2" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/activity_login.xml" value="0.25364583333333335" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/activity_main.xml" value="0.4" />
-        <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/activity_map.xml" value="0.25364583333333335" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/activity_nav_category.xml" value="0.25364583333333335" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/activity_navigation.xml" value="0.25364583333333335" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/activity_order.xml" value="0.25364583333333335" />
@@ -108,14 +120,12 @@
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/content_store_main.xml" value="0.12335359675785208" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_blank.xml" value="0.12335359675785208" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_category.xml" value="0.25364583333333335" />
-        <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_debug.xml" value="0.2" />
+        <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_debug.xml" value="0.12335359675785208" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_delivery1.xml" value="0.12335359675785208" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_delivery2.xml" value="0.25364583333333335" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_delivery_man_home.xml" value="0.12335359675785208" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_gallery.xml" value="0.12335359675785208" />
-        <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_go_to_map.xml" value="0.2128623188405797" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_home.xml" value="0.264" />
-        <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_map.xml" value="0.25364583333333335" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_my_carts.xml" value="0.25364583333333335" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_my_orders.xml" value="0.25364583333333335" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_new_products.xml" value="0.25364583333333335" />
@@ -123,7 +133,6 @@
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_profile.xml" value="0.12335359675785208" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_slideshow.xml" value="0.12335359675785208" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_store_home.xml" value="0.12335359675785208" />
-        <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_store_profile.xml" value="0.25364583333333335" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/fragment_test_test.xml" value="0.12335359675785208" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/home_cat_items.xml" value="0.12335359675785208" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/listitem_coupon.xml" value="0.25364583333333335" />
@@ -136,7 +145,6 @@
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/order_item.xml" value="0.25364583333333335" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/popular_item.xml" value="0.25364583333333335" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/recommended_item.xml" value="0.25364583333333335" />
-        <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/store_cart_item.xml" value="0.25364583333333335" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/layout/view_all_item.xml" value="0.25364583333333335" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/menu/activity_delivery_man_main_drawer.xml" value="0.24974358974358973" />
         <entry key="..\:/foodTurtle/foodTurtle/app/src/main/res/menu/activity_main_drawer.xml" value="0.24974358974358973" />
@@ -151,8 +159,6 @@
         <entry key="..\:/user/Desktop/food/app/src/main/res/layout/activity_navigation.xml" value="0.13454545454545455" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.159375" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/drawable/hometext.xml" value="0.15625" />
-        <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/drawable/rounded_corner1.xml" value="0.21458333333333332" />
-        <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/drawable/rounded_corner2.xml" value="0.21458333333333332" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_browse.xml" value="0.2563405797101449" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_chat.xml" value="0.24230072463768115" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_coupon.xml" value="0.152" />
@@ -165,6 +171,7 @@
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_delivery_order.xml" value="0.264" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_navigation.xml" value="0.264" />
+        <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_order.xml" value="0.4" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_order_order.xml" value="0.2" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_orders_accept.xml" value="0.4" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_orders_home.xml" value="0.4" />
@@ -176,17 +183,11 @@
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_shopcar.xml" value="0.4" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_shopcar2.xml" value="0.14010416666666667" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/activity_shopcar3.xml" value="0.2" />
-
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/listitem_coupon.xml" value="0.26811594202898553" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/listitem_food.xml" value="0.27395833333333336" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/listitem_order.xml" value="0.1" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/listitem_store.xml" value="0.27395833333333336" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/message_area.xml" value="0.24230072463768115" />
-        <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/my_cart_item.xml" value="0.264" />
-        <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/nav_cat_item.xml" value="0.1" />
-        <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/order_item.xml" value="0.27395833333333336" />
-        <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/popular_item.xml" value="0.27395833333333336" />
-        <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/layout/view_all_item.xml" value="0.27395833333333336" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.15625" />
         <entry key="..\:/user/Desktop/foodTurtle/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.15625" />
       </map>

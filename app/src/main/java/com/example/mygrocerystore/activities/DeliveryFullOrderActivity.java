@@ -1,5 +1,8 @@
 package com.example.mygrocerystore.activities;
 
+import android.content.ActivityNotFoundException;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,7 +38,7 @@ public class DeliveryFullOrderActivity extends AppCompatActivity {
     FirebaseDatabase database;
     RecyclerView recyclerView;
     EditText remarkEdit,paymentEdit,addressEdit;
-    Button button;
+    Button button,map;
     TextView textview,textView11,textView14,textView12;
     OrderAdapter orderAdapter;
     List<OrderModel> OrderModelList;
@@ -49,7 +52,7 @@ public class DeliveryFullOrderActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_store_order);
+        setContentView(R.layout.activity_delivery_order);
 
 			database=FirebaseDatabase.getInstance();
 			database.getReference().child("DeliveryMan").child(FirebaseAuth.getInstance().getUid())
@@ -84,6 +87,7 @@ public class DeliveryFullOrderActivity extends AppCompatActivity {
         paymentEdit=findViewById(R.id.payment);
         addressEdit=findViewById(R.id.address);
         button =findViewById(R.id.toOrder);
+			  map =findViewById(R.id.map);
         recyclerView = findViewById(R.id.order_rec);
         recyclerView.setVisibility(View.GONE);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -103,7 +107,7 @@ public class DeliveryFullOrderActivity extends AppCompatActivity {
 					fullOrder = dataSnapshot.getValue(FullOrderModel.class);
 					textView11.setText("備註:"+fullOrder.getRemark());
 					textView12.setText("付款方式:"+fullOrder.getPayment());
-					textView14.setText("地址"+fullOrder.getAddress());
+					textView14.setText("地址:"+fullOrder.getAddress());
 
 					TextView customer=(TextView) findViewById(R.id.customer);
 					customer.setText(fullOrder.getCustomer());
@@ -130,7 +134,7 @@ public class DeliveryFullOrderActivity extends AppCompatActivity {
         DatabaseReference OrdersRef = database.getReference().child("Orders").child(OrderDetail.order).child("product");
         OrdersRef.addValueEventListener(new ValueEventListener() {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-            		System.out.println("OrderDetail.order:"+OrderDetail.order);
+            		//System.out.println("OrderDetail.order:"+OrderDetail.order);
                 for(DataSnapshot ds : dataSnapshot.getChildren()){
 										OrderModel order = ds.getValue(OrderModel.class);
 										total+=order.getTotalPrice();
@@ -166,5 +170,35 @@ public class DeliveryFullOrderActivity extends AppCompatActivity {
 
             }
         });
+
+			map.setOnClickListener(new View.OnClickListener() {
+				@Override
+				public void onClick(View view) {
+					String sSource = storeName.trim();
+					String sDestination = fullOrder.getAddress().trim();
+
+					if (sSource.equals("") && sDestination.equals("")) {
+						Toast.makeText(getApplicationContext(), "輸入位址", Toast.LENGTH_SHORT).show();
+					} else {
+						DisplayTrack(sSource, sDestination);
+					}
+
+				}
+			});
     }
+
+	private void DisplayTrack(String sSource, String sDestination) {
+		try {
+			Uri uri = Uri.parse("https://www.google.co.in/maps/dir/" + sSource + "/" + sDestination);
+			Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+			intent.setPackage("com.google.android.apps.maps");
+			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			startActivity(intent);
+		} catch (ActivityNotFoundException e) {
+			Uri uri = Uri.parse("https://play.google.com/store/apps/details?id=com.google.android.apps.maps");
+			Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			startActivity(intent);
+		}
+	}
 }
