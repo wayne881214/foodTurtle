@@ -88,7 +88,6 @@ public class DeliveryFragment2 extends Fragment {
 //									fullOrderModelList.add(fullOrder);
 									break;
 								case 2:
-									System.out.println("RRRRRRRR");
 									fullOrderModelList2.add(fullOrder);
 									break;
 								case 3:

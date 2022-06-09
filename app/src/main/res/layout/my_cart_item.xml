@@ -162,6 +162,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/white"
                 android:fontFamily="@font/alice"
                 android:text="付款方式"
                 android:textSize="16sp" />
@@ -171,6 +172,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textStyle="bold"
+                android:textColor="@color/white"
                 android:text="Product Price"
                 android:textSize="16sp"
                 android:fontFamily="@font/alice" />
@@ -188,6 +190,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:textColor="@color/white"
                 android:fontFamily="@font/alice"
                 android:text="地址"
                 android:textSize="16sp" />
@@ -197,6 +200,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:textStyle="bold"
+                android:textColor="@color/white"
                 android:text="Product Price"
                 android:textSize="16sp"
                 android:fontFamily="@font/alice" />

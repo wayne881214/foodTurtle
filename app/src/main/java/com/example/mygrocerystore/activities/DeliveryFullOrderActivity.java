@@ -4,6 +4,7 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -38,7 +39,7 @@ public class DeliveryFullOrderActivity extends AppCompatActivity {
     FirebaseDatabase database;
     RecyclerView recyclerView;
     EditText remarkEdit,paymentEdit,addressEdit;
-    Button button,map;
+    Button button,map,chat;
     TextView textview,textView11,textView14,textView12;
     OrderAdapter orderAdapter;
     List<OrderModel> OrderModelList;
@@ -48,46 +49,40 @@ public class DeliveryFullOrderActivity extends AppCompatActivity {
     String name;
     int total=0;
     int productCount=0;
-		FullOrderModel fullOrder;
+    FullOrderModel fullOrder;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivery_order);
-
-			database=FirebaseDatabase.getInstance();
-			database.getReference().child("DeliveryMan").child(FirebaseAuth.getInstance().getUid())
-			.addListenerForSingleValueEvent(new ValueEventListener() {
+        database=FirebaseDatabase.getInstance();
+        database.getReference().child("DeliveryMan").child(FirebaseAuth.getInstance().getUid())
+                .addListenerForSingleValueEvent(new ValueEventListener() {
 				@Override
 				public void onDataChange(@NonNull DataSnapshot snapshot) {
 					UserModel userModel = snapshot.getValue(UserModel.class);
 					OrderDetail.customer=userModel.getName();
 					name=userModel.getName();
-//					TextView DeliveryName=findViewById(R.id.DeliveryName2);
-//					DeliveryName.setText("外送員名稱:"+name);
 				}
-
 				@Override
 				public void onCancelled(@NonNull DatabaseError error) {
-
 				}
 			});
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         progressBar = findViewById(R.id.progressbar);
         progressBar.setVisibility(View.VISIBLE);
         textview = findViewById(R.id.textView5);
-
-				textView11=findViewById(R.id.textView11);
-				textView14=findViewById(R.id.textView14);
-				textView12=findViewById(R.id.textView12);
-
+        textView11=findViewById(R.id.textView11);
+        textView14=findViewById(R.id.textView14);
+        textView12=findViewById(R.id.textView12);
         remarkEdit=findViewById(R.id.remark);
         paymentEdit=findViewById(R.id.payment);
         addressEdit=findViewById(R.id.address);
         button =findViewById(R.id.toOrder);
-			  map =findViewById(R.id.map);
+        button.setVisibility(View.GONE);
+        map =findViewById(R.id.map);
+        chat=findViewById(R.id.chat);
         recyclerView = findViewById(R.id.order_rec);
         recyclerView.setVisibility(View.GONE);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -113,6 +108,12 @@ public class DeliveryFullOrderActivity extends AppCompatActivity {
 					customer.setText(fullOrder.getCustomer());
 					TextView deliveryMan=(TextView)findViewById(R.id.deliveryMan);
 					deliveryMan.setText(fullOrder.getDelivery());
+					Log.w("type","type:"+fullOrder.getType());
+                    if(fullOrder.getType()==2) {
+                        button.setText("確認接受");
+                        button.setVisibility(View.VISIBLE);
+                    }
+
 				}
 
 				@Override
@@ -120,7 +121,6 @@ public class DeliveryFullOrderActivity extends AppCompatActivity {
 					// Failed to read value
 				}
 			});
-
         DatabaseReference ProductCountRef = database.getReference("Counts/count");
         ProductCountRef.addListenerForSingleValueEvent(new ValueEventListener() {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -131,6 +131,7 @@ public class DeliveryFullOrderActivity extends AppCompatActivity {
             }
         });
         //顯示購物車中內的商品資訊
+
         DatabaseReference OrdersRef = database.getReference().child("Orders").child(OrderDetail.order).child("product");
         OrdersRef.addValueEventListener(new ValueEventListener() {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -144,7 +145,6 @@ public class DeliveryFullOrderActivity extends AppCompatActivity {
                     recyclerView.setVisibility(View.VISIBLE);
                 }
                 textview.setText("總計金額:"+total+"$");
-                button.setText("確認訂單"+" "+total+"$");
 
             }
             @Override
@@ -168,6 +168,15 @@ public class DeliveryFullOrderActivity extends AppCompatActivity {
 //							startActivity(intent);
 							finish();
 
+            }
+        });
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent();
+                intent.putExtra("name",name);
+                intent.setClass(DeliveryFullOrderActivity.this, ChatActivity.class);
+                startActivity(intent);
             }
         });
 
