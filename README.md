@@ -204,3 +204,73 @@
     <td>#73、#76</td>
 </table>
 
+## 下單流程
+
+![Untitled Diagram.drawio (4).png](https://i.imgur.com/PAAJp4j.png)
+## 通用功能
+
+### 登入&註冊
+
+![註冊+登入.gif](https://i.imgur.com/c1DdVjg.png)
+![註冊+登入.gif](https://i.imgur.com/2rQajKk.png)
+
+### 個人資料編輯
+
+![個人資料.gif](https://i.imgur.com/QXs9AH4.png)
+![個人資料.gif](https://i.imgur.com/0u2ngbS.png)
+![個人資料.gif](https://i.imgur.com/xBkOKCM.png)
+![個人資料.gif](https://i.imgur.com/5M53loM.png)
+
+
+### 瀏覽商店(分類&搜尋)
+
+![商店瀏覽.gif](https://i.imgur.com/gIq1xZd.png)
+![商店瀏覽.gif](https://i.imgur.com/MEhuYgY.png)
+![商店瀏覽.gif](https://i.imgur.com/Mwdkkp9.png)
+![商店瀏覽.gif](https://i.imgur.com/RT3lWsu.png)
+
+### 聊天
+
+![聊天2.gif](https://i.imgur.com/Qjrw053.png)
+![聊天1.gif](https://i.imgur.com/zxgmNqE.png)
+
+## 角色-買家
+
+### 購物車結帳
+
+![購物車訂單.gif](https://i.imgur.com/3uIstpt.png)
+
+### 查看訂單狀態
+![](https://i.imgur.com/PNp4Qqt.png)
+![](https://i.imgur.com/stFkZ8u.png)
+
+## 角色-商家
+
+### 編輯商店資料
+
+### 上架商品
+
+![食物上架.gif](https://i.imgur.com/7MTP1mQ.png)
+![食物上架.gif](https://i.imgur.com/CnklwS6.png)
+![食物上架.gif](https://i.imgur.com/6NwDQg0.png)
+![食物上架.gif](https://i.imgur.com/ZJkZor1.png)
+
+### 管理訂單
+
+![商家訂單.gif](https://i.imgur.com/3s8iEWd.png)
+![商家訂單.gif](https://i.imgur.com/Fb8UhnR.png)
+![商家訂單.gif](https://i.imgur.com/WuBtToD.png)
+![商家訂單.gif](https://i.imgur.com/O9P0yal.png)
+
+## 角色-外送員
+
+### 接收訂單
+
+![外送員訂單.gif](https://i.imgur.com/6ZliU1D.png)
+![外送員訂單.gif](https://i.imgur.com/uZQr5aV.png)
+![外送員訂單.gif](https://i.imgur.com/PRe0Xzs.png)
+![外送員訂單.gif](https://i.imgur.com/V3xITEI.png)
+
+### 地圖接送
+![](https://i.imgur.com/A5s1ovg.png)
+![](https://i.imgur.com/E6b0PkG.png)
