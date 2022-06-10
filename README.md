@@ -217,18 +217,20 @@
 
 ### 個人資料編輯
 
-![個人資料.gif](https://i.imgur.com/QXs9AH4.png)
 ![](https://i.imgur.com/MwVGuXi.png)
-![個人資料.gif](https://i.imgur.com/xBkOKCM.png)
 ![個人資料.gif](https://i.imgur.com/5M53loM.png)
 
 ### 瀏覽商店(分類&搜尋)
 
 ![商店瀏覽.gif](https://i.imgur.com/gIq1xZd.png)
 ![商店瀏覽.gif](https://i.imgur.com/MEhuYgY.png)
+![](https://i.imgur.com/2HPX4t6.png)
+
+### 瀏覽食品
+
 ![商店瀏覽.gif](https://i.imgur.com/Mwdkkp9.png)
 ![商店瀏覽.gif](https://i.imgur.com/RT3lWsu.png)
-![](https://i.imgur.com/2HPX4t6.png)
+
 ### 聊天
 
 ![聊天2.gif](https://i.imgur.com/Qjrw053.png)
