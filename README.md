@@ -236,8 +236,12 @@
 
 ## 角色-買家
 
-### 購物車結帳
+### 麵包版
+![](https://i.imgur.com/Osa8nTn.png)
+### 購物車
+![](https://i.imgur.com/yY1NVBI.png)
 
+### 結帳
 ![購物車訂單.gif](https://i.imgur.com/3uIstpt.png)
 
 ### 查看訂單狀態
@@ -245,6 +249,8 @@
 ![](https://i.imgur.com/stFkZ8u.png)
 
 ## 角色-商家
+### 麵包版
+![](https://i.imgur.com/YeTJLvL.png)
 
 ### 編輯商店資料
 ![](https://i.imgur.com/AAujCkx.png)
@@ -266,6 +272,8 @@
 
 ## 角色-外送員
 
+### 麵包版
+![](https://i.imgur.com/MNP6eQ0.png)
 ### 接收訂單
 
 ![外送員訂單.gif](https://i.imgur.com/6ZliU1D.png)
