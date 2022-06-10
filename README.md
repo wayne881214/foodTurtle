@@ -208,7 +208,8 @@
 
 ![Untitled Diagram.drawio (4).png](https://i.imgur.com/PAAJp4j.png)
 ## 通用功能
-
+### 首頁
+![](https://i.imgur.com/j7SyfbT.png)
 ### 登入&註冊
 
 ![註冊+登入.gif](https://i.imgur.com/c1DdVjg.png)
@@ -247,6 +248,8 @@
 ## 角色-商家
 
 ### 編輯商店資料
+![](https://i.imgur.com/AAujCkx.png)
+![](https://i.imgur.com/Fm5m7cw.png)
 
 ### 上架商品
 
